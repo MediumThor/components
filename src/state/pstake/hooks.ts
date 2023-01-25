@@ -299,18 +299,18 @@ export function useGetPoolDollerWorth(pair: Pair | null) {
   const currency0Price = CHAINS[chainId]?.mainnet ? currency0PriceTmp : undefined;
 
   const pairOrToken = isEvmChain(chainId) ? pair?.liquidityToken : pair;
-  const userPgl = useTokenBalance(account ?? undefined, pairOrToken as Token);
+  const userArl = useTokenBalance(account ?? undefined, pairOrToken as Token);
   const totalPoolTokens = useTotalSupply(pairOrToken as Token);
 
   const [token0Deposited] =
     !!pair &&
-    !!totalPoolTokens &&
-    !!userPgl &&
-    JSBI.greaterThan(totalPoolTokens.raw, BIG_INT_ZERO) &&
-    JSBI.greaterThan(userPgl.raw, BIG_INT_ZERO) &&
-    // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-    JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPgl.raw)
-      ? pair.getLiquidityValues(totalPoolTokens, userPgl, { feeOn: false })
+      !!totalPoolTokens &&
+      !!userArl &&
+      JSBI.greaterThan(totalPoolTokens.raw, BIG_INT_ZERO) &&
+      JSBI.greaterThan(userArl.raw, BIG_INT_ZERO) &&
+      // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+      JSBI.greaterThanOrEqual(totalPoolTokens.raw, userArl.raw)
+      ? pair.getLiquidityValues(totalPoolTokens, userArl, { feeOn: false })
       : [undefined, undefined];
 
   let liquidityInUSD = 0;
@@ -321,10 +321,10 @@ export function useGetPoolDollerWorth(pair: Pair | null) {
 
   return useMemo(
     () => ({
-      userPgl,
+      userArl,
       liquidityInUSD,
     }),
-    [userPgl, liquidityInUSD],
+    [userArl, liquidityInUSD],
   );
 }
 
@@ -753,12 +753,12 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
             PNG[chainId],
             JSBI.greaterThan(_totalStakedAmount.raw, JSBI.BigInt(0))
               ? JSBI.divide(
-                  JSBI.multiply(
-                    JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw),
-                    BIG_INT_SECONDS_IN_WEEK,
-                  ),
-                  _totalStakedAmount.raw,
-                )
+                JSBI.multiply(
+                  JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw),
+                  BIG_INT_SECONDS_IN_WEEK,
+                ),
+                _totalStakedAmount.raw,
+              )
               : JSBI.BigInt(0),
           );
         };
@@ -986,9 +986,9 @@ export const useGetMinichefStakingInfosViaSubgraph = (): MinichefStakingInfo[] =
           png,
           JSBI.greaterThan(_totalStakedAmount.raw, JSBI.BigInt(0))
             ? JSBI.divide(
-                JSBI.multiply(JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw), BIG_INT_SECONDS_IN_WEEK),
-                _totalStakedAmount.raw,
-              )
+              JSBI.multiply(JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw), BIG_INT_SECONDS_IN_WEEK),
+              _totalStakedAmount.raw,
+            )
             : JSBI.BigInt(0),
         );
       };
