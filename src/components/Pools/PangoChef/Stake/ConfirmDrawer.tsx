@@ -85,7 +85,7 @@ const ConfirmDrawer: React.FC<Props> = (props) => {
     <ContentWrapper>
       <Box display="flex" justifyContent="space-between" width="100%">
         <Text fontSize={'28px'} fontWeight={500} color="text1">
-          {amount?.toFixed(8)} PGL
+          {amount?.toFixed(8)} ARL
         </Text>
         <DoubleCurrencyLogo size={24} currency0={token0} currency1={token1} />
       </Box>

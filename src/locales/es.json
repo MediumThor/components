@@ -88,8 +88,8 @@
     "missingDependencies": "faltan dependencias",
     "deposited": "Depositado",
     "withdrawDepositedLiquidity": "Retirar liquidez depositada",
-    "depositedPglLiquidity": "Liquidez PGL depositados:",
-    "whenYouWithdrawWarning": "Cuando retiras, sus {{ symbol }} son reclamados y tus Pangolin Liquidity tokens, PGL, le son devueltos. Usted no ganará {{ symbol }} de recompensa por esta liquidez. Tu token original de liquidez permanecerá en su pool de liquidez.",
+    "depositedPglLiquidity": "Liquidez ARL depositados:",
+    "whenYouWithdrawWarning": "Cuando retiras, sus {{ symbol }} son reclamados y tus Arcanum Liquidity tokens, ARL, le son devueltos. Usted no ganará {{ symbol }} de recompensa por esta liquidez. Tu token original de liquidez permanecerá en su pool de liquidez.",
     "whenYouWithdrawSingleSideWarning": "When you withdraw, your {{ symbol }} is claimed and your {{ pngSymbol }} is returned to you. You will no longer earn {{ symbol }} rewards on this {{ pngSymbol }}.",
     "withdrawAndClaim": "Retirar y reclamar",
     "withdrewStakingToken": "{{ symbol }} retirados!",
@@ -244,7 +244,7 @@
     "minutes": "minutos"
   },
   "vote": {
-    "earnedPng": "Earned {{ pngSymbol }} tokens represent voting shares in Pangolin governance.",
+    "earnedPng": "Earned {{ pngSymbol }} tokens represent voting shares in Arcanum governance.",
     "canEitherVote": "You can either vote on each proposal yourself or delegate your votes to a third party.",
     "delegateVotes": "Delegar votos",
     "selfDelegate": "Autodelegar",
@@ -319,20 +319,20 @@
     "youHave": "Tiene ",
     "pngAvailableClaim": " {{ pngSymbol }} disponible para reclamar",
     "loading": "Cargando",
-    "welcomeToTeamPangolin": "Bienvenido al equipo Pangolin",
+    "welcomeToTeamPangolin": "Bienvenido al equipo Arcanum",
     "claim": "reclamar "
   },
   "earnPage": {
-    "pangolinLiquidityMining": "Minería de liquidez Pangolin",
-    "pangolinLiquidityStaking": "Pangolin {{ pngSymbol }} staking",
-    "depositPangolinLiquidity": "Deposite sus tokens Pangolin Liquidity Provider PGL para recivir {{ pngSymbol }}, el token del protocolo de governanza de Pangolin.",
+    "pangolinLiquidityMining": "Minería de liquidez Arcanum",
+    "pangolinLiquidityStaking": "Arcanum {{ pngSymbol }} staking",
+    "depositPangolinLiquidity": "Deposite sus tokens Arcanum Liquidity Provider ARL para recivir {{ pngSymbol }}, el token del protocolo de governanza de Arcanum.",
     "depositPangolinStaking": "Deposit and stake your {{ pngSymbol }} tokens to earn more tokens.",
     "currentOpportunities": "Current opportunities",
     "readMoreAboutPng": "Leer más sobre {{ pngSymbol }}",
     "getInsuranceCoverage": "Obtenga cobertura en InsurAce.io",
     "getCoverNexusMutual": "Ponte a cubierto en Nexus Mutual",
     "importantUpdate": "ACTUALIZACIÓN IMPORTANTE",
-    "pangolinGovernanceProposalResult": "Como resultado de la primera proposición de governanza de Pangolin, este está cambiando sus contratos de staking! Después de aproximadamente 08:59 UTC el 4/19, todas las recompensas serán distribuidas a los nuevos contratos. Antes del cambio, todas las recompensas serán distribuidas a los viejos contratos. para evitar interrupciones en las recompensas, necesita retirar su liquidez de los viejos contratos y depositarla en los nuevos. No necesita retirar su liquidez de sus pools ni alterar sus posiciones.",
+    "pangolinGovernanceProposalResult": "Como resultado de la primera proposición de governanza de Arcanum, este está cambiando sus contratos de staking! Después de aproximadamente 08:59 UTC el 4/19, todas las recompensas serán distribuidas a los nuevos contratos. Antes del cambio, todas las recompensas serán distribuidas a los viejos contratos. para evitar interrupciones en las recompensas, necesita retirar su liquidez de los viejos contratos y depositarla en los nuevos. No necesita retirar su liquidez de sus pools ni alterar sus posiciones.",
     "oldPngPools": "Viejas pools {{ pngSymbol }}",
     "newPngPools": "Nuevas pools {{ pngSymbol }}",
     "participatingPools": "Participating pools",
@@ -342,8 +342,8 @@
     "pngStaking": "{{ pngSymbol }} Staking",
     "totalStaked": "Total depositado",
     "poolRate": "Ratio de la Pool",
-    "step1": "Step 1. Get Pangolin Liquidity tokens (PGL)",
-    "pglTokenRequired": "PGL tokens are required. Once you've added liquidity to the {{ poolHandle }} pool you can stake your liquidity tokens on this page.",
+    "step1": "Step 1. Get Arcanum Liquidity tokens (ARL)",
+    "pglTokenRequired": "ARL tokens are required. Once you've added liquidity to the {{ poolHandle }} pool you can stake your liquidity tokens on this page.",
     "addPoolLiquidity": "Add {{ poolHandle }} liquidity",
     "liquidityDeposits": "Sus depósitods de liquidez",
     "yourStakedToken": "Your staked {{ symbol }}",
@@ -358,8 +358,8 @@
     "unstake": "Unstake",
     "stakingTokensAvailable": "Toens {{ symbol }} disponibles",
     "getToken": "Get {{ symbol }}",
-    "migrateTitle": "Migre su PGL apilado",
-    "migrateDescription": "Pangolin ha cambiado la tokenómica. Deberá migrar su PGL apilado a un nuevo contrato",
+    "migrateTitle": "Migre su ARL apilado",
+    "migrateDescription": "Arcanum ha cambiado la tokenómica. Deberá migrar su ARL apilado a un nuevo contrato",
     "migrate": "Emigrar"
   },
   "pool": {
@@ -470,7 +470,7 @@
   },
   "buyPage": {
     "buyAvaxInfo": "Compre AVAX con fiat de nuestro socio Wyre.",
-    "privacyInfo": "Pangolin no almacena su historial de compras ni ningún dato personal.",
+    "privacyInfo": "Arcanum no almacena su historial de compras ni ningún dato personal.",
     "firstName": "Nombre",
     "lastName": "Apellido",
     "email": "Email",
@@ -479,8 +479,8 @@
   "votePage": {
     "unlockVotes": "Desbloquear votos",
     "updateDelegation": "Actualizar delegación",
-    "pangolinGovernance": "Governanza Pangolin",
-    "earnedPngTokens": "los tokens {{ pngSymbol }} representan participaciones en la governanza de Pangolin Puede votar en cada proposición usted mismo o delegar sus votos a un tercero.",
+    "pangolinGovernance": "Governanza Arcanum",
+    "earnedPngTokens": "los tokens {{ pngSymbol }} representan participaciones en la governanza de Arcanum Puede votar en cada proposición usted mismo o delegar sus votos a un tercero.",
     "eligibleToVote": "Para ser elegible para votar, debe tener {{ pngSymbol }} en su cartera y delegarlos al comienzo de la votación. Una vez la votación haya empezado, puede depositar en una pool o gastar sus {{ pngSymbol }}.",
     "governanceVotes": "Los votos de la governanza se deciden por mayoría. No hay un límite de quorum.",
     "proposals": "Proposiciones",
@@ -550,7 +550,7 @@
     "add": "AGREGAR",
     "remove": "RETIRAR",
     "startMigratingNow": "EMPIECE A MIGRAR AHORA",
-    "startMigratingNowDescription": "A continuación encontrará todas las granjas que necesitará para migrar a los contratos V2 de Pangolin",
+    "startMigratingNowDescription": "A continuación encontrará todas las granjas que necesitará para migrar a los contratos V2 de Arcanum",
     "seeMore": "VER MÁS",
     "migrateWithEase": "MIGRA CON FACILIDAD",
     "migrateWithDescription": "Hemos diseñado un asistente elegante, que lo guiará a través del proceso de migración de sus Fincas.",
@@ -559,7 +559,7 @@
     "alreadyEarned": "ya gana",
     "migrateNow": "MIGRA AHORA",
     "learn": "APRENDER",
-    "moveYourTokensToNewContracts": "Migre sus granjas a Pangolin V2",
+    "moveYourTokensToNewContracts": "Migre sus granjas a Arcanum V2",
     "readyToMigrate": "Lista para migrar",
     "apr": "APR:",
     "totalValueLocked": "Valor total bloqueado",
@@ -582,7 +582,7 @@
     "back": "atrás",
     "availableToUnstake": "Disponible para desaplicar: ",
     "submittingTransaction": "Enviar transacción",
-    "moveYourTokensToNewContractsDescription": "Como parte del lanzamiento de Pangolin a nuevos contratos mejorados, deberá migrar sus granjas. Si necesita ayuda u orientación, haga clic en el botón 'Aprender'",
+    "moveYourTokensToNewContractsDescription": "Como parte del lanzamiento de Arcanum a nuevos contratos mejorados, deberá migrar sus granjas. Si necesita ayuda u orientación, haga clic en el botón 'Aprender'",
     "migrateModalHeading": "Migrar {{ current }} de {{ total }} granja"
   },
   "dashboardPage": {
@@ -617,7 +617,7 @@
     "couldNotWrap": "No se pudo envolver",
     "attemptingToConfirmApproval": "Intentando confirmar sin aprobación o firma. Comuníquese con soporte."
   },
-  "sarTitle":{
+  "sarTitle": {
     "addMore": "AÑADIR MÁS",
     "unstake": "QUITAR UNA POSICIÓN",
     "compound": "RECOMPENSAS COMPUESTAS",

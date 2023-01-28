@@ -70,14 +70,14 @@ export function useTokenPriceData(tokenAddress: string, timeWindow: string, inte
   useEffect(() => {
     const currentTime = dayjs?.utc();
 
-    // February 8th 2021 - Pangolin Factory is created
+    // February 8th 2021 - Arcanum Factory is created
     const startTime =
       type === 'ALL'
         ? dayjs('2021-02-11').startOf('hour').unix()
         : currentTime
-            .subtract(1, timeWindow as dayjs.ManipulateType)
-            .startOf('hour')
-            .unix();
+          .subtract(1, timeWindow as dayjs.ManipulateType)
+          .startOf('hour')
+          .unix();
 
     async function fetch() {
       const data = await getIntervalTokenData(tokenAddress, startTime, undefined, interval);

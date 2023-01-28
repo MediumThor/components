@@ -50,7 +50,7 @@ export const gnosisSafe = new SafeAppConnector({
 export const walletlink = new WalletLinkConnector({
   url: NETWORK_URL,
   supportedChainIds: [43113, 43114, 11111, 16, 19],
-  appName: 'Pangolin',
+  appName: 'Arcanum',
   appLogoUrl: 'https://raw.githubusercontent.com/pangolindex/interface/master/public/images/384x384_App_Icon.png',
 });
 

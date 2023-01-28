@@ -10,7 +10,7 @@ const currency1 = new Token(
   CHAINS[ChainId.AVALANCHE].contracts!.png,
   18,
   CHAINS[ChainId.AVALANCHE].png_symbol!,
-  'Pangolin',
+  'Arcanum',
 );
 
 export default {
@@ -83,14 +83,14 @@ export default {
       name: 'OnDelete',
       control: 'function',
       type: { name: 'function', required: true },
-      defaultValue: () => {},
+      defaultValue: () => { },
       description: 'The function to be called when the delete button is clicked',
     },
     onResume: {
       name: 'OnResume',
       control: 'function',
       type: { name: 'function', required: true },
-      defaultValue: () => {},
+      defaultValue: () => { },
       description: 'The function to be called when the resume button is clicked',
     },
   },
@@ -102,8 +102,8 @@ const TemplateBridgeTransfer: ComponentStory<typeof BridgeTransfer> = (args: any
 
 export const Default = TemplateBridgeTransfer.bind({});
 Default.args = {
-  onDelete: () => {},
-  onResume: () => {},
+  onDelete: () => { },
+  onResume: () => { },
   date: '9/10/2022, 7:53:00 AM',
   from: '1.0000',
   fromChain: currency0,
@@ -111,6 +111,6 @@ Default.args = {
   to: '22.3615',
   toChain: currency0,
   toCoin: currency1,
-  via: 'PANGOLIN > DODO',
+  via: 'ARCANUM > DODO',
   state: BridgeState.PENDING,
 } as Partial<BridgeTransferProps>;

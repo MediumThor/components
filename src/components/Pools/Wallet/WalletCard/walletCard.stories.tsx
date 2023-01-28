@@ -12,7 +12,7 @@ export default {
 
 const TemplateWalletCard: ComponentStory<typeof WalletCard> = () => {
   const chainId = useChainId();
-  const tokenA = new Token(43114, '0x60781C2586D68229fde47564546784ab3fACA982', 18, 'PNG', 'Pangolin');
+  const tokenA = new Token(43114, '0x60781C2586D68229fde47564546784ab3fACA982', 18, 'PNG', 'Arcanum');
   const tokenB = new Token(43114, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAVAX', 'Wrapped AVAX');
   const tokens = [tokenA, tokenB];
 

@@ -76,12 +76,12 @@ const RemoveFarm = ({ stakingInfo, version, onClose, onLoadingOrComplete, redire
         version === 1
           ? []
           : version === 2
-          ? [
+            ? [
               poolMap[stakingInfo.stakedAmount.token.address],
               `0x${stakingInfo.stakedAmount?.raw.toString(16)}`,
               account,
             ]
-          : [stakingInfo.pid, `0x${stakingInfo.stakedAmount?.raw.toString(16)}`];
+            : [stakingInfo.pid, `0x${stakingInfo.stakedAmount?.raw.toString(16)}`];
 
       try {
         const response: TransactionResponse = await contract[method](...args);
@@ -131,7 +131,7 @@ const RemoveFarm = ({ stakingInfo, version, onClose, onLoadingOrComplete, redire
                   {stakingInfo?.stakedAmount && (
                     <StatWrapper>
                       <Stat
-                        title={t('earn.depositedToken', { symbol: 'PGL' })}
+                        title={t('earn.depositedToken', { symbol: 'ARL' })}
                         stat={stakingInfo?.stakedAmount?.toSignificant(4)}
                         titlePosition="top"
                         titleFontSize={12}

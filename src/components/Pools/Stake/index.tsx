@@ -167,21 +167,21 @@ const Stake = ({ version, onComplete, type, stakingInfo, combinedApr }: StakePro
         const permitArgs =
           version < 2
             ? [
-                `0x${parsedAmount.raw.toString(16)}`,
-                signatureData.deadline,
-                signatureData.v,
-                signatureData.r,
-                signatureData.s,
-              ]
+              `0x${parsedAmount.raw.toString(16)}`,
+              signatureData.deadline,
+              signatureData.v,
+              signatureData.r,
+              signatureData.s,
+            ]
             : [
-                poolMap[stakingInfo.stakedAmount.token.address],
-                `0x${parsedAmount.raw.toString(16)}`,
-                account,
-                signatureData.deadline,
-                signatureData.v,
-                signatureData.r,
-                signatureData.s,
-              ];
+              poolMap[stakingInfo.stakedAmount.token.address],
+              `0x${parsedAmount.raw.toString(16)}`,
+              account,
+              signatureData.deadline,
+              signatureData.v,
+              signatureData.r,
+              signatureData.s,
+            ];
         try {
           const response: TransactionResponse = await stakingContract[permitMethod](...permitArgs);
           await waitForTransaction(response, 1);
@@ -233,7 +233,7 @@ const Stake = ({ version, onComplete, type, stakingInfo, combinedApr }: StakePro
       { name: 'verifyingContract', type: 'address' },
     ];
     const domain = {
-      name: 'Pangolin Liquidity',
+      name: 'Arcanum Liquidity',
       version: '1',
       chainId: chainId,
       verifyingContract: pairContract.address,
@@ -364,7 +364,7 @@ const Stake = ({ version, onComplete, type, stakingInfo, combinedApr }: StakePro
                 addonAfter={
                   <Box display="flex" alignItems="center">
                     <Text color="text4" fontSize={[24, 18]}>
-                      PGL
+                      ARL
                     </Text>
                   </Box>
                 }

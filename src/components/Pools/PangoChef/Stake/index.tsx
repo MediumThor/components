@@ -151,12 +151,12 @@ const Stake = ({ onComplete, type, stakingInfo, combinedApr }: StakeProps) => {
       Number(
         userLiquidityUnstaked && _typedValue
           ? JSBI.divide(
-              JSBI.multiply(
-                JSBI.BigInt(parseUnits(_typedValue, userLiquidityUnstaked.currency.decimals)),
-                JSBI.BigInt(100),
-              ),
-              userLiquidityUnstaked.raw,
-            ).toString()
+            JSBI.multiply(
+              JSBI.BigInt(parseUnits(_typedValue, userLiquidityUnstaked.currency.decimals)),
+              JSBI.BigInt(100),
+            ),
+            userLiquidityUnstaked.raw,
+          ).toString()
           : 0,
       ),
     );
@@ -266,7 +266,7 @@ const Stake = ({ onComplete, type, stakingInfo, combinedApr }: StakeProps) => {
                 addonAfter={
                   <Box display="flex" alignItems="center">
                     <Text color="text4" fontSize={[24, 18]}>
-                      PGL
+                      ARL
                     </Text>
                   </Box>
                 }

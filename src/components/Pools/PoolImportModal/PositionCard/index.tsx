@@ -39,12 +39,12 @@ const PositionCard = ({ pair, onManagePoolsClick }: PositionCardProps) => {
 
   const [token0Deposited, token1Deposited] =
     !!pair &&
-    !!totalPoolTokens &&
-    !!userPoolBalance &&
-    JSBI.greaterThan(totalPoolTokens.raw, BIG_INT_ZERO) &&
-    JSBI.greaterThan(userPoolBalance.raw, BIG_INT_ZERO) &&
-    // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-    JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
+      !!totalPoolTokens &&
+      !!userPoolBalance &&
+      JSBI.greaterThan(totalPoolTokens.raw, BIG_INT_ZERO) &&
+      JSBI.greaterThan(userPoolBalance.raw, BIG_INT_ZERO) &&
+      // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+      JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
       ? pair.getLiquidityValues(totalPoolTokens, userPoolBalance, { feeOn: false })
       : [undefined, undefined];
   return (
@@ -72,7 +72,7 @@ const PositionCard = ({ pair, onManagePoolsClick }: PositionCardProps) => {
       <InnerWrapper>
         <Box>
           <Stat
-            title={'PGL'}
+            title={'ARL'}
             stat={`${userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}`}
             titlePosition="top"
             titleFontSize={14}

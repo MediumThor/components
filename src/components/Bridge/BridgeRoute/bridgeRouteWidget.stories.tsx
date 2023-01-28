@@ -72,7 +72,7 @@ export default {
 const steps: any[] = [
   {
     contractType: 'LI.FI Contract',
-    subSteps: ['1. Swap to 0.0538 USDT via PANGOLIN', '2. Transfer to 0.0522 USDT via PANGOLIN'],
+    subSteps: ['1. Swap to 0.0538 USDT via ARCANUM', '2. Transfer to 0.0522 USDT via ARCANUM'],
   },
   {
     contractType: 'LI.FI Contract',

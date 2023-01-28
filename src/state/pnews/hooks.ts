@@ -15,7 +15,7 @@ export interface News {
   chains: string[];
 }
 
-// Get News in Pangolin Strapi api
+// Get News in Arcanum Strapi api
 export function useGetNews() {
   const chainId = useChainId();
   const chain = getChainByNumber(chainId) ?? AVALANCHE_MAINNET;

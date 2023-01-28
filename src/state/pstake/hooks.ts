@@ -1,3 +1,4 @@
+
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
 import { CHAINS, ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
@@ -18,7 +19,7 @@ import {
   ZERO_ADDRESS,
 } from 'src/constants';
 import ERC20_INTERFACE from 'src/constants/abis/erc20';
-import { PANGOLIN_PAIR_INTERFACE } from 'src/constants/abis/pangolinPair';
+import { PANGOLIN_PAIR_INTERFACE } from 'src/constants/abis/arcanumPair';
 import { REWARDER_VIA_MULTIPLIER_INTERFACE } from 'src/constants/abis/rewarderViaMultiplier';
 import { DAIe, PNG, USDC, USDCe, USDTe, axlUST } from 'src/constants/tokens';
 import { PairState, usePair, usePairs } from 'src/data/Reserves';
@@ -35,12 +36,12 @@ import {
 import { useTokenBalanceHook } from 'src/state/pwallet/multiChainsHooks';
 import { isEvmChain } from 'src/utils';
 import { unwrappedToken } from 'src/utils/wrappedCurrency';
-import { useTokens } from '../../hooks/Tokens';
-import { useMiniChefContract, useRewardViaMultiplierContract, useStakingContract } from '../../hooks/useContract';
-import { tryParseAmount } from '../../state/pswap/hooks';
+import { useTokens } from 'src/hooks/Tokens';
+import { useMiniChefContract, useRewardViaMultiplierContract, useStakingContract } from 'src/hooks/useContract';
+import { tryParseAmount } from 'src/state/pswap/hooks';
 import { AppState, useDispatch, useSelector } from '../index';
-import { useMultipleContractSingleData, useSingleCallResult, useSingleContractMultipleData } from '../pmulticall/hooks';
-import { Apr } from './reducer';
+import { useMultipleContractSingleData, useSingleCallResult, useSingleContractMultipleData } from 'src/state/pmulticall/hooks';
+import { Apr } from 'src/state/pstake/reducer';
 import {
   DoubleSideStaking,
   DoubleSideStakingInfo,
@@ -49,7 +50,7 @@ import {
   MinichefStakingInfo,
   MinichefV2,
   StakingInfo,
-} from './types';
+} from 'src/state/pstake/types';
 
 export const useGetFarmApr = (pid: string) => {
   const chainId = useChainId();
@@ -100,7 +101,6 @@ interface AprResult {
   stakingApr: number;
   combinedApr: number;
 }
-
 export const fetchChunkedAprs = async (pids: string[], chainId: ChainId, chunkSize = 4) => {
   const pidChunks: string[][] = [];
 

@@ -63,9 +63,8 @@ const ConfirmSwapDrawer: React.FC<Props> = (props) => {
   const theme = useContext(ThemeContext);
   const { t } = useTranslation();
 
-  const pendingText = `Supplying ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${
-    currencies[Field.CURRENCY_A]?.symbol
-  } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencies[Field.CURRENCY_B]?.symbol}`;
+  const pendingText = `Supplying ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${currencies[Field.CURRENCY_A]?.symbol
+    } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencies[Field.CURRENCY_B]?.symbol}`;
 
   const DetailConfirmContent = (
     <Root>
@@ -136,15 +135,13 @@ const ConfirmSwapDrawer: React.FC<Props> = (props) => {
             </Text>
             <Box>
               <Text fontSize="14px" color="text1" ml="10px">
-                {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
-                  currencies[Field.CURRENCY_B]?.symbol
-                }`}
+                {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${currencies[Field.CURRENCY_B]?.symbol
+                  }`}
               </Text>
 
               <Text fontSize="14px" color="text1" ml="10px">
-                {`1 ${currencies[Field.CURRENCY_B]?.symbol} = ${price?.invert().toSignificant(4)} ${
-                  currencies[Field.CURRENCY_A]?.symbol
-                }`}
+                {`1 ${currencies[Field.CURRENCY_B]?.symbol} = ${price?.invert().toSignificant(4)} ${currencies[Field.CURRENCY_A]?.symbol
+                  }`}
               </Text>
             </Box>
           </Box>

@@ -62,9 +62,9 @@ export function useETHBalances(
     () =>
       uncheckedAddresses
         ? uncheckedAddresses
-            .map(isAddress)
-            .filter((a): a is string => a !== false)
-            .sort()
+          .map(isAddress)
+          .filter((a): a is string => a !== false)
+          .sort()
         : [],
     [uncheckedAddresses],
   );
@@ -157,13 +157,13 @@ export function useTokenBalancesWithLoadingIndicator(
       () =>
         address && validatedTokens.length > 0
           ? validatedTokens.reduce<{ [tokenAddress: string]: TokenAmount | undefined }>((memo, token, i) => {
-              const value = balances?.[i]?.result?.[0];
-              const amount = value ? JSBI.BigInt(value.toString()) : undefined;
-              if (amount) {
-                memo[token.address] = new TokenAmount(token, amount);
-              }
-              return memo;
-            }, {})
+            const value = balances?.[i]?.result?.[0];
+            const amount = value ? JSBI.BigInt(value.toString()) : undefined;
+            if (amount) {
+              memo[token.address] = new TokenAmount(token, amount);
+            }
+            return memo;
+          }, {})
           : {},
       [address, validatedTokens, balances],
     ),
@@ -742,7 +742,7 @@ export function useRemoveLiquidity(pair?: Pair | null | undefined) {
       { name: 'verifyingContract', type: 'address' },
     ];
     const domain = {
-      name: 'Pangolin Liquidity',
+      name: 'Arcanum Liquidity',
       version: '1',
       chainId: chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -885,7 +885,7 @@ export function useNearRemoveLiquidity(pair: Pair) {
     // This is intentional
   };
 
-  return { removeLiquidity, onAttemptToApprove, signatureData: undefined, setSignatureData: () => {} };
+  return { removeLiquidity, onAttemptToApprove, signatureData: undefined, setSignatureData: () => { } };
 }
 
 export function useGetUserLP() {

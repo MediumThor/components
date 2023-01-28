@@ -12,24 +12,24 @@ interface Props {
   title: string;
   totalAmount: string;
   pair: Pair | null;
-  pgl?: TokenAmount;
+  arl?: TokenAmount;
   currency0: Currency | undefined;
   currency1: Currency | undefined;
   link?: string;
 }
 
-export default function StatDetail({ title, totalAmount, pair, pgl, currency0, currency1, link }: Props) {
+export default function StatDetail({ title, totalAmount, pair, arl, currency0, currency1, link }: Props) {
   const totalPoolTokens = useTotalSupply(pair?.liquidityToken);
 
   const [token0Deposited, token1Deposited] =
     !!pair &&
-    !!totalPoolTokens &&
-    !!pgl &&
-    JSBI.greaterThan(totalPoolTokens.raw, BIG_INT_ZERO) &&
-    JSBI.greaterThan(pgl.raw, BIG_INT_ZERO) &&
-    // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-    JSBI.greaterThanOrEqual(totalPoolTokens.raw, pgl.raw)
-      ? pair.getLiquidityValues(totalPoolTokens, pgl, { feeOn: false })
+      !!totalPoolTokens &&
+      !!arl &&
+      JSBI.greaterThan(totalPoolTokens.raw, BIG_INT_ZERO) &&
+      JSBI.greaterThan(arl.raw, BIG_INT_ZERO) &&
+      // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+      JSBI.greaterThanOrEqual(totalPoolTokens.raw, arl.raw)
+      ? pair.getLiquidityValues(totalPoolTokens, arl, { feeOn: false })
       : [undefined, undefined];
 
   return (

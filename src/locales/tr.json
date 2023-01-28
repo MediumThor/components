@@ -88,8 +88,8 @@
     "missingDependencies": "eksik değer",
     "deposited": "Yatırıldı",
     "withdrawDepositedLiquidity": "Yatırılan likiditeyi çek",
-    "depositedPglLiquidity": "Yatırılan PGL likiditesi:",
-    "whenYouWithdrawWarning": "Sağladığınız likiditeyi çektiğinizde PGL tokenlarınız ve kazandığınız {{ symbol }}'ler hesabınıza gelecektir. PGL tokenlarının farmdan çekilmesi durumunda ise artık {{ symbol }} kazanamayacaksınız. Asıl tokenlarınız ise siz çekene kadar likidite havuzunda kalacaktır.",
+    "depositedPglLiquidity": "Yatırılan ARL likiditesi:",
+    "whenYouWithdrawWarning": "Sağladığınız likiditeyi çektiğinizde ARL tokenlarınız ve kazandığınız {{ symbol }}'ler hesabınıza gelecektir. ARL tokenlarının farmdan çekilmesi durumunda ise artık {{ symbol }} kazanamayacaksınız. Asıl tokenlarınız ise siz çekene kadar likidite havuzunda kalacaktır.",
     "whenYouWithdrawSingleSideWarning": "Çekim işlemi yaptığınızda {{ symbol }} tokenları talep edilir ve {{ pngSymbol }} tokenlarınız size iade edilir. Bu, {{ pngSymbol }} staking üzerinden artık {{ symbol }} ödülü kazanamayacaksınız anlamına gelir.",
     "withdrawAndClaim": "Çek & Ödülleri Talep Et",
     "withdrewStakingToken": "{{ symbol }} çekildi!",
@@ -122,7 +122,7 @@
     "createPair": "İşlem çifti oluştur",
     "addLiquidity": "Likidite Ekle",
     "removeLiquidity": "Likidite Çıkar",
-    "whenYouAddLiquidityInfo": "Likidite eklediğinizde tarafınıza pozisyonunuzu temsil eden havuz tokenları verilir. Bu tokenlar, havuzdaki payınıza göre Pangolin üzerinde gerçekleşen işlemlerden komisyon ücreti kazanır ve istenildiği zaman talep edilebilir.",
+    "whenYouAddLiquidityInfo": "Likidite eklediğinizde tarafınıza pozisyonunuzu temsil eden havuz tokenları verilir. Bu tokenlar, havuzdaki payınıza göre Arcanum üzerinde gerçekleşen işlemlerden komisyon ücreti kazanır ve istenildiği zaman talep edilebilir.",
     "removingPoolTokensInfo": "Havuz tokenlarını çekmek istediğinizde; pozisyonunuz, havuzdaki payınızla orantılı olarak mevcut parite üzerinden likidite sağladığınız tokenlara dönüştürülür. İşlemlerden kazandığınız komisyon ücreti, aldığınız tutara dahildir."
   },
   "popups": {
@@ -244,7 +244,7 @@
     "minutes": "dakika"
   },
   "vote": {
-    "earnedPng": "{{ pngSymbol }} tokenları size Pangolin'in yönetişiminde oy hakkı tanır.",
+    "earnedPng": "{{ pngSymbol }} tokenları size Arcanum'in yönetişiminde oy hakkı tanır.",
     "canEitherVote": "Her önergeye kendiniz oy verebilir veya oylarınızı üçüncü bir partiye devredebilirsiniz.",
     "delegateVotes": "Oylarınızın Yetkisini Başkasına Verin",
     "selfDelegate": "Kendinizi Temsil Edin",
@@ -319,20 +319,20 @@
     "youHave": "Talep edebileceğiniz mevcut PNG: ",
     "pngAvailableClaim": "",
     "loading": "Yükleniyor",
-    "welcomeToTeamPangolin": "Pangolin'e hoşgeldiniz",
+    "welcomeToTeamPangolin": "Arcanum'e hoşgeldiniz",
     "claim": "Talep Et"
   },
   "earnPage": {
-    "pangolinLiquidityMining": "Pangolin likidite madenciliği",
+    "pangolinLiquidityMining": "Arcanum likidite madenciliği",
     "pangolinLiquidityStaking": "Likidite sağlama",
-    "depositPangolinLiquidity": "Pangolin protokolünün yönetişim tokenı olan {{ pngSymbol }}'yi elde etmek için Pangolin Likidite Sağlayıcı(PGL) tokenlarınızı farma yatırın.",
+    "depositPangolinLiquidity": "Arcanum protokolünün yönetişim tokenı olan {{ pngSymbol }}'yi elde etmek için Arcanum Likidite Sağlayıcı(ARL) tokenlarınızı farma yatırın.",
     "depositPangolinStaking": "Daha fazla ödül kazanmak için {{ pngSymbol }} tokenlarınızı staking havuzuna yatırın.",
     "currentOpportunities": "Mevcut Fırsatlar",
     "readMoreAboutPng": "{{ pngSymbol }} hakkında daha fazla bilgi edinin",
     "getInsuranceCoverage": "InsurAce.io üzerinden sigorta teminatı alın",
     "getCoverNexusMutual": "Nexus Mutual üzerinden fonlarınızı koruma altına alın",
     "importantUpdate": "ÖNEMLİ GÜNCELLEME",
-    "pangolinGovernanceProposalResult": "Pangolin yönetişiminin 1. önergesinin oylama sonucuna göre: Pangolin, yatırma işlemlerinde kullanılan akıllı kontratlarını değiştirmiştir. 19/04/2021 tarihinde saat 08:59’dan sonra (UTC saat dilimi), likidite sağlama karşılığında verilen tüm ödüller, yeni kontratlara dağıtılacaktır. Geçişten önce ise, tüm ödüller eski kontratlara dağıtılmaya devam edecektir. Yield farming ödüllerinin kesintiye uğramasını önlemek adına likiditenizi eski kontratlardan kaldırmanız ve yeni kontratlara geçiş sağlamanız gerekmektedir. Bununla birlikte havuzlardaki likiditenizi çekmenize veya pozisyonlarınızı değiştirmenize gerek yoktur.",
+    "pangolinGovernanceProposalResult": "Arcanum yönetişiminin 1. önergesinin oylama sonucuna göre: Arcanum, yatırma işlemlerinde kullanılan akıllı kontratlarını değiştirmiştir. 19/04/2021 tarihinde saat 08:59’dan sonra (UTC saat dilimi), likidite sağlama karşılığında verilen tüm ödüller, yeni kontratlara dağıtılacaktır. Geçişten önce ise, tüm ödüller eski kontratlara dağıtılmaya devam edecektir. Yield farming ödüllerinin kesintiye uğramasını önlemek adına likiditenizi eski kontratlardan kaldırmanız ve yeni kontratlara geçiş sağlamanız gerekmektedir. Bununla birlikte havuzlardaki likiditenizi çekmenize veya pozisyonlarınızı değiştirmenize gerek yoktur.",
     "oldPngPools": "Eski {{ pngSymbol }} havuzları",
     "newPngPools": "Yeni {{ pngSymbol }} havuzları",
     "participatingPools": "Katılım sağlanılan havuzlar",
@@ -342,8 +342,8 @@
     "pngStaking": "{{ pngSymbol }} Stake Etme",
     "totalStaked": "Yatırılan Toplam",
     "poolRate": "Havuzun Getirisi",
-    "step1": "1. Aşama: PGL token(Pangolin'in likidite tokenı) edinin.",
-    "pglTokenRequired": "PGL tokenı gereklidir. {{ poolHandle }} havuzuna likidite ekledikten sonra bu sayfadan likidite tokenlarınızı farma yatırabilirsiniz.",
+    "step1": "1. Aşama: ARL token(Arcanum'in likidite tokenı) edinin.",
+    "pglTokenRequired": "ARL tokenı gereklidir. {{ poolHandle }} havuzuna likidite ekledikten sonra bu sayfadan likidite tokenlarınızı farma yatırabilirsiniz.",
     "addPoolLiquidity": "{{ poolHandle }} havuzuna likidite ekle",
     "liquidityDeposits": "Likidite yatırımlarınız",
     "yourStakedToken": "Stake edilmiş {{ symbol }} tokenlarınız",
@@ -358,8 +358,8 @@
     "unstake": "Stakeden çıkar",
     "stakingTokensAvailable": "Kullanılabilir {{ symbol }} tokenı",
     "getToken": "{{ symbol }} elde edin",
-    "migrateTitle": "Yatırmış olduğunuz PGL'leri taşıyın",
-    "migrateDescription": "Pangolin'in tokenomicsi değişti. Bu nedenle önceden yatırmış olduğunuz PGL'leri yeni sözleşmeye taşımanız gerekiyor.",
+    "migrateTitle": "Yatırmış olduğunuz ARL'leri taşıyın",
+    "migrateDescription": "Arcanum'in tokenomicsi değişti. Bu nedenle önceden yatırmış olduğunuz ARL'leri yeni sözleşmeye taşımanız gerekiyor.",
     "migrate": "Taşı"
   },
   "pool": {
@@ -469,7 +469,7 @@
   },
   "buyPage": {
     "buyAvaxInfo": "Partnerimiz Wyre aracılığıyla AVAX satın alın.",
-    "privacyInfo": "Pangolin, satın alma geçmişinizi ya da şahsi bilgilerinizi kaydetmez.",
+    "privacyInfo": "Arcanum, satın alma geçmişinizi ya da şahsi bilgilerinizi kaydetmez.",
     "firstName": "Ad",
     "lastName": "Soyad",
     "email": "E-mail",
@@ -478,8 +478,8 @@
   "votePage": {
     "unlockVotes": "Oyların Kilidini Kaldır",
     "updateDelegation": "Delegasyonu(Yetkilerdirme) Güncelle",
-    "pangolinGovernance": "Pangolin Yönetişimi",
-    "earnedPngTokens": "{{ pngSymbol }} tokenları, Pangolin'in yönetişiminde kullanabildiğiniz oy hakkını temsil eder. Her önergede kendiniz oy verebilir veya oy haklarınızı üçüncü bir partiye devredebilirsiniz.",
+    "pangolinGovernance": "Arcanum Yönetişimi",
+    "earnedPngTokens": "{{ pngSymbol }} tokenları, Arcanum'in yönetişiminde kullanabildiğiniz oy hakkını temsil eder. Her önergede kendiniz oy verebilir veya oy haklarınızı üçüncü bir partiye devredebilirsiniz.",
     "eligibleToVote": "Oy kullanmaya uygun olmak için cüzdanınızda {{ pngSymbol }} tutmanız ve oylama başında {{ pngSymbol }}'lerinizi yetkilendirmeniz gerekir. Oylama başladıktan sonra {{ pngSymbol }}'lerinizi bir farma/havuza yatırabilir veya harcayabilirsiniz.",
     "governanceVotes": "Yönetişimin sunduğu önergeler, basit çoğunlukla kararlaştırılır. Ulaşılması veya geçilmesi gereken bir çoğunluk eşiği yoktur.",
     "proposals": "Önergeler",
@@ -511,7 +511,7 @@
   },
   "IDOPage": {
     "pangolinIDOs": "Initial DEX Offering (IDO)",
-    "pangolinIDODescription": "Projelerin kendi tokenlarını merkeziyetsiz borsalarda kitle fonlamasına IDO(İlk DEX Teklifleri) adı verilir. Pangolin de Avalanche ekosisteminde çıkan ve bu listede yer alan projelerin bazılarıyla partner oluyor.",
+    "pangolinIDODescription": "Projelerin kendi tokenlarını merkeziyetsiz borsalarda kitle fonlamasına IDO(İlk DEX Teklifleri) adı verilir. Arcanum de Avalanche ekosisteminde çıkan ve bu listede yer alan projelerin bazılarıyla partner oluyor.",
     "upcomingIDOs": "Yaklaşan",
     "endedIDOs": "Bitti",
     "allIDOs": "Tüm IDO'lar",
@@ -549,7 +549,7 @@
     "add": "EKLE",
     "remove": "ÇIKAR",
     "startMigratingNow": "ŞİMDİ TAŞIMAYA BAŞLA",
-    "startMigratingNowDescription": "Aşağıda Pangolin'in V2 akıllı kontratlarına geçiş sağlaması gereken tüm farmları görebilirsiniz.",
+    "startMigratingNowDescription": "Aşağıda Arcanum'in V2 akıllı kontratlarına geçiş sağlaması gereken tüm farmları görebilirsiniz.",
     "seeMore": "DAHA FAZLASINI GÖR",
     "migrateWithEase": "KOLAYLIKLA TAŞIYIN",
     "migrateWithDescription": "Farmlarınızı taşıma sürecinde size rehberlik edecek bir sihirbaz tasarladık.",
@@ -558,7 +558,7 @@
     "alreadyEarned": "zaten kazanıldı",
     "migrateNow": "ŞİMDİ TAŞI",
     "learn": "ÖĞREN",
-    "moveYourTokensToNewContracts": "Farmlarınızı Pangolin V2'ye Taşıyın",
+    "moveYourTokensToNewContracts": "Farmlarınızı Arcanum V2'ye Taşıyın",
     "readyToMigrate": "Taşımaya hazır",
     "apr": "APR(Yıllık Getiri Oranı):",
     "totalValueLocked": "Toplam Kilitli Değer",
@@ -581,12 +581,12 @@
     "back": "Geri",
     "availableToUnstake": "Stake etmeyi durdurmaya müsait olan miktar: ",
     "submittingTransaction": "İşlem gönderiliyor",
-    "moveYourTokensToNewContractsDescription": "Pangolin'in yeni geliştirilmiş olduğu kontratlara geçişin bir parçası olarak, farmlarınızı taşımanız gerekiyor. Herhangi bir konuda yardıma ihtiyacınız varsa, lütfen “Öğren” tuşuna tıklayın.",
+    "moveYourTokensToNewContractsDescription": "Arcanum'in yeni geliştirilmiş olduğu kontratlara geçişin bir parçası olarak, farmlarınızı taşımanız gerekiyor. Herhangi bir konuda yardıma ihtiyacınız varsa, lütfen “Öğren” tuşuna tıklayın.",
     "migrateModalHeading": "{{ total }} farmlar içinden {{ current }}'ı taşı"
   },
   "dashboardPage": {
     "dashboard": "Panel",
-    "greetings": "Pangolin'e Hoşgeldiniz.",
+    "greetings": "Arcanum'e Hoşgeldiniz.",
     "portfolioValue": "Portfolyonuzun Değeri",
     "earned": "Kazanılan",
     "coins": "Coinler",
@@ -616,7 +616,7 @@
     "couldNotWrap": "Kaydırılamadı",
     "attemptingToConfirmApproval": "Onay veya imza olmadan onaylamaya çalışılıyor. Lütfen destek ile iletişime geçin."
   },
-  "sarTitle":{
+  "sarTitle": {
     "addMore": "DAHA EKLE",
     "unstake": "BİR POZİSYONU KALDIR",
     "compound": "BİLEŞİK ÖDÜLLER",

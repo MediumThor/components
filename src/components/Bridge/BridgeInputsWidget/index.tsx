@@ -17,7 +17,7 @@ const BridgeInputsWidget: React.FC<BridgeInputsWidgetProps> = (props) => {
     CHAINS[ChainId.AVALANCHE].contracts!.png,
     18,
     CHAINS[ChainId.AVALANCHE].png_symbol!,
-    'Pangolin',
+    'Arcanum',
   );
 
   return (

@@ -12,7 +12,7 @@ export const useGetMinichefStakingInfos = (): MinichefStakingInfo => {
   const png = PNG[chainId];
 
   const totalStakedInWavax = new TokenAmount(WAVAX[chainId], BIG_INT_ZERO);
-  const tokenA = new Token(43114, '0x60781C2586D68229fde47564546784ab3fACA982', 18, 'PNG', 'Pangolin');
+  const tokenA = new Token(43114, '0x60781C2586D68229fde47564546784ab3fACA982', 18, 'PNG', 'Arcanum');
   const tokenB = new Token(43114, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAVAX', 'Wrapped AVAX');
   const tokens = [tokenA, tokenB];
 
@@ -54,7 +54,7 @@ export const useGetPangoChefInfos = (): PangoChefInfo => {
   const miniChefInfo = useGetMinichefStakingInfos();
 
   const wavax = miniChefInfo.tokens[1];
-  const pair = new Token(433114, ' 0xd7538cABBf8605BdE1f4901B47B8D42c61DE0367', 18, 'PGL', 'Pangolin Liquidity');
+  const pair = new Token(433114, ' 0xd7538cABBf8605BdE1f4901B47B8D42c61DE0367', 18, 'ARL', 'Arcanum Liquidity');
 
   return {
     ...miniChefInfo,

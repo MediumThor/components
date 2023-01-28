@@ -20,7 +20,7 @@ const Bridge = () => {
   const steps: Step[] = [
     {
       contractType: 'LI.FI Contract',
-      subSteps: ['1. Swap to 0.0538 USDT via PANGOLIN', '2. Transfer to 0.0522 USDT via PANGOLIN'],
+      subSteps: ['1. Swap to 0.0538 USDT via ARCANUM', '2. Transfer to 0.0522 USDT via ARCANUM'],
     },
     {
       contractType: 'LI.FI Contract',
@@ -34,14 +34,14 @@ const Bridge = () => {
     CHAINS[ChainId.AVALANCHE].contracts!.png,
     18,
     CHAINS[ChainId.AVALANCHE].png_symbol!,
-    'Pangolin',
+    'Arcanum',
   );
   const currency1 = new Token(
     ChainId.AVALANCHE,
     CHAINS[ChainId.AVALANCHE].contracts!.png,
     18,
     CHAINS[ChainId.AVALANCHE].png_symbol!,
-    'Pangolin',
+    'Arcanum',
   );
 
   return (
@@ -95,7 +95,7 @@ const Bridge = () => {
                 to={'22.3615'}
                 toChain={currency0}
                 toCoin={currency1}
-                via={'PANGOLIN > DODO'}
+                via={'ARCANUM > DODO'}
                 state={BridgeState.PENDING}
               />
               <BridgeTransfer
@@ -106,7 +106,7 @@ const Bridge = () => {
                 to={'0.1564'}
                 toChain={currency0}
                 toCoin={currency1}
-                via={'PANGOLIN > DODO'}
+                via={'ARCANUM > DODO'}
                 state={BridgeState.PENDING}
               />
             </Transfers>

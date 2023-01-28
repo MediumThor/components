@@ -55,7 +55,7 @@ const BridgeCard = () => {
   ];
   const Exchanges = [
     {
-      label: 'Pangolin',
+      label: 'Arcanum',
       value: 'pangolin',
     },
     {

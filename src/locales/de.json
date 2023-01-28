@@ -88,8 +88,8 @@
     "missingDependencies": "Fehlende Abhängigkeiten",
     "deposited": "Eingezahlt",
     "withdrawDepositedLiquidity": "Eingezahlte Liquidität abbuchen",
-    "depositedPglLiquidity": "Eingezahlte PGL-Liquidität:",
-    "whenYouWithdrawWarning": "Wenn du abbuchst, wird deine ausstehenden {{ symbol }}-Vergütung beansprucht. Deine Pangolin-Liquiditätstoken, PGL, werden an dich zurückgegeben und du wirst keine {{ symbol }}-Vergütungen mehr auf diese Liquiditätsposition erhalten. Deine ursprüngliche Liquidität wird im Liquiditätspool verbleiben.",
+    "depositedPglLiquidity": "Eingezahlte ARL-Liquidität:",
+    "whenYouWithdrawWarning": "Wenn du abbuchst, wird deine ausstehenden {{ symbol }}-Vergütung beansprucht. Deine Arcanum-Liquiditätstoken, ARL, werden an dich zurückgegeben und du wirst keine {{ symbol }}-Vergütungen mehr auf diese Liquiditätsposition erhalten. Deine ursprüngliche Liquidität wird im Liquiditätspool verbleiben.",
     "whenYouWithdrawSingleSideWarning": "When you withdraw, your {{ symbol }} is claimed and your {{ pngSymbol}} is returned to you. You will no longer earn {{ symbol }} rewards on this {{ pngSymbol}}.",
     "withdrawAndClaim": "Abbuchen & Beanspruchen",
     "withdrewStakingToken": "{{ symbol }} abgebucht!",
@@ -244,7 +244,7 @@
     "minutes": "Minuten"
   },
   "vote": {
-    "earnedPng": "Verdiente {{ pngSymbol }}-Token stellen stimmberechtigte Anteile bei Pangolin-Abstimmungen dar.",
+    "earnedPng": "Verdiente {{ pngSymbol }}-Token stellen stimmberechtigte Anteile bei Arcanum-Abstimmungen dar.",
     "canEitherVote": "Du kannst entweder über jeden Antrag selbst abstimmen oder deine Stimmen an einen Dritten delegieren.",
     "delegateVotes": "Stimmen delegieren",
     "selfDelegate": "An dich selbst delegieren",
@@ -319,20 +319,20 @@
     "youHave": "Du hast ",
     "pngAvailableClaim": " {{ pngSymbol }} verfügbar zum Beanspruchen",
     "loading": "Lädt",
-    "welcomeToTeamPangolin": "Willkommen im Pangolin-Team",
+    "welcomeToTeamPangolin": "Willkommen im Arcanum-Team",
     "claim": "Beanspruchen "
   },
   "earnPage": {
-    "pangolinLiquidityMining": "Pangolin Liquidity-Mining",
-    "pangolinLiquidityStaking": "Pangolin {{ pngSymbol }} staking",
-    "depositPangolinLiquidity": "Zahle deine Pangolin Liquiditätsprovider-Token (PGL) ein, um {{ pngSymbol }}, den Governance-Token des Pangolin-Protokolls zu erhalten.",
+    "pangolinLiquidityMining": "Arcanum Liquidity-Mining",
+    "pangolinLiquidityStaking": "Arcanum {{ pngSymbol }} staking",
+    "depositPangolinLiquidity": "Zahle deine Arcanum Liquiditätsprovider-Token (ARL) ein, um {{ pngSymbol }}, den Governance-Token des Arcanum-Protokolls zu erhalten.",
     "depositPangolinStaking": "Deposit and stake your {{ pngSymbol }} tokens to earn more tokens.",
     "currentOpportunities": "Current opportunities",
     "readMoreAboutPng": "Erfahre mehr über {{ pngSymbol }}",
     "getInsuranceCoverage": "Versichern Sie sich auf InsurAce.io",
     "getCoverNexusMutual": "Schützen Sie sich bei Nexus Mutual",
     "importantUpdate": "WICHTIGES UPDATE",
-    "pangolinGovernanceProposalResult": "Als Ergebnis des Pangolin-Governance-Antrags 1 ändert Pangolin die Staking-Smart Contracts! Nach ca. 09:59 MEZ am 19.4. werden alle Staking-Vergütungen auf die neuen Staking-Smart Contracts verteilt. Vor der Umstellung werden alle Vergütungen noch auf die alten Verträge verteilt. Um Unterbrechungen bei den Yield Farming-Vergütungen zu vermeiden, musst du deine Liquidität aus den alten Smart Contracts herausnehmen und in den neuen Smart Contracts staken. Du musst weder Liquidität aus deinen Pools entfernen noch deine Positionen ändern.",
+    "pangolinGovernanceProposalResult": "Als Ergebnis des Arcanum-Governance-Antrags 1 ändert Arcanum die Staking-Smart Contracts! Nach ca. 09:59 MEZ am 19.4. werden alle Staking-Vergütungen auf die neuen Staking-Smart Contracts verteilt. Vor der Umstellung werden alle Vergütungen noch auf die alten Verträge verteilt. Um Unterbrechungen bei den Yield Farming-Vergütungen zu vermeiden, musst du deine Liquidität aus den alten Smart Contracts herausnehmen und in den neuen Smart Contracts staken. Du musst weder Liquidität aus deinen Pools entfernen noch deine Positionen ändern.",
     "oldPngPools": "Alte {{ pngSymbol }}-Pools",
     "newPngPools": "Neue {{ pngSymbol }}-Pools",
     "participatingPools": "Pools, an denen du beteiligt bist",
@@ -342,8 +342,8 @@
     "pngStaking": "{{ pngSymbol }} Staking",
     "totalStaked": "Insgesamt gestakt",
     "poolRate": "Pool-Rate",
-    "step1": "Schritt 1. Hole dir Pangolin Liquidity-Token (PGL)",
-    "pglTokenRequired": "Es sind PGL-Token erforderlich. Sobald du Liquidität zu dem {{ poolHandle }} Pool hinzugefügt hast, kannst du deine Liquiditätsprovider-Token auf dieser Seite staken.",
+    "step1": "Schritt 1. Hole dir Arcanum Liquidity-Token (ARL)",
+    "pglTokenRequired": "Es sind ARL-Token erforderlich. Sobald du Liquidität zu dem {{ poolHandle }} Pool hinzugefügt hast, kannst du deine Liquiditätsprovider-Token auf dieser Seite staken.",
     "addPoolLiquidity": "Füge {{ poolHandle }} Liquidität hinzu",
     "liquidityDeposits": "Deine Liquiditätseinzahlungen",
     "yourStakedToken": "Your staked {{ symbol }}",
@@ -358,8 +358,8 @@
     "unstake": "Unstake",
     "stakingTokensAvailable": "{{ symbol }}-Token verfügbar",
     "getToken": "Get {{ symbol }}",
-    "migrateTitle": "Migrieren Sie Ihre gestapelte PGL",
-    "migrateDescription": "Pangolin hat die Tokenomik geändert. Sie müssen Ihre gestapelte PGL auf einen neuen Vertrag migrieren",
+    "migrateTitle": "Migrieren Sie Ihre gestapelte ARL",
+    "migrateDescription": "Arcanum hat die Tokenomik geändert. Sie müssen Ihre gestapelte ARL auf einen neuen Vertrag migrieren",
     "migrate": "Wandern"
   },
   "pool": {
@@ -470,7 +470,7 @@
   },
   "buyPage": {
     "buyAvaxInfo": "Kaufen Sie AVAX mit Fiatgeld von unserem Partner Wyre.",
-    "privacyInfo": "Pangolin speichert keine Kaufhistorie und persönliche Daten.",
+    "privacyInfo": "Arcanum speichert keine Kaufhistorie und persönliche Daten.",
     "firstName": "Vorname",
     "lastName": "Nachname",
     "email": "E-Mail-Adresse",
@@ -479,8 +479,8 @@
   "votePage": {
     "unlockVotes": "Stimmen freischalten",
     "updateDelegation": "Delegierung aktualisieren",
-    "pangolinGovernance": "Pangolin-Governance",
-    "earnedPngTokens": "{{ pngSymbol }}-Token repräsentieren Stimmgewichte in der Pangolin Governance. Du kannst entweder über jeden Vorschlag selbst abstimmen oder deine Stimmen an einen Dritten delegieren.",
+    "pangolinGovernance": "Arcanum-Governance",
+    "earnedPngTokens": "{{ pngSymbol }}-Token repräsentieren Stimmgewichte in der Arcanum Governance. Du kannst entweder über jeden Vorschlag selbst abstimmen oder deine Stimmen an einen Dritten delegieren.",
     "eligibleToVote": "Um stimmberechtigt zu sein, musst du {{ pngSymbol }} in deiner Wallet haben und diese zu Beginn der Abstimmung delegieren. Nachdem die Abstimmung begonnen hat, kannst du deine {{ pngSymbol }} einem Pool hinzufügen oder ausgeben.",
     "governanceVotes": "Abstimmungen zur Governance werden mit einfacher Mehrheit entschieden. Es gibt keine Mindestwahlbeteiligung.",
     "proposals": "Anträge",
@@ -559,7 +559,7 @@
     "alreadyEarned": "Bereits verdienen",
     "migrateNow": "JETZT MIGIEREN",
     "learn": "LERNEN",
-    "moveYourTokensToNewContracts": "Migrieren Sie Ihre Farmen zu Pangolin V2",
+    "moveYourTokensToNewContracts": "Migrieren Sie Ihre Farmen zu Arcanum V2",
     "readyToMigrate": "Bereit zur Migration",
     "apr": "APR:",
     "totalValueLocked": "Gesamtwert gesperrt",
@@ -582,7 +582,7 @@
     "back": "Zurück",
     "availableToUnstake": "Verfügbar zum Abnehmen: ",
     "submittingTransaction": "Übermittlung der Transaktion",
-    "moveYourTokensToNewContractsDescription": "Als Teil der Einführung von Pangolin zu neuen verbesserten Verträgen müssen Sie Ihre Farmen migrieren. Wenn Sie Hilfe oder Anleitung benötigen, klicken Sie bitte auf die Schaltfläche „Lernen“.",
+    "moveYourTokensToNewContractsDescription": "Als Teil der Einführung von Arcanum zu neuen verbesserten Verträgen müssen Sie Ihre Farmen migrieren. Wenn Sie Hilfe oder Anleitung benötigen, klicken Sie bitte auf die Schaltfläche „Lernen“.",
     "migrateModalHeading": "Migration {{ current }} der {{ total }} Farm"
   },
   "dashboardPage": {
@@ -617,7 +617,7 @@
     "couldNotWrap": "Konnte nicht umbrechen",
     "attemptingToConfirmApproval": "Bestätigungsversuch ohne Genehmigung oder Unterschrift. Bitte kontaktieren Sie den Support."
   },
-  "sarTitle":{
+  "sarTitle": {
     "addMore": "MEHR HINZUFÜGEN",
     "unstake": "EINE POSITION ABSETZEN",
     "compound": "VERBUNDENE BELOHNUNGEN",

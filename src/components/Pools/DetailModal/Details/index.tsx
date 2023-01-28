@@ -53,7 +53,7 @@ const Details: React.FC<Props> = ({ stakingInfo }) => {
           currency1={currency1}
           pair={pair}
           totalAmount={`${totalStakedInUsd}`}
-          pgl={stakingInfo?.totalStakedAmount}
+          arl={stakingInfo?.totalStakedAmount}
           link={`${ANALYTICS_PAGE}/#/pair/${pair?.liquidityToken.address}`}
         />
 
@@ -65,7 +65,7 @@ const Details: React.FC<Props> = ({ stakingInfo }) => {
               currency1={currency1}
               pair={pair}
               totalAmount={yourLiquidity}
-              pgl={userPgl}
+              arl={userPgl}
               link={`${ANALYTICS_PAGE}/#/account/${account}`}
             />
           </Box>
@@ -79,7 +79,7 @@ const Details: React.FC<Props> = ({ stakingInfo }) => {
               currency1={currency1}
               pair={pair}
               totalAmount={`${numeral((yourStakeInUsd as Fraction)?.toFixed(2)).format('$0.00a')}`}
-              pgl={stakingInfo?.stakedAmount}
+              arl={stakingInfo?.stakedAmount}
               link={`${ANALYTICS_PAGE}/#/account/${account}`}
             />
           </Box>
