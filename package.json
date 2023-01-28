@@ -1,5 +1,5 @@
 {
-  "name": "@pangolindex/components",
+  "name": "@arcanumdex/components",
   "version": "4.2.0",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
