@@ -4,7 +4,7 @@ import { JSBI, Pair, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
 import { useMemo } from 'react';
 import { BIG_INT_SECONDS_IN_WEEK, BIG_INT_ZERO, ZERO_ADDRESS } from 'src/constants';
 import ERC20_INTERFACE from 'src/constants/abis/erc20';
-import { PANGOLIN_PAIR_INTERFACE } from 'src/constants/abis/pangolinPair';
+import { PANGOLIN_PAIR_INTERFACE } from 'src/constants/abis/arcanumPair';
 import { REWARDER_VIA_MULTIPLIER_INTERFACE } from 'src/constants/abis/rewarderViaMultiplier';
 import { PNG, USDC } from 'src/constants/tokens';
 import { PairState, usePair, usePairs } from 'src/data/Reserves';
@@ -298,9 +298,9 @@ export function usePangoChefInfos() {
           png,
           JSBI.greaterThan(_totalStakedAmount.raw, JSBI.BigInt(0))
             ? JSBI.divide(
-                JSBI.multiply(JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw), BIG_INT_SECONDS_IN_WEEK),
-                _totalStakedAmount.raw,
-              )
+              JSBI.multiply(JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw), BIG_INT_SECONDS_IN_WEEK),
+              _totalStakedAmount.raw,
+            )
             : JSBI.BigInt(0),
         );
       };
@@ -309,11 +309,11 @@ export function usePangoChefInfos() {
         pool.valueVariables.balance.isZero() || pairPrice.equalTo('0')
           ? 0
           : Number(
-              pngPrice.raw
-                .multiply(rewardRate.mul(365 * 86400 * 100).toString())
-                .divide(pairPrice.raw.multiply(pool.valueVariables.balance.toString()))
-                .toSignificant(2),
-            );
+            pngPrice.raw
+              .multiply(rewardRate.mul(365 * 86400 * 100).toString())
+              .divide(pairPrice.raw.multiply(pool.valueVariables.balance.toString()))
+              .toSignificant(2),
+          );
 
       farms.push({
         pid: pid,

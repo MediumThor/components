@@ -1,0 +1,26 @@
+import { Web3Provider } from '@ethersproject/providers';
+import { SafeAppConnector } from '@gnosis.pm/safe-apps-web3-react';
+import { InjectedConnector } from '@pangolindex/web3-react-injected-connector';
+import { TalismanConnector } from '@talismn/web3react-v6-connector';
+import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
+import { WalletLinkConnector } from '@web3-react/walletlink-connector';
+import { BitKeepConnector } from './BitKeepConnector';
+import { DefiConnector } from './DefiConnector';
+import { NearConnector } from './NearConnector';
+import { NetworkConnector } from './NetworkConnector';
+export declare const NEAR_EXCHANGE_CONTRACT_ADDRESS: {
+    329847900: string;
+    329847901: string;
+};
+export declare const NETWORK_CHAIN_ID: number;
+export declare const network: NetworkConnector;
+export declare function getNetworkLibrary(): Web3Provider;
+export declare const injected: InjectedConnector;
+export declare const talisman: TalismanConnector;
+export declare const gnosisSafe: SafeAppConnector;
+export declare const walletlink: WalletLinkConnector;
+export declare const walletconnect: WalletConnectConnector;
+export declare const xDefi: DefiConnector;
+export declare const bitKeep: BitKeepConnector;
+export declare const near: NearConnector;
+export { NearConnector };

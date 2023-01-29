@@ -1,0 +1,12 @@
+import { Contract } from '@ethersproject/contracts';
+export declare function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null;
+export declare function useBytes32TokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null;
+export declare function useWETHContract(withSignerIfPossible?: boolean): Contract | null;
+export declare function useMulticallContract(): Contract | null;
+export declare function useStakingContract(stakingAddress?: string, withSignerIfPossible?: boolean): Contract | null;
+export declare function useMiniChefContract(): Contract | null;
+export declare function useRewardViaMultiplierContract(address?: string, withSignerIfPossible?: boolean): Contract | null;
+export declare function usePairContract(pairAddress?: string, withSignerIfPossible?: boolean): Contract | null;
+export declare function usePngContract(): Contract | null;
+export declare function useSarStakingContract(): Contract | null;
+export declare function usePangoChefContract(): Contract | null;
