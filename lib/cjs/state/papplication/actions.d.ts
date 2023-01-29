@@ -1,4 +1,4 @@
-import { TokenList } from '@arcanumdex/token-lists';
+import { TokenList } from '@_arcanumdex/token-lists';
 export type PopupContent = {
     txn: {
         hash: string;

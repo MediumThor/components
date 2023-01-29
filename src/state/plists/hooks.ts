@@ -1,5 +1,5 @@
 import { CHAINS, ChainId, Token } from '@arcanumdex/sdk';
-import { Tags, TokenInfo, TokenList } from '@arcanumdex/token-lists';
+import { Tags, TokenInfo, TokenList } from '@_arcanumdex/token-lists';
 import { useMemo } from 'react';
 import { AEB_TOKENS } from 'src/constants/lists';
 import { AppState, useSelector } from '../index';

@@ -3,8 +3,8 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { AddressZero } from '@ethersproject/constants';
 import { Contract } from '@ethersproject/contracts';
 import { JsonRpcSigner, TransactionResponse, Web3Provider } from '@ethersproject/providers';
-import IPangolinRouter from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-periphery/interfaces/IPangolinRouter.sol/IPangolinRouter.json';
-import IPangolinRouterSupportingFees from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-periphery/interfaces/IPangolinRouterSupportingFees.sol/IPangolinRouterSupportingFees.json';
+import IArcanumRouter from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-periphery/interfaces/IArcanumRouter.sol/IArcanumRouter.json';
+import IArcanumRouterSupportingFees from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-periphery/interfaces/IArcanumRouterSupportingFees.sol/IArcanumRouterSupportingFees.json';
 import {
   ALL_CHAINS,
   CAVAX,
@@ -19,7 +19,7 @@ import {
   Token,
   Trade,
   currencyEquals,
-} from '@arcanumdex/sdk';
+} from '@_arcanumdex/sdk';
 import { ROUTER_ADDRESS, ROUTER_DAAS_ADDRESS, SAR_STAKING_ADDRESS, ZERO_ADDRESS } from '../constants';
 import { TokenAddressMap } from '../state/plists/hooks';
 import { wait } from './retry';
@@ -147,10 +147,10 @@ export function getContract(address: string, ABI: any, library: Web3Provider, ac
 
 // account is optional
 export function getRouterContract(chainId: ChainId, library: Web3Provider, account?: string): Contract | null {
-  return getContract(ROUTER_ADDRESS[chainId], IPangolinRouter.abi, library, account);
+  return getContract(ROUTER_ADDRESS[chainId], IArcanumRouter.abi, library, account);
 }
 export function getRouterContractDaaS(chainId: ChainId, library: Web3Provider, account?: string): Contract | null {
-  return getContract(ROUTER_DAAS_ADDRESS[chainId], IPangolinRouterSupportingFees.abi, library, account);
+  return getContract(ROUTER_DAAS_ADDRESS[chainId], IArcanumRouterSupportingFees.abi, library, account);
 }
 
 export function isTokenOnList(defaultTokens: TokenAddressMap, chainId: ChainId, currency?: Currency): boolean {

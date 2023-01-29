@@ -1,6 +1,6 @@
-import { VersionUpgrade, getVersionUpgrade } from '@arcanumdex/token-lists';
+import { VersionUpgrade, getVersionUpgrade } from '@_arcanumdex/token-lists';
 // eslint-disable-next-line import/no-unresolved
-import { TokenList } from '@arcanumdex/token-lists/dist/types';
+import { TokenList } from '@_arcanumdex/token-lists/dist/types';
 import { createReducer } from '@reduxjs/toolkit';
 import { DEFAULT_TOKEN_LISTS, DEFAULT_TOKEN_LISTS_SELECTED } from 'src/constants/lists';
 import { updateVersion } from '../pglobal/actions';

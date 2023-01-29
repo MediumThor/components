@@ -1,4 +1,4 @@
-import { VersionUpgrade, getVersionUpgrade, minVersionBump } from '@arcanumdex/token-lists';
+import { VersionUpgrade, getVersionUpgrade, minVersionBump } from '@_arcanumdex/token-lists';
 import { useCallback, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { DEFAULT_TOKEN_LISTS } from 'src/constants/lists';

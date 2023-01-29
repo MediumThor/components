@@ -1,6 +1,6 @@
 import { Interface } from '@ethersproject/abi';
-import IPangolinPair from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-core/interfaces/IPangolinPair.sol/IPangolinPair.json';
-import { ChainId, Currency, Pair, Token, TokenAmount } from '@arcanumdex/sdk';
+import IArcanumPair from '@_arcanumdex/exchange-contracts/artifacts/contracts/arcanum-core/interfaces/IArcanumPair.sol/IArcanumPair.json';
+import { ChainId, Currency, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { useChainId } from 'src/hooks';
@@ -9,7 +9,7 @@ import { useMultipleContractSingleData } from '../state/pmulticall/hooks';
 import { wrappedCurrency } from '../utils/wrappedCurrency';
 import { usePairsHook } from './multiChainsHooks';
 
-const PAIR_INTERFACE = new Interface(IPangolinPair.abi);
+const PAIR_INTERFACE = new Interface(IArcanumPair.abi);
 
 export enum PairState {
   LOADING,

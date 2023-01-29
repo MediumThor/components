@@ -1,4 +1,4 @@
-import { TokenList } from '@arcanumdex/token-lists';
+import { TokenList } from '@_arcanumdex/token-lists';
 /**
  * Contains the logic for resolving a list URL to a validated token list
  * @param listUrl list url

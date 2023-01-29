@@ -1,4 +1,4 @@
-import { TokenList, Version } from '@arcanumdex/token-lists';
+import { TokenList, Version } from '@_arcanumdex/token-lists';
 import { ActionCreatorWithPayload, createAction } from '@reduxjs/toolkit';
 
 export const fetchTokenList: Readonly<{

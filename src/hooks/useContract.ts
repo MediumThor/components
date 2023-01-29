@@ -1,9 +1,9 @@
 import { Contract } from '@ethersproject/contracts';
 import MiniChefV2 from '@arcanumdex/exchange-contracts/artifacts/contracts/mini-chef/MiniChefV2.sol/MiniChefV2.json';
-import IPangolinPair from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-core/interfaces/IPangolinPair.sol/IPangolinPair.json';
-import Png from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-token/Png.sol/Png.json';
+import IArcanumPair from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-core/interfaces/IArcanumPair.sol/IArcanumPair.json';
+import Png from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-token/Arc.sol/Arc.json';
 import StakingRewards from '@arcanumdex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
-import { WAVAX } from '@arcanumdex/sdk';
+import { WAVAX } from '@_arcanumdex/sdk';
 import { useMemo } from 'react';
 import { MINICHEF_ADDRESS, PANGOCHEF_ADDRESS, SAR_STAKING_ADDRESS, ZERO_ADDRESS } from 'src/constants';
 import { ERC20_BYTES32_ABI } from 'src/constants/abis/erc20';
@@ -70,7 +70,7 @@ export function useRewardViaMultiplierContract(address?: string, withSignerIfPos
 }
 
 export function usePairContract(pairAddress?: string, withSignerIfPossible?: boolean): Contract | null {
-  return useContract(pairAddress, IPangolinPair.abi, withSignerIfPossible);
+  return useContract(pairAddress, IArcanumPair.abi, withSignerIfPossible);
 }
 
 export function usePngContract(): Contract | null {
