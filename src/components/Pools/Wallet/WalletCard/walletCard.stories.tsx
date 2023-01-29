@@ -1,4 +1,4 @@
-import { Pair, Token, TokenAmount } from '@arcanumdex/sdk';
+import { Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { useChainId } from 'src/hooks';

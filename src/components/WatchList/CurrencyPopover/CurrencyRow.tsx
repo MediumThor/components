@@ -1,4 +1,4 @@
-import { Token } from '@arcanumdex/sdk';
+import { Token } from '@_arcanumdex/sdk';
 import React, { useCallback } from 'react';
 import { Box, Button, CurrencyLogo, Text } from 'src/components';
 import { useChainId } from 'src/hooks';

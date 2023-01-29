@@ -1,4 +1,4 @@
-import { Currency } from '@arcanumdex/sdk';
+import { Currency } from '@_arcanumdex/sdk';
 import React, { useCallback } from 'react';
 import { LoaderIcon } from 'src/components/Icons';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';

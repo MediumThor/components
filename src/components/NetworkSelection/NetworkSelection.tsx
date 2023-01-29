@@ -1,4 +1,4 @@
-import { ALL_CHAINS, Chain } from '@arcanumdex/sdk';
+import { ALL_CHAINS, Chain } from '@_arcanumdex/sdk';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { Box, Modal, Text, ToggleButtons } from 'src/components';

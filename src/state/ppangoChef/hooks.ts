@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
-import { JSBI, Pair, Token, TokenAmount, WAVAX } from '@arcanumdex/sdk';
+import { JSBI, Pair, Token, TokenAmount, WAVAX } from '@_arcanumdex/sdk';
 import { useMemo } from 'react';
 import { BIG_INT_SECONDS_IN_WEEK, BIG_INT_ZERO, ZERO_ADDRESS } from 'src/constants';
 import ERC20_INTERFACE from 'src/constants/abis/erc20';

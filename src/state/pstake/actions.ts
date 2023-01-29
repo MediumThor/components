@@ -1,4 +1,4 @@
-import { ChainId } from '@arcanumdex/sdk';
+import { ChainId } from '@_arcanumdex/sdk';
 import { createAction } from '@reduxjs/toolkit';
 import { MinichefV2 } from './types';
 

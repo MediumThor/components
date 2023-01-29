@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@arcanumdex/sdk';
+import { Trade, TradeType } from '@_arcanumdex/sdk';
 import React, { useContext, useMemo } from 'react';
 import { AlertTriangle, ArrowDown, ArrowUpCircle } from 'react-feather';
 import { Trans } from 'react-i18next';

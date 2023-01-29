@@ -1,4 +1,4 @@
-import { ChefType } from '@arcanumdex/sdk';
+import { ChefType } from '@_arcanumdex/sdk';
 import styled from 'styled-components';
 import { Box } from 'src/components';
 

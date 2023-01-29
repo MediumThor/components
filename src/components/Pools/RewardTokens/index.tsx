@@ -1,4 +1,4 @@
-import { Token } from '@arcanumdex/sdk';
+import { Token } from '@_arcanumdex/sdk';
 import React from 'react';
 import styled from 'styled-components';
 import { CurrencyLogo } from 'src/components';

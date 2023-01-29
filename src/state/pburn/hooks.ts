@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, TokenAmount } from '@arcanumdex/sdk';
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BIG_INT_ZERO } from 'src/constants';

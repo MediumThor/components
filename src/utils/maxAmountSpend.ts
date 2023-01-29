@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, CurrencyAmount, JSBI } from '@arcanumdex/sdk';
+import { CAVAX, ChainId, CurrencyAmount, JSBI } from '@_arcanumdex/sdk';
 import { Currency, CurrencyAmount as UniCurrencyAmount } from '@uniswap/sdk-core';
 import { MIN_ETH } from '../constants';
 

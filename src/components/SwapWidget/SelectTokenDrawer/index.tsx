@@ -1,4 +1,4 @@
-import { CAVAX, CHAINS, ChainId, Currency, Token, currencyEquals } from '@arcanumdex/sdk';
+import { CAVAX, CHAINS, ChainId, Currency, Token, currencyEquals } from '@_arcanumdex/sdk';
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import AutoSizer from 'react-virtualized-auto-sizer';

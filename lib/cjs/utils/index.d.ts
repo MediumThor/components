@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Contract } from '@ethersproject/contracts';
 import { JsonRpcSigner, TransactionResponse, Web3Provider } from '@ethersproject/providers';
-import { Chain, ChainId, Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, Trade } from '@arcanumdex/sdk';
+import { Chain, ChainId, Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, Trade } from '@_arcanumdex/sdk';
 import { TokenAddressMap } from '../state/plists/hooks';
 export declare function isAddress(value: any): string | false;
 export declare function getEtherscanLink(chainId: ChainId, data: string, type: 'transaction' | 'token' | 'address' | 'block'): string;

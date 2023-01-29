@@ -1,4 +1,4 @@
-import { Currency, Pair } from '@arcanumdex/sdk';
+import { Currency, Pair } from '@_arcanumdex/sdk';
 import * as React from 'react';
 import { ButtonStyleProps } from '../Button/types';
 import { TextInputProps } from '../TextInput/types';

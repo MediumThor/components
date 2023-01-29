@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings';
-import { CAVAX, CHAINS, ChainId, Currency, Token } from '@arcanumdex/sdk';
+import { CAVAX, CHAINS, ChainId, Currency, Token } from '@_arcanumdex/sdk';
 import axios from 'axios';
 import { useEffect, useMemo, useState } from 'react';
 import { useQueries, useQuery } from 'react-query';

@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@arcanumdex/sdk';
+import { CHAINS, ChainId, Token } from '@_arcanumdex/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { BridgeState, BridgeTransferProps } from './types';

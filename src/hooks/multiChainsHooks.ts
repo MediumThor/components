@@ -1,4 +1,4 @@
-import { ChainId } from '@arcanumdex/sdk';
+import { ChainId } from '@_arcanumdex/sdk';
 import { useNearToken, useNearTokens, useToken, useTokens } from './Tokens';
 import {
   useApproveCallback,

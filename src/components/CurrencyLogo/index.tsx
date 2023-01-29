@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, Currency, Token } from '@arcanumdex/sdk';
+import { CAVAX, ChainId, Currency, Token } from '@_arcanumdex/sdk';
 import deepEqual from 'deep-equal';
 import React, { useMemo } from 'react';
 import NearLogo from 'src/assets/images/near.svg';

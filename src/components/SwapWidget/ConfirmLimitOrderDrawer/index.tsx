@@ -1,5 +1,5 @@
 import { useGelatoLimitOrders } from '@gelatonetwork/limit-orders-react';
-import { CAVAX, Token, Trade, TradeType } from '@arcanumdex/sdk';
+import { CAVAX, Token, Trade, TradeType } from '@_arcanumdex/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { AlertTriangle, ArrowDown, ArrowUpCircle } from 'react-feather';
 import { ThemeContext } from 'styled-components';

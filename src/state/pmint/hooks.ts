@@ -9,7 +9,7 @@ import {
   Price,
   Token,
   TokenAmount,
-} from '@arcanumdex/sdk';
+} from '@_arcanumdex/sdk';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';

@@ -1,4 +1,4 @@
-import { Pair } from '@arcanumdex/sdk';
+import { Pair } from '@_arcanumdex/sdk';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, DoubleCurrencyLogo, Stat, Text } from 'src/components';

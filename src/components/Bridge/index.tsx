@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@arcanumdex/sdk';
+import { CHAINS, ChainId, Token } from '@_arcanumdex/sdk';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Tab, TabList, TabPanel, Tabs } from '../Tabs';

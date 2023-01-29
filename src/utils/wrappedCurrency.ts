@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, Currency, CurrencyAmount, Token, TokenAmount, WAVAX } from '@arcanumdex/sdk';
+import { CAVAX, ChainId, Currency, CurrencyAmount, Token, TokenAmount, WAVAX } from '@_arcanumdex/sdk';
 import { NativeCurrency as UniCurrency, Token as UniToken } from '@uniswap/sdk-core';
 
 export function wrappedCurrency(currency: Currency | undefined, chainId: ChainId | undefined): Token | undefined {

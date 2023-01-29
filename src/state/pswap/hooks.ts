@@ -12,7 +12,7 @@ import {
   Token,
   TokenAmount,
   Trade,
-} from '@arcanumdex/sdk';
+} from '@_arcanumdex/sdk';
 import { ParsedQs } from 'qs';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { NATIVE, ROUTER_ADDRESS, ROUTER_DAAS_ADDRESS, SWAP_DEFAULT_CURRENCY } from 'src/constants';

@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@arcanumdex/sdk';
+import { Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useMemo } from 'react';
 import { useAllTokenBalances } from 'src/state/pwallet/hooks';
 

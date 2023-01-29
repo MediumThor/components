@@ -1,4 +1,4 @@
-import { CHAINS, ChefType, Currency } from '@arcanumdex/sdk';
+import { CHAINS, ChefType, Currency } from '@_arcanumdex/sdk';
 import React, { useState } from 'react';
 import { useChainId } from 'src/hooks';
 import { PangoChefInfo } from 'src/state/ppangoChef/types';

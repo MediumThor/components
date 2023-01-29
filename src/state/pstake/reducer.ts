@@ -1,4 +1,4 @@
-import { ChainId } from '@arcanumdex/sdk';
+import { ChainId } from '@_arcanumdex/sdk';
 import { createReducer } from '@reduxjs/toolkit';
 import {
   updateMinichefStakingAllAprs,

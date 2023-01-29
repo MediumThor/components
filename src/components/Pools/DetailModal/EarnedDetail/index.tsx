@@ -1,4 +1,4 @@
-import { TokenAmount } from '@arcanumdex/sdk';
+import { TokenAmount } from '@_arcanumdex/sdk';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Stat, Text } from 'src/components';

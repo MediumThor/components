@@ -1,4 +1,4 @@
-import { Currency } from '@arcanumdex/sdk';
+import { Currency } from '@_arcanumdex/sdk';
 import React, { useContext } from 'react';
 import { ChevronDown, Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';

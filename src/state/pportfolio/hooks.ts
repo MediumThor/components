@@ -1,4 +1,4 @@
-import { ALL_CHAINS, AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@arcanumdex/sdk';
+import { ALL_CHAINS, AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import axios from 'axios';
 import qs from 'qs';
 import { useQuery } from 'react-query';

@@ -1,5 +1,5 @@
 import { formatEther } from '@ethersproject/units';
-import { TokenAmount } from '@arcanumdex/sdk';
+import { TokenAmount } from '@_arcanumdex/sdk';
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';

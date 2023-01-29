@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@arcanumdex/sdk';
+import { Currency, CurrencyAmount, Token } from '@_arcanumdex/sdk';
 import React, { useContext } from 'react';
 import { AlertTriangle } from 'react-feather';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { Currency, Pair, Token } from '@arcanumdex/sdk';
+import { Currency, Pair, Token } from '@_arcanumdex/sdk';
 export declare enum PairState {
     LOADING = 0,
     NOT_EXISTS = 1,

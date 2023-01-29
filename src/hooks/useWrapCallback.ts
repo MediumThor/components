@@ -1,4 +1,4 @@
-import { CAVAX, Currency, WAVAX, currencyEquals } from '@arcanumdex/sdk';
+import { CAVAX, Currency, WAVAX, currencyEquals } from '@_arcanumdex/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import { useMemo } from 'react';
 import { Transaction, nearFn } from 'src/utils/near';

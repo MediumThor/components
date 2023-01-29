@@ -1,4 +1,4 @@
-import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@arcanumdex/sdk';
+import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@_arcanumdex/sdk';
 import { BigNumber } from 'ethers';
 import { BIG_INT_ZERO } from 'src/constants';
 import { PNG } from 'src/constants/tokens';

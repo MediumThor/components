@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
-import { JSBI, Token, TokenAmount } from '@arcanumdex/sdk';
+import { JSBI, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ZERO_ADDRESS } from 'src/constants';

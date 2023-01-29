@@ -1,4 +1,4 @@
-import { AVALANCHE_MAINNET } from '@arcanumdex/sdk';
+import { AVALANCHE_MAINNET } from '@_arcanumdex/sdk';
 import axios from 'axios';
 import qs from 'qs';
 import { useQuery } from 'react-query';

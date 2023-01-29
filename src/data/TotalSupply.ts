@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Pair, Token, TokenAmount } from '@arcanumdex/sdk';
+import { ChainId, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { useChainId } from 'src/hooks';
 import { nearFn } from 'src/utils/near';

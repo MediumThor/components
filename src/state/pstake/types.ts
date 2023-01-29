@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@arcanumdex/sdk';
+import { JSBI, Token, TokenAmount } from '@_arcanumdex/sdk';
 
 export enum SpaceType {
   card = 'card',

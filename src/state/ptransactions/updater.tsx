@@ -1,4 +1,4 @@
-import { ChainId } from '@arcanumdex/sdk';
+import { ChainId } from '@_arcanumdex/sdk';
 import { AnyAction } from '@reduxjs/toolkit';
 import { Dispatch, useEffect } from 'react';
 import { AppState, useDispatch, useSelector } from 'src/state';

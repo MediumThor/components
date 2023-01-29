@@ -1,4 +1,4 @@
-import { Currency, JSBI, Token, TokenAmount } from '@arcanumdex/sdk';
+import { Currency, JSBI, Token, TokenAmount } from '@_arcanumdex/sdk';
 import React, { useContext, useEffect } from 'react';
 import { ChevronDown, Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';

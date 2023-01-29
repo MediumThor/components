@@ -1,4 +1,4 @@
-import { Pair } from '@arcanumdex/sdk';
+import { Pair } from '@_arcanumdex/sdk';
 import React, { useCallback } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList } from 'react-window';

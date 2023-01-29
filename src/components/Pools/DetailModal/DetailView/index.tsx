@@ -1,4 +1,4 @@
-import { CHAINS, ChefType } from '@arcanumdex/sdk';
+import { CHAINS, ChefType } from '@_arcanumdex/sdk';
 import React from 'react';
 import { useWindowSize } from 'react-use';
 import { Box } from 'src/components';

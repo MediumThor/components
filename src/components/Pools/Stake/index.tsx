@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { TransactionResponse } from '@ethersproject/providers';
-import { JSBI, Pair, Token, TokenAmount } from '@arcanumdex/sdk';
+import { JSBI, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {

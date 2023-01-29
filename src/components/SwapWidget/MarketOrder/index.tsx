@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@arcanumdex/sdk';
+import { CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@_arcanumdex/sdk';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { RefreshCcw } from 'react-feather';
 import ReactGA from 'react-ga';

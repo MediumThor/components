@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@arcanumdex/sdk';
+import { CHAINS, ChainId, Token } from '@_arcanumdex/sdk';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
 export const PNG: { [chainId in ChainId]: Token } = {

@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Contract } from '@ethersproject/contracts';
 import { parseUnits } from '@ethersproject/units';
-import { JSBI, Percent, Router, SwapParameters, Token, Trade, TradeType } from '@arcanumdex/sdk';
+import { JSBI, Percent, Router, SwapParameters, Token, Trade, TradeType } from '@_arcanumdex/sdk';
 import { useMemo } from 'react';
 import { NEAR_EXCHANGE_CONTRACT_ADDRESS } from 'src/connectors';
 import { BIPS_BASE, INITIAL_ALLOWED_SLIPPAGE, ONE_YOCTO_NEAR, ZERO_ADDRESS } from 'src/constants';

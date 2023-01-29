@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, Currency, Token, WAVAX } from '@arcanumdex/sdk';
+import { CAVAX, ChainId, Currency, Token, WAVAX } from '@_arcanumdex/sdk';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList } from 'react-window';

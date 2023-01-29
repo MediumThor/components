@@ -1,4 +1,4 @@
-import { ALL_CHAINS } from '@arcanumdex/sdk';
+import { ALL_CHAINS } from '@_arcanumdex/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import { Lock } from 'react-feather';

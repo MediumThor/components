@@ -1,4 +1,4 @@
-import { CAVAX, CHAINS, Fraction, Token } from '@arcanumdex/sdk';
+import { CAVAX, CHAINS, Fraction, Token } from '@_arcanumdex/sdk';
 import numeral from 'numeral';
 import React from 'react';
 import { Box, CoinDescription } from 'src/components';

@@ -1,4 +1,4 @@
-import { Trade } from '@arcanumdex/sdk';
+import { Trade } from '@_arcanumdex/sdk';
 import React, { useContext } from 'react';
 import { ChevronRight } from 'react-feather';
 import { ThemeContext } from 'styled-components';

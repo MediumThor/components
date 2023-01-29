@@ -1,4 +1,4 @@
-import { CAVAX, ChainId } from '@arcanumdex/sdk';
+import { CAVAX, ChainId } from '@_arcanumdex/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import CurrencyLogo from '.';

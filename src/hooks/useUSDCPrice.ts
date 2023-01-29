@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units';
-import { ChainId, Currency, JSBI, Price, TokenAmount, WAVAX, currencyEquals } from '@arcanumdex/sdk';
+import { ChainId, Currency, JSBI, Price, TokenAmount, WAVAX, currencyEquals } from '@_arcanumdex/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { NEAR_API_BASE_URL } from 'src/constants';
 import { USDC, USDCe } from 'src/constants/tokens';

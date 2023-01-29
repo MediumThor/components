@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Percent, Token, Trade } from '@arcanumdex/sdk';
+import { Currency, CurrencyAmount, Pair, Percent, Token, Trade } from '@_arcanumdex/sdk';
 import flatMap from 'lodash.flatmap';
 import { useMemo } from 'react';
 import { BASES_TO_CHECK_TRADES_AGAINST, BIPS_BASE, CUSTOM_BASES } from 'src/constants';

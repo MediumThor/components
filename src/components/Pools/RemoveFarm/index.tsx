@@ -1,5 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers';
-import { CHAINS, ChefType } from '@arcanumdex/sdk';
+import { CHAINS, ChefType } from '@_arcanumdex/sdk';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Loader, Stat, Text, TransactionCompleted } from 'src/components';
