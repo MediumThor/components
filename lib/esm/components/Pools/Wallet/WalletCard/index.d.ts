@@ -1,4 +1,4 @@
-import { Pair } from '@pangolindex/sdk';
+import { Pair } from '@arcanumdex/sdk';
 export interface WalletCardProps {
     pair: Pair;
 }

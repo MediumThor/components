@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 import React from 'react';
 interface Props {
     isOpen: boolean;

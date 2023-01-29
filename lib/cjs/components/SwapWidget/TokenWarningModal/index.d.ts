@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 export default function TokenWarningModal({ isOpen, tokens, onConfirm, }: {
     isOpen: boolean;
     tokens: Token[];

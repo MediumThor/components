@@ -1,4 +1,4 @@
-import { TokenList, Version } from '@pangolindex/token-lists';
+import { TokenList } from '@arcanumdex/token-lists';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 export declare const fetchTokenList: Readonly<{
     pending: ActionCreatorWithPayload<{
@@ -23,4 +23,4 @@ export declare const selectList: ActionCreatorWithPayload<{
     url: string;
     shouldSelect: boolean;
 }, string>;
-export declare const rejectVersionUpdate: ActionCreatorWithPayload<Version, string>;
+export declare const rejectVersionUpdate: ActionCreatorWithPayload<any, string>;

@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@arcanumdex/sdk';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { RefreshCcw } from 'react-feather';
 import ReactGA from 'react-ga';
@@ -144,13 +144,13 @@ const MarketOrder: React.FC<Props> = ({
   // const betterTradeLinkVersion: Version | undefined = undefined
   const parsedAmounts = showWrap
     ? {
-        [Field.INPUT]: parsedAmount,
-        [Field.OUTPUT]: parsedAmount,
-      }
+      [Field.INPUT]: parsedAmount,
+      [Field.OUTPUT]: parsedAmount,
+    }
     : {
-        [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-        [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
-      };
+      [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+      [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
+    };
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers(chainId);
   const isValid = !swapInputError;
@@ -255,8 +255,8 @@ const MarketOrder: React.FC<Props> = ({
             recipient === null
               ? 'Swap w/o Send'
               : (recipientAddress ?? recipient) === account
-              ? 'Swap w/o Send + recipient'
-              : 'Swap w/ Send',
+                ? 'Swap w/o Send + recipient'
+                : 'Swap w/ Send',
           label: [trade?.inputAmount?.currency?.symbol, trade?.outputAmount?.currency?.symbol, Version.v2].join('/'),
         });
       })
@@ -419,7 +419,7 @@ const MarketOrder: React.FC<Props> = ({
             }}
             id="swap-button"
             isDisabled={!isValid || approval !== ApprovalState.APPROVED || (priceImpactSeverity > 3 && !isExpertMode)}
-            // error={isValid && priceImpactSeverity > 2}
+          // error={isValid && priceImpactSeverity > 2}
           >
             {priceImpactSeverity > 3 && !isExpertMode
               ? 'Price Impact High'
@@ -449,8 +449,8 @@ const MarketOrder: React.FC<Props> = ({
         {swapInputError
           ? swapInputError
           : priceImpactSeverity > 3 && !isExpertMode
-          ? 'Price Impact High'
-          : 'Swap' + `${priceImpactSeverity > 2 ? 'Anyway' : ''}`}
+            ? 'Price Impact High'
+            : 'Swap' + `${priceImpactSeverity > 2 ? 'Anyway' : ''}`}
       </Button>
     );
   };

@@ -1,4 +1,4 @@
-import { Currency, Pair, Token } from '@pangolindex/sdk';
+import { Currency, Pair, Token } from '@arcanumdex/sdk';
 export declare enum PairState {
     LOADING = 0,
     NOT_EXISTS = 1,

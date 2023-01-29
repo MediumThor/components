@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { CHAINS, ChainId, ChefType, Fraction, JSBI, Percent, StakingType, Token, WAVAX } from '@pangolindex/sdk';
+import { CHAINS, ChainId, ChefType, Fraction, JSBI, Percent, StakingType, Token, WAVAX } from '@arcanumdex/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import BN from 'bn.js';
 import arrowRightIcon from 'src/assets/images/arrow-right.svg';

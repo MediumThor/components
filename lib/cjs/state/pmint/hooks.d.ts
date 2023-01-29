@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Percent, Price, TokenAmount } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Pair, Percent, Price, TokenAmount } from '@arcanumdex/sdk';
 import { AppState } from 'src/state';
 import { PairState } from '../../data/Reserves';
 import { Field } from './actions';

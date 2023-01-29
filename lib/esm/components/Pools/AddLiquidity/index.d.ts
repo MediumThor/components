@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 import { SpaceType } from 'src/state/pstake/types';
 interface AddLiquidityProps {
     currencyA: Currency;

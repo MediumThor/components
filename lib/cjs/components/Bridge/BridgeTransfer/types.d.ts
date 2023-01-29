@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 export declare enum BridgeState {
     PENDING = "PENDING",
     FAILED = "FAILED",

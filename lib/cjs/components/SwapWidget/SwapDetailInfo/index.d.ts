@@ -1,4 +1,4 @@
-import { Trade } from '@pangolindex/sdk';
+import { Trade } from '@arcanumdex/sdk';
 import React from 'react';
 type Props = {
     trade: Trade;

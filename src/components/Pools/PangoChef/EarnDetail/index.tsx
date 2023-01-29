@@ -1,5 +1,5 @@
 import { formatEther } from '@ethersproject/units';
-import { TokenAmount } from '@pangolindex/sdk';
+import { TokenAmount } from '@arcanumdex/sdk';
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';
@@ -143,10 +143,10 @@ const EarnedDetailV3 = ({ stakingInfo, version }: EarnDetailProps) => {
           <Text fontSize="12px" color="text1" textAlign="center">
             {isLockingToPoolZero
               ? `${t('pangoChef.lockingPoolZeroWarning')}${lockingPoolZeroPairs
-                  .map(
-                    (pair) => `${unwrappedToken(pair[0], chainId).symbol}-${unwrappedToken(pair[1], chainId).symbol}`,
-                  )
-                  .join(', ')}.`
+                .map(
+                  (pair) => `${unwrappedToken(pair[0], chainId).symbol}-${unwrappedToken(pair[1], chainId).symbol}`,
+                )
+                .join(', ')}.`
               : t('pangoChef.claimWarning1')}
           </Text>
         </Box>

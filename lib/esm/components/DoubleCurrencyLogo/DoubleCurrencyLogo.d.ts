@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 import { LogoSize } from 'src/constants';
 export interface DoubleCurrencyLogoProps {
     margin?: boolean;

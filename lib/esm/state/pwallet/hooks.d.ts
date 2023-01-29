@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
-import { ChainId, Currency, CurrencyAmount, Pair, Percent, Token, TokenAmount } from '@pangolindex/sdk';
+import { ChainId, Currency, CurrencyAmount, Pair, Percent, Token, TokenAmount } from '@arcanumdex/sdk';
 import { ApprovalState } from 'src/hooks/useApproveCallback';
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.

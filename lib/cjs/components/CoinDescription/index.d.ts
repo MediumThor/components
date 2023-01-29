@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 interface Props {
     coin: Token;
 }

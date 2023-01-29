@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@pangolindex/sdk';
+import { Trade, TradeType } from '@arcanumdex/sdk';
 import React, { useContext, useMemo } from 'react';
 import { AlertTriangle, ArrowDown, ArrowUpCircle } from 'react-feather';
 import { Trans } from 'react-i18next';
@@ -67,9 +67,8 @@ const ConfirmSwapDrawer: React.FC<Props> = (props) => {
   );
 
   // text to show while loading
-  const pendingText = `Swapping ${trade?.inputAmount?.toSignificant(6)} ${
-    trade?.inputAmount?.currency?.symbol
-  } for ${trade?.outputAmount?.toSignificant(6)} ${trade?.outputAmount?.currency?.symbol}`;
+  const pendingText = `Swapping ${trade?.inputAmount?.toSignificant(6)} ${trade?.inputAmount?.currency?.symbol
+    } for ${trade?.outputAmount?.toSignificant(6)} ${trade?.outputAmount?.currency?.symbol}`;
 
   const ConfirmContent = (
     <Root>
@@ -103,8 +102,8 @@ const ConfirmSwapDrawer: React.FC<Props> = (props) => {
               priceImpactSeverity > 2
                 ? 'error'
                 : showAcceptChanges && trade.tradeType === TradeType.EXACT_INPUT
-                ? 'primary'
-                : 'swapWidget.primary'
+                  ? 'primary'
+                  : 'swapWidget.primary'
             }
           >
             {trade.outputAmount.toSignificant(6)}

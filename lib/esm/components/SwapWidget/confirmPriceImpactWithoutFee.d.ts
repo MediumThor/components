@@ -1,4 +1,4 @@
-import { Percent } from '@pangolindex/sdk';
+import { Percent } from '@arcanumdex/sdk';
 /**
  * Given the price impact, get user confirmation.
  *

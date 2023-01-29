@@ -1,4 +1,4 @@
-import { Trade } from '@pangolindex/sdk';
+import { Trade } from '@arcanumdex/sdk';
 export declare enum SwapCallbackState {
     INVALID = 0,
     LOADING = 1,

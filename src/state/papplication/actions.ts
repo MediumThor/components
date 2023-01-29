@@ -1,22 +1,22 @@
-import { TokenList } from '@pangolindex/token-lists';
+import { TokenList } from '@arcanumdex/token-lists';
 import { createAction } from '@reduxjs/toolkit';
 
 export type PopupContent =
   | {
-      txn: {
-        hash: string;
-        success: boolean;
-        summary?: string;
-      };
-    }
-  | {
-      listUpdate: {
-        listUrl: string;
-        oldList: TokenList;
-        newList: TokenList;
-        auto: boolean;
-      };
+    txn: {
+      hash: string;
+      success: boolean;
+      summary?: string;
     };
+  }
+  | {
+    listUpdate: {
+      listUrl: string;
+      oldList: TokenList;
+      newList: TokenList;
+      auto: boolean;
+    };
+  };
 
 export enum ApplicationModal {
   WALLET,

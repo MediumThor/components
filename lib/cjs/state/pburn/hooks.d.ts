@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Percent, TokenAmount } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Pair, Percent, TokenAmount } from '@arcanumdex/sdk';
 import { AppState } from 'src/state';
 import { Field } from './actions';
 export declare function useBurnState(): AppState['pburn'];

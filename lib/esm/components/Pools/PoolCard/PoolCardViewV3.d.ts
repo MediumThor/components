@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import { PangoChefInfo } from 'src/state/ppangoChef/types';
 export interface PoolCardViewProps {
     stakingInfo: PangoChefInfo;

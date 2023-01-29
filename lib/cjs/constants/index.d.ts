@@ -1,12 +1,12 @@
-import { ChainId, Fraction, JSBI, Percent, Token } from '@pangolindex/sdk';
+import { ChainId, JSBI, Percent, Token } from '@arcanumdex/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import BN from 'bn.js';
-export declare const BIG_INT_ZERO: JSBI;
-export declare const BIG_INT_TWO: JSBI;
+export declare const BIG_INT_ZERO: any;
+export declare const BIG_INT_TWO: any;
 export declare const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 export declare const NATIVE = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-export declare const BIG_INT_SECONDS_IN_WEEK: JSBI;
-export declare const ONE_TOKEN: JSBI;
+export declare const BIG_INT_SECONDS_IN_WEEK: any;
+export declare const ONE_TOKEN: any;
 export declare const ROUTER_ADDRESS: {
     [chainId in ChainId]: string;
 };
@@ -38,38 +38,14 @@ export declare const TRUSTED_TOKEN_ADDRESSES: {
     readonly [chainId in ChainId]: string[];
 };
 export declare const SWAP_DEFAULT_CURRENCY: {
-    43114: {
-        inputCurrency: string;
-        outputCurrency: string;
-    };
-    43113: {
-        inputCurrency: string;
-        outputCurrency: string;
-    };
-    11111: {
-        inputCurrency: string;
-        outputCurrency: string;
-    };
-    16: {
-        inputCurrency: string;
-        outputCurrency: string;
-    };
-    19: {
-        inputCurrency: string;
-        outputCurrency: string;
-    };
-    329847900: {
-        inputCurrency: string;
-        outputCurrency: string;
-    };
-    329847901: {
-        inputCurrency: string;
-        outputCurrency: string;
+    [x: number]: {
+        inputCurrency: any;
+        outputCurrency: any;
     };
 };
 export declare const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList;
-export declare const ONE_BIPS: Percent;
-export declare const BIPS_BASE: JSBI;
+export declare const ONE_BIPS: any;
+export declare const BIPS_BASE: any;
 export declare const ALLOWED_PRICE_IMPACT_LOW: Percent;
 export declare const ALLOWED_PRICE_IMPACT_MEDIUM: Percent;
 export declare const ALLOWED_PRICE_IMPACT_HIGH: Percent;
@@ -143,8 +119,8 @@ export declare enum SwapTypes {
     MARKET = "MARKET",
     LIMIT = "LIMIT"
 }
-export declare const PANGOCHEF_COMPOUND_SLIPPAGE: Fraction;
-export declare const ONE_FRACTION: Fraction;
+export declare const PANGOCHEF_COMPOUND_SLIPPAGE: any;
+export declare const ONE_FRACTION: any;
 export declare const COINGECKO_CURRENCY_ID: {
     [chainId in ChainId]: string | undefined;
 };

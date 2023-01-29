@@ -1,5 +1,5 @@
 import { GelatoProvider } from '@gelatonetwork/limit-orders-react';
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@arcanumdex/sdk';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { QueryClient, QueryClientProvider } from 'react-query';

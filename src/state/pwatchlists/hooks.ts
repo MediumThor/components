@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pangolindex/sdk';
+import { ChainId, Token } from '@arcanumdex/sdk';
 import { PNG } from 'src/constants/tokens';
 import { usePangolinWeb3 } from 'src/hooks';
 import { useAllTokens } from 'src/hooks/Tokens';

@@ -1,4 +1,4 @@
-import { Currency, Pair } from '@pangolindex/sdk';
+import { Currency, Pair } from '@arcanumdex/sdk';
 import { ButtonStyleProps } from '../Button/types';
 import { TextInputProps } from '../TextInput/types';
 export type CurrencyInputProps = TextInputProps & {

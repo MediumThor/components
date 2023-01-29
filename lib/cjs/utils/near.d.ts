@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import BN from 'bn.js';
 import { providers, transactions } from 'near-api-js';
 export interface ViewFunctionOptions {

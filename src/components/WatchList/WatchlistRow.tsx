@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import React, { useContext, useEffect, useState } from 'react';
 import { X } from 'react-feather';
 import { Line, LineChart, ResponsiveContainer } from 'recharts';

@@ -1,4 +1,4 @@
-import { CAVAX, CHAINS, ChainId, Currency, Token, currencyEquals } from '@pangolindex/sdk';
+import { CAVAX, CHAINS, ChainId, Currency, Token, currencyEquals } from '@arcanumdex/sdk';
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -28,8 +28,8 @@ const currencyKey = (currency: Currency, chainId: ChainId): string => {
   return currency instanceof Token
     ? currency.address
     : currency === CAVAX[chainId] && CAVAX[chainId]?.symbol
-    ? (CAVAX[chainId]?.symbol as string)
-    : '';
+      ? (CAVAX[chainId]?.symbol as string)
+      : '';
 };
 
 const SelectTokenDrawer: React.FC<Props> = (props) => {

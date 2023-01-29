@@ -12,7 +12,7 @@ import {
   Token,
   TokenAmount,
   Trade,
-} from '@pangolindex/sdk';
+} from '@arcanumdex/sdk';
 import { ParsedQs } from 'qs';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { NATIVE, ROUTER_ADDRESS, ROUTER_DAAS_ADDRESS, SWAP_DEFAULT_CURRENCY } from 'src/constants';
@@ -64,8 +64,8 @@ export function useSwapActionHandlers(chainId: ChainId): {
             currency instanceof Token
               ? currency.address
               : currency === CAVAX[chainId] && CAVAX[chainId]?.symbol
-              ? (CAVAX[chainId]?.symbol as string)
-              : '',
+                ? (CAVAX[chainId]?.symbol as string)
+                : '',
         }),
       );
     },
@@ -242,8 +242,8 @@ export function useDerivedSwapInfo(): {
         ? slippageAdjustedAmountsV1[Field.INPUT]
         : null
       : slippageAdjustedAmounts
-      ? slippageAdjustedAmounts[Field.INPUT]
-      : null,
+        ? slippageAdjustedAmounts[Field.INPUT]
+        : null,
   ];
 
   if (balanceIn && amountIn && balanceIn.lessThan(amountIn)) {
@@ -347,13 +347,13 @@ export function useDefaultsFromURLSearch():
         inputCurrencyId: parsed[Field.INPUT].currencyId
           ? parsed[Field.INPUT].currencyId
           : inputCurrencyId
-          ? inputCurrencyId
-          : SWAP_DEFAULT_CURRENCY[chainId]?.inputCurrency,
+            ? inputCurrencyId
+            : SWAP_DEFAULT_CURRENCY[chainId]?.inputCurrency,
         outputCurrencyId: parsed[Field.OUTPUT].currencyId
           ? parsed[Field.OUTPUT].currencyId
           : outputCurrencyId
-          ? outputCurrencyId
-          : SWAP_DEFAULT_CURRENCY[chainId]?.outputCurrency,
+            ? outputCurrencyId
+            : SWAP_DEFAULT_CURRENCY[chainId]?.outputCurrency,
         recipient: parsed.recipient,
       }),
     );
@@ -388,8 +388,8 @@ export function useGelatoLimitOrderDetail(order: Order) {
       order.adjustedMinReturn
         ? order.adjustedMinReturn
         : gelatoLibrary && chainId && order.minReturn
-        ? gelatoLibrary.getAdjustedMinReturn(order.minReturn)
-        : undefined,
+          ? gelatoLibrary.getAdjustedMinReturn(order.minReturn)
+          : undefined,
     [chainId, gelatoLibrary, order.adjustedMinReturn, order.minReturn],
   );
 

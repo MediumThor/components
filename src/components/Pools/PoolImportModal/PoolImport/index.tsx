@@ -1,4 +1,4 @@
-import { Currency, JSBI, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, JSBI, Token, TokenAmount } from '@arcanumdex/sdk';
 import React, { useContext, useEffect } from 'react';
 import { ChevronDown, Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';
@@ -46,9 +46,9 @@ const PoolImport = ({ currency0, currency1, openTokenDrawer, setActiveField, onM
     pairState === PairState.NOT_EXISTS ||
     Boolean(
       pairState === PairState.EXISTS &&
-        pair &&
-        JSBI.equal(pair.reserve0.raw, JSBI.BigInt(0)) &&
-        JSBI.equal(pair.reserve1.raw, JSBI.BigInt(0)),
+      pair &&
+      JSBI.equal(pair.reserve0.raw, JSBI.BigInt(0)) &&
+      JSBI.equal(pair.reserve1.raw, JSBI.BigInt(0)),
     );
   const pairOrToken = isEvmChain(chainId) ? pair?.liquidityToken : pair;
   const position: TokenAmount | undefined = useTokenBalance(account ?? undefined, pairOrToken as Token);

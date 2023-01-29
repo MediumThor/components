@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@arcanumdex/sdk';
 import { useAddLiquidity, useETHBalances, useGetNearUserLP, useGetUserLP, useNearAddLiquidity, useNearBalance, useNearRemoveLiquidity, useNearTokenBalance, useNearTokenBalances, useRemoveLiquidity, useTokenBalance, useTokenBalances } from './hooks';
 export type UseTokenBalancesHookType = {
     [chainId in ChainId]: typeof useTokenBalances | typeof useNearTokenBalances;

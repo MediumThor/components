@@ -1,6 +1,5 @@
 /// <reference types="react" />
 import { BigNumber } from '@ethersproject/bignumber';
-import { Token, TokenAmount } from '@pangolindex/sdk';
 export interface URI {
     name: string;
     description: string;
@@ -19,7 +18,7 @@ export interface Position {
 }
 export declare function useSarStakeInfo(): {
     apr: BigNumber | null;
-    totalStaked: TokenAmount;
+    totalStaked: any;
     sumOfEntryTimes: BigNumber;
     rewardRate: BigNumber;
     weeklyPNG: BigNumber;
@@ -27,7 +26,7 @@ export declare function useSarStakeInfo(): {
 export declare function useDerivativeSarStake(positionId?: BigNumber): {
     attempting: boolean;
     typedValue: string;
-    parsedAmount: import("@pangolindex/sdk").CurrencyAmount | undefined;
+    parsedAmount: any;
     hash: string | null;
     stepIndex: number;
     dollerWorth: number | undefined;
@@ -49,7 +48,7 @@ export declare function useDerivativeSarUnstake(position: Position | null): {
     hash: string | null;
     stepIndex: number;
     typedValue: string;
-    parsedAmount: import("@pangolindex/sdk").CurrencyAmount | undefined;
+    parsedAmount: any;
     error: string | undefined;
     unstakeError: string | null;
     onUserInput: (_typedValue: string) => void;

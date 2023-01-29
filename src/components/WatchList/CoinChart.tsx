@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-feather';
 import { Line, LineChart, ResponsiveContainer, Tooltip } from 'recharts';
@@ -29,13 +29,13 @@ const CoinChart: React.FC<Props> = ({ coin, visibleTradeButton, tradeLinkUrl, re
 
   const [timeWindow, setTimeWindow] = useState(
     weekFrame ||
-      ({} as {
-        description: string;
-        label: string;
-        interval: number;
-        momentIdentifier: string;
-        days: string;
-      }),
+    ({} as {
+      description: string;
+      label: string;
+      interval: number;
+      momentIdentifier: string;
+      days: string;
+    }),
   );
   const tokenPrice = useUSDCPrice(coin);
 

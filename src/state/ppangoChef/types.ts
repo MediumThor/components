@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Price } from '@pangolindex/sdk';
+import { Price } from '@arcanumdex/sdk';
 import { MinichefStakingInfo } from '../pstake/types';
 
 export enum PoolType {

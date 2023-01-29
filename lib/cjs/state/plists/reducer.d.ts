@@ -1,4 +1,4 @@
-import { TokenList } from '@pangolindex/token-lists/dist/types';
+import { TokenList } from '@arcanumdex/token-lists/dist/types';
 export interface ListsState {
     readonly byUrl: {
         readonly [url: string]: {

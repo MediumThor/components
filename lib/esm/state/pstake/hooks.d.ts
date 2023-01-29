@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@arcanumdex/sdk';
 import { Apr } from 'src/state/pstake/reducer';
 import { DoubleSideStakingInfo, MinichefStakingInfo, MinichefV2, StakingInfo } from 'src/state/pstake/types';
 export declare const useGetFarmApr: (pid: string) => {
@@ -7,7 +7,7 @@ export declare const useGetFarmApr: (pid: string) => {
     stakingApr: number;
 };
 export declare const useGetEarnedAmount: (pid: string) => {
-    earnedAmount: TokenAmount;
+    earnedAmount: any;
 };
 export declare const useSortFarmAprs: () => Array<Apr>;
 interface AprResult {
@@ -29,7 +29,7 @@ export declare function useMinichefPendingRewards(miniChefStaking: StakingInfo |
     rewardTokensMultiplier: any;
 };
 export declare function useGetPoolDollerWorth(pair: Pair | null): {
-    userArl: TokenAmount | undefined;
+    userArl: any;
     liquidityInUSD: number;
 };
 export declare function useDerivedStakeInfo(typedValue: string, stakingToken: Token, userLiquidityUnstaked: TokenAmount | undefined): {
@@ -39,7 +39,7 @@ export declare function useDerivedStakeInfo(typedValue: string, stakingToken: To
 export declare function useGetRewardTokens(rewardTokens?: Array<Token>, rewardTokensAddress?: Array<string>): Token[] | undefined;
 export declare const calculateTotalStakedAmountInAvax: (amountStaked: JSBI, amountAvailable: JSBI, reserveInWavax: JSBI, chainId: ChainId) => TokenAmount;
 export declare const calculateTotalStakedAmountInAvaxFromPng: (amountStaked: JSBI, amountAvailable: JSBI, avaxPngPairReserveOfPng: JSBI, avaxPngPairReserveOfWavax: JSBI, reserveInPng: JSBI, chainId: ChainId) => TokenAmount;
-export declare const getExtraTokensWeeklyRewardRate: (rewardRatePerWeek: TokenAmount, token: Token, tokenMultiplier: JSBI | undefined) => TokenAmount;
+export declare const getExtraTokensWeeklyRewardRate: (rewardRatePerWeek: TokenAmount, token: Token, tokenMultiplier: JSBI | undefined) => any;
 export declare const tokenComparator: ({ address: addressA }: {
     address: string;
 }, { address: addressB }: {

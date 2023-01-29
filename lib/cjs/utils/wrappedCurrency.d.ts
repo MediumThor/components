@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Token, TokenAmount } from '@pangolindex/sdk';
+import { ChainId, Currency, CurrencyAmount, Token, TokenAmount } from '@arcanumdex/sdk';
 import { NativeCurrency as UniCurrency, Token as UniToken } from '@uniswap/sdk-core';
 export declare function wrappedCurrency(currency: Currency | undefined, chainId: ChainId | undefined): Token | undefined;
 export declare function wrappedCurrencyAmount(currencyAmount: CurrencyAmount | undefined, chainId: ChainId | undefined): TokenAmount | undefined;

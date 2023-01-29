@@ -1,4 +1,4 @@
-import { Pair } from '@pangolindex/sdk';
+import { Pair } from '@arcanumdex/sdk';
 import React from 'react';
 interface Props {
     isOpen: boolean;

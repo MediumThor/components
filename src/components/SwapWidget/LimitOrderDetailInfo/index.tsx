@@ -1,6 +1,6 @@
 import { formatUnits } from '@ethersproject/units';
 import { useGasOverhead, useGelatoLimitOrders, useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
-import { TokenAmount } from '@pangolindex/sdk';
+import { TokenAmount } from '@arcanumdex/sdk';
 import React, { useMemo } from 'react';
 import { INITIAL_ALLOWED_SLIPPAGE } from 'src/constants';
 import { usePangolinWeb3 } from 'src/hooks';
@@ -20,9 +20,8 @@ const LimitOrderDetailInfo: React.FC<Props> = ({ trade }) => {
   const priceText =
     realExecutionPriceAsString === 'never executes'
       ? realExecutionPriceAsString
-      : `${'1 ' + parsedAmounts?.input?.currency.symbol + ' = ' + realExecutionPriceAsString ?? '-'} ${
-          parsedAmounts?.output?.currency.symbol
-        }`;
+      : `${'1 ' + parsedAmounts?.input?.currency.symbol + ' = ' + realExecutionPriceAsString ?? '-'} ${parsedAmounts?.output?.currency.symbol
+      }`;
 
   const formattedGasPrice = gasPrice ? `${parseFloat(formatUnits(gasPrice, 'gwei')).toFixed(0)} GWEI` : '-';
 

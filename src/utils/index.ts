@@ -3,8 +3,8 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { AddressZero } from '@ethersproject/constants';
 import { Contract } from '@ethersproject/contracts';
 import { JsonRpcSigner, TransactionResponse, Web3Provider } from '@ethersproject/providers';
-import IPangolinRouter from '@pangolindex/exchange-contracts/artifacts/contracts/pangolin-periphery/interfaces/IPangolinRouter.sol/IPangolinRouter.json';
-import IPangolinRouterSupportingFees from '@pangolindex/exchange-contracts/artifacts/contracts/pangolin-periphery/interfaces/IPangolinRouterSupportingFees.sol/IPangolinRouterSupportingFees.json';
+import IPangolinRouter from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-periphery/interfaces/IPangolinRouter.sol/IPangolinRouter.json';
+import IPangolinRouterSupportingFees from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-periphery/interfaces/IPangolinRouterSupportingFees.sol/IPangolinRouterSupportingFees.json';
 import {
   ALL_CHAINS,
   CAVAX,
@@ -19,7 +19,7 @@ import {
   Token,
   Trade,
   currencyEquals,
-} from '@pangolindex/sdk';
+} from '@arcanumdex/sdk';
 import { ROUTER_ADDRESS, ROUTER_DAAS_ADDRESS, SAR_STAKING_ADDRESS, ZERO_ADDRESS } from '../constants';
 import { TokenAddressMap } from '../state/plists/hooks';
 import { wait } from './retry';
@@ -209,9 +209,8 @@ export async function waitForTransaction(
 
 export function getBuyUrl(token: Token, chainId?: ChainId): string {
   const origin = window.location.origin;
-  const path = `/#/swap?inputCurrency=${chainId ? CAVAX[chainId].symbol : ZERO_ADDRESS}&outputCurrency=${
-    token.address
-  }`;
+  const path = `/#/swap?inputCurrency=${chainId ? CAVAX[chainId].symbol : ZERO_ADDRESS}&outputCurrency=${token.address
+    }`;
   return origin.includes('localhost') || origin.includes('pangolin.exchange') ? path : `app.pangolin.exchange${path}`;
 }
 

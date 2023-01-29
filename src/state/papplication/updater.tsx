@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@arcanumdex/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useChainId, useLibrary, usePangolinWeb3 } from 'src/hooks';

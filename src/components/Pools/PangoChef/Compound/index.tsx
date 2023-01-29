@@ -1,6 +1,6 @@
 import { TransactionResponse } from '@ethersproject/providers';
 import { formatUnits } from '@ethersproject/units';
-import { CAVAX, CurrencyAmount, Fraction, JSBI, Price, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { CAVAX, CurrencyAmount, Fraction, JSBI, Price, TokenAmount, WAVAX } from '@arcanumdex/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import numeral from 'numeral';
 import React, { useCallback, useContext, useEffect, useState } from 'react';

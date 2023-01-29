@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@arcanumdex/sdk';
 import { useDummyMinichefHook, useDummyMinichefStakingInfosViaSubgraph, useGetAllFarmData, useGetDummyAllFarmData, useGetMinichefStakingInfosViaSubgraph, useMinichefStakingInfos } from './hooks';
 export type UseMinichefStakingInfosHookType = {
     [chainId in ChainId]: typeof useMinichefStakingInfos | typeof useDummyMinichefHook;

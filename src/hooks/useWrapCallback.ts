@@ -1,4 +1,4 @@
-import { CAVAX, Currency, WAVAX, currencyEquals } from '@pangolindex/sdk';
+import { CAVAX, Currency, WAVAX, currencyEquals } from '@arcanumdex/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import { useMemo } from 'react';
 import { Transaction, nearFn } from 'src/utils/near';
@@ -47,13 +47,13 @@ export function useWrapCallback(
         execute:
           sufficientBalance && inputAmount
             ? async () => {
-                try {
-                  const txReceipt = await wethContract.deposit({ value: `0x${inputAmount.raw.toString(16)}` });
-                  addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} AVAX to WAVAX` });
-                } catch (error) {
-                  console.error('Could not deposit', error);
-                }
+              try {
+                const txReceipt = await wethContract.deposit({ value: `0x${inputAmount.raw.toString(16)}` });
+                addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} AVAX to WAVAX` });
+              } catch (error) {
+                console.error('Could not deposit', error);
               }
+            }
             : undefined,
         inputError: sufficientBalance ? undefined : 'Insufficient AVAX balance',
       };
@@ -63,13 +63,13 @@ export function useWrapCallback(
         execute:
           sufficientBalance && inputAmount
             ? async () => {
-                try {
-                  const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`);
-                  addTransaction(txReceipt, { summary: `Unwrap ${inputAmount.toSignificant(6)} WAVAX to AVAX` });
-                } catch (error) {
-                  console.error('Could not withdraw', error);
-                }
+              try {
+                const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`);
+                addTransaction(txReceipt, { summary: `Unwrap ${inputAmount.toSignificant(6)} WAVAX to AVAX` });
+              } catch (error) {
+                console.error('Could not withdraw', error);
               }
+            }
             : undefined,
         inputError: sufficientBalance ? undefined : 'Insufficient WAVAX balance',
       };

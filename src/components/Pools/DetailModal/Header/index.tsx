@@ -1,4 +1,4 @@
-import { CHAINS, ChefType } from '@pangolindex/sdk';
+import { CHAINS, ChefType } from '@arcanumdex/sdk';
 import numeral from 'numeral';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';

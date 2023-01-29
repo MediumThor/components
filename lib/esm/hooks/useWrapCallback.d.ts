@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 export declare enum WrapType {
     NOT_APPLICABLE = 0,
     WRAP = 1,

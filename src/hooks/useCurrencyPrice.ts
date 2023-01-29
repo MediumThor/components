@@ -1,4 +1,4 @@
-import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@arcanumdex/sdk';
 import { useMemo } from 'react';
 import { ONE_TOKEN, ZERO_ADDRESS } from 'src/constants';
 import { PairState, usePair, usePairs } from 'src/data/Reserves';

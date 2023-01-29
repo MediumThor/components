@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Percent, Price } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Percent, Price } from '@arcanumdex/sdk';
 import { Field } from 'src/state/pmint/actions';
 interface BarProps {
     currencies: {

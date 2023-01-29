@@ -1,4 +1,4 @@
-import { CurrencyAmount, Fraction, JSBI, Percent, Pool, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CurrencyAmount, Fraction, JSBI, Percent, Pool, TokenAmount, Trade } from '@arcanumdex/sdk';
 import {
   ALLOWED_PRICE_IMPACT_HIGH,
   ALLOWED_PRICE_IMPACT_LOW,
@@ -23,12 +23,12 @@ export function computeTradePriceBreakdown(trade?: Trade): {
   const realizedLPFee = !trade
     ? undefined
     : ONE_HUNDRED_PERCENT.subtract(
-        trade.route.pools.reduce<Fraction>(
-          (currentFee: Fraction, pool: Pool): Fraction =>
-            currentFee.multiply(new Percent(pool.swapFeeCoefficient, pool.swapFeeDivisor)),
-          ONE_HUNDRED_PERCENT,
-        ),
-      );
+      trade.route.pools.reduce<Fraction>(
+        (currentFee: Fraction, pool: Pool): Fraction =>
+          currentFee.multiply(new Percent(pool.swapFeeCoefficient, pool.swapFeeDivisor)),
+        ONE_HUNDRED_PERCENT,
+      ),
+    );
 
   // remove lp fees from price impact
   const priceImpactWithoutFeeFraction = trade && realizedLPFee ? trade.priceImpact.subtract(realizedLPFee) : undefined;
@@ -49,8 +49,8 @@ export function computeTradePriceBreakdown(trade?: Trade): {
   const feeAmount = !trade
     ? undefined
     : trade.outputAmount instanceof TokenAmount
-    ? new TokenAmount(trade.outputAmount.token, trade.fee.multiply(trade.outputAmount.raw).quotient)
-    : CurrencyAmount.ether(trade.fee.multiply(trade.outputAmount.raw).quotient);
+      ? new TokenAmount(trade.outputAmount.token, trade.fee.multiply(trade.outputAmount.raw).quotient)
+      : CurrencyAmount.ether(trade.fee.multiply(trade.outputAmount.raw).quotient);
 
   return {
     priceImpactWithoutFee: priceImpactWithoutFeePercent,

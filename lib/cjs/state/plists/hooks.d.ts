@@ -1,5 +1,5 @@
-import { ChainId, Token } from '@pangolindex/sdk';
-import { Tags, TokenInfo, TokenList } from '@pangolindex/token-lists';
+import { ChainId, Token } from '@arcanumdex/sdk';
+import { Tags, TokenInfo, TokenList } from '@arcanumdex/token-lists';
 type TagDetails = Tags[keyof Tags];
 export interface TagInfo extends TagDetails {
     id: string;

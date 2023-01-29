@@ -1,4 +1,3 @@
-import { ChainId } from '@pangolindex/sdk';
 export interface SerializableTransactionReceipt {
     to: string;
     from: string;

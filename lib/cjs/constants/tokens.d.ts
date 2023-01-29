@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pangolindex/sdk';
+import { ChainId, Token } from '@arcanumdex/sdk';
 export declare const PNG: {
     [chainId in ChainId]: Token;
 };

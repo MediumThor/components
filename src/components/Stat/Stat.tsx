@@ -1,4 +1,4 @@
-import { Currency, Token, WAVAX } from '@pangolindex/sdk';
+import { Currency, Token, WAVAX } from '@arcanumdex/sdk';
 import React from 'react';
 import AnalyticsIcon from 'src/assets/images/analytics.svg';
 import { Box, CurrencyLogo, Text } from 'src/components';

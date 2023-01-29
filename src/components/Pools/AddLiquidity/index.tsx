@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { Currency, TokenAmount } from '@pangolindex/sdk';
+import { Currency, TokenAmount } from '@arcanumdex/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';
@@ -215,7 +215,7 @@ const AddLiquidity = ({ currencyA, currencyB, onComplete, onAddToFarm, type }: A
               expertMode ? onAdd() : setShowConfirm(true);
             }}
             isDisabled={!isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED}
-            //error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
+          //error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
           >
             {error ?? t('addLiquidity.supply')}
           </Button>

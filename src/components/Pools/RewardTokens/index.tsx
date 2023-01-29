@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import React from 'react';
 import styled from 'styled-components';
 import { CurrencyLogo } from 'src/components';
@@ -17,7 +17,7 @@ interface RewardTokensLogoProps {
   rewardTokens?: Array<Token | null | undefined> | null;
 }
 
-const CoveredLogo = styled(CurrencyLogo)<{ sizeraw: number }>`
+const CoveredLogo = styled(CurrencyLogo) <{ sizeraw: number }>`
   position: absolute;
   left: ${({ sizeraw }) => '-' + (sizeraw / 2).toString() + 'px'} !important;
 `;

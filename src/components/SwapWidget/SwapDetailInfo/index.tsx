@@ -1,4 +1,4 @@
-import { Percent, Trade, TradeType } from '@pangolindex/sdk';
+import { Percent, Trade, TradeType } from '@arcanumdex/sdk';
 import React from 'react';
 import { BIPS_BASE, INITIAL_ALLOWED_SLIPPAGE, ONE_BIPS } from 'src/constants';
 import { Field } from 'src/state/pswap/actions';

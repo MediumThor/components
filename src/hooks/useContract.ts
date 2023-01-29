@@ -1,9 +1,9 @@
 import { Contract } from '@ethersproject/contracts';
-import MiniChefV2 from '@pangolindex/exchange-contracts/artifacts/contracts/mini-chef/MiniChefV2.sol/MiniChefV2.json';
-import IPangolinPair from '@pangolindex/exchange-contracts/artifacts/contracts/pangolin-core/interfaces/IPangolinPair.sol/IPangolinPair.json';
-import Png from '@pangolindex/exchange-contracts/artifacts/contracts/pangolin-token/Png.sol/Png.json';
-import StakingRewards from '@pangolindex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
-import { WAVAX } from '@pangolindex/sdk';
+import MiniChefV2 from '@arcanumdex/exchange-contracts/artifacts/contracts/mini-chef/MiniChefV2.sol/MiniChefV2.json';
+import IPangolinPair from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-core/interfaces/IPangolinPair.sol/IPangolinPair.json';
+import Png from '@arcanumdex/exchange-contracts/artifacts/contracts/pangolin-token/Png.sol/Png.json';
+import StakingRewards from '@arcanumdex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
+import { WAVAX } from '@arcanumdex/sdk';
 import { useMemo } from 'react';
 import { MINICHEF_ADDRESS, PANGOCHEF_ADDRESS, SAR_STAKING_ADDRESS, ZERO_ADDRESS } from 'src/constants';
 import { ERC20_BYTES32_ABI } from 'src/constants/abis/erc20';

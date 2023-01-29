@@ -1,4 +1,4 @@
-import { Currency, JSBI, Pair, Percent, Token } from '@pangolindex/sdk';
+import { Currency, JSBI, Pair, Percent, Token } from '@arcanumdex/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, DoubleCurrencyLogo, Stat, Text } from 'src/components';

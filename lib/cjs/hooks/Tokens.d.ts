@@ -1,4 +1,4 @@
-import { ChainId, Currency, Token } from '@pangolindex/sdk';
+import { ChainId, Currency, Token } from '@arcanumdex/sdk';
 export type TokenReturnType = Token | undefined | null;
 export declare function useAllTokens(): {
     [address: string]: Token;

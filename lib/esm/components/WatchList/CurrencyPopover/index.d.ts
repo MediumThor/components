@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import React from 'react';
 interface Props {
     getRef?: (ref: any) => void;

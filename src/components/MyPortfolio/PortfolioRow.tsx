@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pangolindex/sdk';
+import { ChainId, Token } from '@arcanumdex/sdk';
 import React, { useContext } from 'react';
 import { HelpCircle, Lock } from 'react-feather';
 import { ThemeContext } from 'styled-components';

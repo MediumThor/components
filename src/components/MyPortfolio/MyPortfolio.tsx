@@ -1,4 +1,4 @@
-import { ALL_CHAINS } from '@pangolindex/sdk';
+import { ALL_CHAINS } from '@arcanumdex/sdk';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import { Lock } from 'react-feather';

@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { useGelatoLimitOrders } from '@gelatonetwork/limit-orders-react';
-import { CAVAX, JSBI, Token, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CAVAX, JSBI, Token, TokenAmount, Trade } from '@arcanumdex/sdk';
 import { CurrencyAmount, Currency as UniCurrency } from '@uniswap/sdk-core';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { Divide, RefreshCcw, X } from 'react-feather';
@@ -405,7 +405,7 @@ const LimitOrder: React.FC<Props> = ({
             onClick={() => handlePlaceOrder()}
             id="swap-button"
             isDisabled={!isValid || approval !== ApprovalState.APPROVED}
-            //error={isValid}
+          //error={isValid}
           >
             Place Order
           </Button>

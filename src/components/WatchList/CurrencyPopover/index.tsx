@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, Currency, Token, WAVAX } from '@pangolindex/sdk';
+import { CAVAX, ChainId, Currency, Token, WAVAX } from '@arcanumdex/sdk';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList } from 'react-window';
@@ -25,8 +25,8 @@ const currencyKey = (currency: Currency, chainId: ChainId): string => {
   return currency instanceof Token
     ? currency.address
     : currency === CAVAX[chainId] && CAVAX[chainId]?.symbol
-    ? (CAVAX[chainId]?.symbol as string)
-    : '';
+      ? (CAVAX[chainId]?.symbol as string)
+      : '';
 };
 
 const CurrencyPopover: React.FC<Props> = ({

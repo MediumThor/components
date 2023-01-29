@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, TokenAmount } from '@arcanumdex/sdk';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BIG_INT_ZERO } from 'src/constants';
@@ -61,20 +61,20 @@ export function useDerivedBurnInfo(
 
   const [liquidityValue0, liquidityValue1] =
     pair &&
-    totalSupply &&
-    userLiquidity &&
-    tokenA &&
-    tokenB &&
-    JSBI.greaterThan(totalSupply.raw, BIG_INT_ZERO) &&
-    JSBI.greaterThan(userLiquidity.raw, BIG_INT_ZERO) &&
-    JSBI.greaterThanOrEqual(totalSupply.raw, userLiquidity.raw)
+      totalSupply &&
+      userLiquidity &&
+      tokenA &&
+      tokenB &&
+      JSBI.greaterThan(totalSupply.raw, BIG_INT_ZERO) &&
+      JSBI.greaterThan(userLiquidity.raw, BIG_INT_ZERO) &&
+      JSBI.greaterThanOrEqual(totalSupply.raw, userLiquidity.raw)
       ? pair.getLiquidityValues(totalSupply, userLiquidity, { feeOn: false })
       : [undefined, undefined];
 
   const liquidityValueA = tokenA && pair?.token0.equals(tokenA) ? liquidityValue0 : liquidityValue1;
   const liquidityValueB = tokenB && pair?.token0.equals(tokenB) ? liquidityValue0 : liquidityValue1;
 
-  const liquidityValues: { [Field.CURRENCY_A]?: TokenAmount; [Field.CURRENCY_B]?: TokenAmount } = {
+  const liquidityValues: { [Field.CURRENCY_A]?: TokenAmount;[Field.CURRENCY_B]?: TokenAmount } = {
     [Field.CURRENCY_A]: liquidityValueA,
     [Field.CURRENCY_B]: liquidityValueB,
   };

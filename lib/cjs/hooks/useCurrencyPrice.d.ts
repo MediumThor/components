@@ -1,4 +1,4 @@
-import { Pair, Price, Token, TokenAmount } from '@pangolindex/sdk';
+import { Pair, Price, Token, TokenAmount } from '@arcanumdex/sdk';
 /**
  * Returns the tokens price in relation to gas coin (avax, wagmi, flare, etc)
  *

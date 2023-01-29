@@ -1,4 +1,4 @@
-import { ChefType } from '@pangolindex/sdk';
+import { ChefType } from '@arcanumdex/sdk';
 import styled from 'styled-components';
 import { Box } from 'src/components';
 
@@ -26,7 +26,7 @@ export const StatWrapper = styled(Box)`
   align-items: center;
 `;
 
-export const Buttons = styled(Box)<{ chefType: ChefType }>`
+export const Buttons = styled(Box) <{ chefType: ChefType }>`
   display: grid;
   grid-template-columns: 1fr ${({ chefType }) => (chefType === ChefType.PANGO_CHEF ? '1fr' : '')};
   grid-gap: 20px;

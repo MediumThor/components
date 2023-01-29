@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 interface RemoveLiquidityProps {
     currencyA?: Currency;
     currencyB?: Currency;

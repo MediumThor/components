@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 export declare enum Fields {
     TOKEN0 = 0,
     TOKEN1 = 1

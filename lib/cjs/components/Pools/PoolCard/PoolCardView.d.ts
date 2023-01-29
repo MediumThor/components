@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@pangolindex/sdk';
+import { Token, TokenAmount } from '@arcanumdex/sdk';
 import { StakingInfo } from 'src/state/pstake/types';
 export interface PoolCardViewProps {
     stakingInfo: StakingInfo;

@@ -1,5 +1,5 @@
 import { useGelatoLimitOrders } from '@gelatonetwork/limit-orders-react';
-import { CAVAX, Token, Trade, TradeType } from '@pangolindex/sdk';
+import { CAVAX, Token, Trade, TradeType } from '@arcanumdex/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { AlertTriangle, ArrowDown, ArrowUpCircle } from 'react-feather';
 import { ThemeContext } from 'styled-components';
@@ -133,9 +133,8 @@ const ConfirmLimitOrderDrawer: React.FC<Props> = (props) => {
   if (!inputAmount || !outputAmount) return null;
 
   // text to show while loading
-  const pendingText = `Submitting order to swap ${trade?.inputAmount?.toSignificant(6)} ${
-    inputCurrency?.symbol
-  } for ${trade?.outputAmount?.toSignificant(6)} ${outputCurrency?.symbol}`;
+  const pendingText = `Submitting order to swap ${trade?.inputAmount?.toSignificant(6)} ${inputCurrency?.symbol
+    } for ${trade?.outputAmount?.toSignificant(6)} ${outputCurrency?.symbol}`;
 
   const ConfirmContent = (
     <Root>

@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import { LogoSize } from 'src/constants';
 interface RewardTokensLogoProps {
     margin?: boolean;

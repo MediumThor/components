@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@pangolindex/sdk';
+import { JSBI, Token, TokenAmount } from '@arcanumdex/sdk';
 
 export enum SpaceType {
   card = 'card',

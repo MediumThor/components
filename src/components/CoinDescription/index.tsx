@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@arcanumdex/sdk';
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { Box, Text } from 'src/components';

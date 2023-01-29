@@ -12,7 +12,7 @@ import {
   Token,
   TokenAmount,
   WAVAX,
-} from '@pangolindex/sdk';
+} from '@arcanumdex/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import qs from 'qs';
 import { useEffect, useMemo, useState } from 'react';

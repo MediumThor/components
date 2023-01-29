@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@arcanumdex/sdk';
 import { useNearToken, useNearTokens, useToken, useTokens } from './Tokens';
 import { useApproveCallback, useApproveCallbackFromNearTrade, useApproveCallbackFromTrade, useNearApproveCallback } from './useApproveCallback';
 import { useNearSwapCallback, useSwapCallback } from './useSwapCallback';

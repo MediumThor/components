@@ -1,4 +1,4 @@
-import { Currency, Pair, Token } from '@pangolindex/sdk';
+import { Currency, Pair, Token } from '@arcanumdex/sdk';
 export interface Balances {
     total: number;
     chains: {

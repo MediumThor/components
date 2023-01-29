@@ -1,4 +1,4 @@
-import { CurrencyAmount, Percent, Trade } from '@pangolindex/sdk';
+import { CurrencyAmount, Percent, Trade } from '@arcanumdex/sdk';
 import { Field } from '../state/pswap/actions';
 export declare function computeTradePriceBreakdown(trade?: Trade): {
     priceImpactWithoutFee?: Percent;

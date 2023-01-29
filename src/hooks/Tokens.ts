@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings';
-import { CAVAX, CHAINS, ChainId, Currency, Token } from '@pangolindex/sdk';
+import { CAVAX, CHAINS, ChainId, Currency, Token } from '@arcanumdex/sdk';
 import axios from 'axios';
 import { useEffect, useMemo, useState } from 'react';
 import { useQueries, useQuery } from 'react-query';
@@ -45,8 +45,8 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
   return str && str.length > 0
     ? str
     : bytes32 && BYTES32_REGEX.test(bytes32)
-    ? parseBytes32String(bytes32)
-    : defaultValue;
+      ? parseBytes32String(bytes32)
+      : defaultValue;
 }
 
 // undefined if invalid or does not exist
@@ -259,9 +259,8 @@ export function useCoinGeckoTokenPrice(coin: Token) {
       try {
         const chain = coin.chainId === 43113 ? CHAINS[ChainId.AVALANCHE] : CHAINS[coin.chainId];
 
-        const url = `${COINGEKO_BASE_URL}/simple/token_price/${
-          chain.coingecko_id
-        }?contract_addresses=${coin.address.toLowerCase()}&vs_currencies=usd`;
+        const url = `${COINGEKO_BASE_URL}/simple/token_price/${chain.coingecko_id
+          }?contract_addresses=${coin.address.toLowerCase()}&vs_currencies=usd`;
         const response = await fetch(url);
         const data = await response.json();
 
@@ -286,9 +285,8 @@ export function useCoinGeckoTokenPriceChart(coin: Token, days = '7') {
       try {
         const chain = coin.chainId === 43113 ? CHAINS[ChainId.AVALANCHE] : CHAINS[coin.chainId];
 
-        const url = `${COINGEKO_BASE_URL}/coins/${
-          chain.coingecko_id
-        }/contract/${coin.address.toLowerCase()}/market_chart/?vs_currency=usd&days=${days}`;
+        const url = `${COINGEKO_BASE_URL}/coins/${chain.coingecko_id
+          }/contract/${coin.address.toLowerCase()}/market_chart/?vs_currency=usd&days=${days}`;
 
         const response = await fetch(url);
         const data = await response.json();

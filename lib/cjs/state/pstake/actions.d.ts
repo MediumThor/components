@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@arcanumdex/sdk';
 import { MinichefV2 } from './types';
 export declare const updateMinichefStakingAllData: import("@reduxjs/toolkit").ActionCreatorWithPayload<{
     data: {

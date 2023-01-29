@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@arcanumdex/sdk';
 import { StakingInfo } from 'src/state/pstake/types';
 interface EarnWidgetProps {
     currencyA: Currency;

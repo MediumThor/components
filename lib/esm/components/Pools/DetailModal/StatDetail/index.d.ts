@@ -1,4 +1,4 @@
-import { Currency, Pair, TokenAmount } from '@pangolindex/sdk';
+import { Currency, Pair, TokenAmount } from '@arcanumdex/sdk';
 interface Props {
     title: string;
     totalAmount: string;
