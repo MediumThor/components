@@ -5,7 +5,7 @@ import { JSBI, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ZERO_ADDRESS } from 'src/constants';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { useApproveCallback } from 'src/hooks/useApproveCallback';
 import { useSarStakingContract } from 'src/hooks/useContract';
@@ -41,7 +41,7 @@ export interface Position {
 export function useSarStakeInfo() {
   const chainId = useChainId();
   const sarStakingContract = useSarStakingContract();
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const rewardRate: BigNumber | undefined = useSingleCallResult(sarStakingContract, 'rewardRate').result?.[0];
   const totalValueVariables = useSingleCallResult(sarStakingContract, 'totalValueVariables')?.result;
@@ -51,13 +51,13 @@ export function useSarStakeInfo() {
       rewardRate && totalValueVariables && totalValueVariables?.balance && !totalValueVariables.balance.isZero()
         ? rewardRate.mul(86400).mul(365).mul(100).div(totalValueVariables.balance)
         : null;
-    const totalStaked = new TokenAmount(png, totalValueVariables ? totalValueVariables?.balance.toString() : '0');
+    const totalStaked = new TokenAmount(arc, totalValueVariables ? totalValueVariables?.balance.toString() : '0');
 
-    const weeklyPNG = !!rewardRate ? rewardRate.mul(86400).mul(7) : ZERO;
+    const weeklyARC = !!rewardRate ? rewardRate.mul(86400).mul(7) : ZERO;
 
     const sumOfEntryTimes: BigNumber = totalValueVariables ? totalValueVariables?.sumOfEntryTimes : ZERO;
 
-    return { apr, totalStaked, sumOfEntryTimes, rewardRate: rewardRate ?? ZERO, weeklyPNG };
+    return { apr, totalStaked, sumOfEntryTimes, rewardRate: rewardRate ?? ZERO, weeklyARC };
   }, [rewardRate, totalValueVariables]);
 }
 
@@ -77,16 +77,16 @@ export function useDerivativeSarStake(positionId?: BigNumber) {
   const addTransaction = useTransactionAdder();
   const { t } = useTranslation();
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
-  const userPngBalance = useTokenBalance(account ?? ZERO_ADDRESS, png);
+  const userArcBalance = useTokenBalance(account ?? ZERO_ADDRESS, arc);
 
   // used for max input button
-  const maxAmountInput = maxAmountSpend(chainId, userPngBalance);
+  const maxAmountInput = maxAmountSpend(chainId, userArcBalance);
 
-  const usdcPrice = useUSDCPrice(png);
+  const usdcPrice = useUSDCPrice(arc);
   const dollerWorth =
-    userPngBalance?.greaterThan('0') && usdcPrice ? Number(typedValue) * Number(usdcPrice.toFixed()) : undefined;
+    userArcBalance?.greaterThan('0') && usdcPrice ? Number(typedValue) * Number(usdcPrice.toFixed()) : undefined;
 
   const wrappedOnDismiss = useCallback(() => {
     setStakeError(null);
@@ -96,7 +96,7 @@ export function useDerivativeSarStake(positionId?: BigNumber) {
     setAttempting(false);
   }, []);
 
-  const { parsedAmount, error } = useDerivedStakeInfo(typedValue, png, userPngBalance);
+  const { parsedAmount, error } = useDerivedStakeInfo(typedValue, arc, userArcBalance);
   const [approval, approveCallback] = useApproveCallback(chainId, parsedAmount, sarStakingContract?.address);
 
   const onUserInput = useCallback((_typedValue: string) => {
@@ -109,16 +109,16 @@ export function useDerivativeSarStake(positionId?: BigNumber) {
   }, [maxAmountInput, onUserInput]);
 
   const onChangePercentage = (value: number) => {
-    if (!userPngBalance) {
+    if (!userArcBalance) {
       setTypedValue('0');
       return;
     }
     if (value === 100) {
-      setTypedValue((userPngBalance as TokenAmount).toExact());
+      setTypedValue((userArcBalance as TokenAmount).toExact());
     } else if (value === 0) {
       setTypedValue('0');
     } else {
-      const newAmount = (userPngBalance as TokenAmount)
+      const newAmount = (userArcBalance as TokenAmount)
         .multiply(JSBI.BigInt(value))
         .divide(JSBI.BigInt(100)) as TokenAmount;
 
@@ -141,14 +141,14 @@ export function useDerivativeSarStake(positionId?: BigNumber) {
         });
       } else {
         const estimatedGas = await sarStakingContract.estimateGas.mint(`0x${parsedAmount.raw.toString(16)}`);
-        // adding more png to an existing position
+        // adding more arc to an existing position
         response = await sarStakingContract.stake(positionId.toHexString(), `0x${parsedAmount.raw.toString(16)}`, {
           gasLimit: calculateGasMargin(estimatedGas),
         });
       }
       await waitForTransaction(response, 3);
       addTransaction(response, {
-        summary: t('sarStake.transactionSummary', { symbol: png.symbol, balance: parsedAmount.toSignificant(2) }),
+        summary: t('sarStake.transactionSummary', { symbol: arc.symbol, balance: parsedAmount.toSignificant(2) }),
       });
       setHash(response.hash);
     } catch (err) {
@@ -174,7 +174,7 @@ export function useDerivativeSarStake(positionId?: BigNumber) {
       error,
       approval,
       account,
-      png,
+      arc,
       stakeError,
       onAttemptToApprove: approveCallback,
       onUserInput,
@@ -245,13 +245,13 @@ export function useDerivativeSarUnstake(position: Position | null) {
   const { t } = useTranslation();
   const addTransaction = useTransactionAdder();
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const sarStakingContract = useSarStakingContract();
 
-  const stakedAmount = new TokenAmount(png, (position?.balance ?? 0).toString());
+  const stakedAmount = new TokenAmount(arc, (position?.balance ?? 0).toString());
 
-  const { parsedAmount, error } = useUnstakeParseAmount(typedValue, png, stakedAmount);
+  const { parsedAmount, error } = useUnstakeParseAmount(typedValue, arc, stakedAmount);
 
   // used for max input button
   const maxAmountInput = maxAmountSpend(chainId, stakedAmount);
@@ -308,7 +308,7 @@ export function useDerivativeSarUnstake(position: Position | null) {
       );
       await waitForTransaction(response, 3);
       addTransaction(response, {
-        summary: t('sarUnstake.transactionSummary', { symbol: png.symbol, balance: parsedAmount.toSignificant(2) }),
+        summary: t('sarUnstake.transactionSummary', { symbol: arc.symbol, balance: parsedAmount.toSignificant(2) }),
       });
       setHash(response.hash);
     } catch (err) {

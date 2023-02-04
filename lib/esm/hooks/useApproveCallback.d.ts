@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Trade } from '@arcanumdex/sdk';
+import { ChainId, CurrencyAmount, Trade } from '@_arcanumdex/sdk';
 export declare enum ApprovalState {
     UNKNOWN = 0,
     NOT_APPROVED = 1,

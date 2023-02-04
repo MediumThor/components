@@ -1,6 +1,6 @@
-import { Token } from '@arcanumdex/sdk';
+import { Token } from '@_arcanumdex/sdk';
 import React from 'react';
-type Props = {
+declare type Props = {
     currency: Token;
     onSelect: (address: string) => void;
     style: any;

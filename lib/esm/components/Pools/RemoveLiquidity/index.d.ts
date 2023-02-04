@@ -1,4 +1,5 @@
-import { Currency } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Currency } from '@_arcanumdex/sdk';
 interface RemoveLiquidityProps {
     currencyA?: Currency;
     currencyB?: Currency;

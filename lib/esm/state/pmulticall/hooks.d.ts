@@ -5,8 +5,8 @@ import { ListenerOptions } from './actions';
 export interface Result extends ReadonlyArray<any> {
     readonly [key: string]: any;
 }
-type MethodArg = string | number | BigNumber;
-type OptionalMethodInputs = Array<MethodArg | MethodArg[] | undefined> | undefined;
+declare type MethodArg = string | number | BigNumber;
+declare type OptionalMethodInputs = Array<MethodArg | MethodArg[] | undefined> | undefined;
 export declare const NEVER_RELOAD: ListenerOptions;
 interface CallState {
     readonly valid: boolean;

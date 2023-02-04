@@ -7,9 +7,9 @@ import BridgeTransfer from '.';
 const currency0 = new Token(ChainId.AVALANCHE, '0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15', 18, 'ETH', 'Ether');
 const currency1 = new Token(
   ChainId.AVALANCHE,
-  CHAINS[ChainId.AVALANCHE].contracts!.png,
+  CHAINS[ChainId.AVALANCHE].contracts!.arc,
   18,
-  CHAINS[ChainId.AVALANCHE].png_symbol!,
+  CHAINS[ChainId.AVALANCHE].arc_symbol!,
   'Arcanum',
 );
 

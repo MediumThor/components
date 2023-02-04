@@ -4,7 +4,7 @@ import Scrollbars from 'react-custom-scrollbars';
 import { Plus } from 'react-feather';
 import { ThemeContext } from 'styled-components';
 import { Box, Button, ShowMore } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { usePangolinWeb3 } from 'src/hooks';
 import { useAllTokens } from 'src/hooks/Tokens';
 import { useOnClickOutside } from 'src/hooks/useOnClickOutside';
@@ -45,7 +45,7 @@ const WatchList: React.FC<Props> = ({
   const referenceElement = useRef<HTMLInputElement>(null);
 
   const currencies = useMemo(
-    () => ((watchListCurrencies || []).length === 0 ? ([PNG[chainId]] as Token[]) : (watchListCurrencies as Token[])),
+    () => ((watchListCurrencies || []).length === 0 ? ([ARC[chainId]] as Token[]) : (watchListCurrencies as Token[])),
 
     [chainId, watchListCurrencies],
   );
@@ -57,7 +57,7 @@ const WatchList: React.FC<Props> = ({
         coin={coin}
         key={coin.address}
         onClick={() => setSelectedToken(coin)}
-        onRemove={() => setSelectedToken(PNG[chainId])}
+        onRemove={() => setSelectedToken(ARC[chainId])}
         isSelected={coin?.address === selectedToken?.address}
       />
     );

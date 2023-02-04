@@ -1,4 +1,4 @@
-import { ChainId } from '@arcanumdex/sdk';
+import { ChainId } from '@_arcanumdex/sdk';
 import MULTICALL_ABI from './abi.json';
 declare const MULTICALL_NETWORKS: {
     [chainId in ChainId]: string;

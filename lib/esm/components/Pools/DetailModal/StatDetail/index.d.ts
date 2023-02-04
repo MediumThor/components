@@ -1,4 +1,5 @@
-import { Currency, Pair, TokenAmount } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Currency, Pair, TokenAmount } from '@_arcanumdex/sdk';
 interface Props {
     title: string;
     totalAmount: string;

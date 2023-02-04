@@ -1,5 +1,5 @@
 import { Interface } from '@ethersproject/abi';
-import StakingRewards from '@arcanumdex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
+import StakingRewards from '@_arcanumdex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
 
 const STAKING_REWARDS_INTERFACE = new Interface(StakingRewards.abi);
 

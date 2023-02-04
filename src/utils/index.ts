@@ -3,8 +3,8 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { AddressZero } from '@ethersproject/constants';
 import { Contract } from '@ethersproject/contracts';
 import { JsonRpcSigner, TransactionResponse, Web3Provider } from '@ethersproject/providers';
-import IArcanumRouter from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-periphery/interfaces/IArcanumRouter.sol/IArcanumRouter.json';
-import IArcanumRouterSupportingFees from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-periphery/interfaces/IArcanumRouterSupportingFees.sol/IArcanumRouterSupportingFees.json';
+import IArcanumRouter from '@_arcanumdex/exchange-contracts/artifacts/contracts/arcanum-periphery/interfaces/IArcanumRouter.sol/IArcanumRouter.json';
+import IArcanumRouterSupportingFees from '@_arcanumdex/exchange-contracts/artifacts/contracts/arcanum-periphery/interfaces/IArcanumRouterSupportingFees.sol/IArcanumRouterSupportingFees.json';
 import {
   ALL_CHAINS,
   CAVAX,
@@ -41,6 +41,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   19: CHAINS[ChainId.SONGBIRD].blockExplorerUrls?.[0] || '',
   329847900: CHAINS[ChainId.NEAR_MAINNET].blockExplorerUrls?.[0] || '',
   329847901: CHAINS[ChainId.NEAR_TESTNET].blockExplorerUrls?.[0] || '',
+  [ChainId.BSC]: ''
 };
 
 const transactionPath: { [chainId in ChainId]: string } = {
@@ -51,6 +52,7 @@ const transactionPath: { [chainId in ChainId]: string } = {
   [ChainId.SONGBIRD]: 'tx',
   [ChainId.NEAR_MAINNET]: 'transactions',
   [ChainId.NEAR_TESTNET]: 'transactions',
+  [ChainId.BSC]: ''
 };
 
 const addressPath: { [chainId in ChainId]: string } = {
@@ -58,9 +60,10 @@ const addressPath: { [chainId in ChainId]: string } = {
   [ChainId.AVALANCHE]: 'address',
   [ChainId.WAGMI]: 'address',
   [ChainId.COSTON]: 'address',
-  [ChainId.SONGBIRD]: 'address',
+  [ChainId.SONGBIRD]: 'xaddress',
   [ChainId.NEAR_MAINNET]: 'accounts',
   [ChainId.NEAR_TESTNET]: 'accounts',
+  [ChainId.BSC]: ''
 };
 
 const blockPath: { [chainId in ChainId]: string } = {
@@ -71,6 +74,7 @@ const blockPath: { [chainId in ChainId]: string } = {
   [ChainId.SONGBIRD]: 'block',
   [ChainId.NEAR_MAINNET]: 'blocks',
   [ChainId.NEAR_TESTNET]: 'blocks',
+  [ChainId.BSC]: ''
 };
 
 const tokenPath: { [chainId in ChainId]: string } = {
@@ -81,6 +85,7 @@ const tokenPath: { [chainId in ChainId]: string } = {
   [ChainId.SONGBIRD]: 'token',
   [ChainId.NEAR_MAINNET]: 'accounts',
   [ChainId.NEAR_TESTNET]: 'accounts',
+  [ChainId.BSC]: ''
 };
 
 export function getEtherscanLink(

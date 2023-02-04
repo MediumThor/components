@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';
 import { Box, CurrencyLogo, Text, Tooltip } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId } from 'src/hooks';
 import { Position } from 'src/state/psarstake/hooks';
 import Title from '../Title';
@@ -19,7 +19,7 @@ interface Props {
 export default function RewardsInfo({ selectedOption, selectedPosition, pendingRewards, onChange }: Props) {
   const { t } = useTranslation();
   const chainId = useChainId();
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const theme = useContext(ThemeContext);
 
@@ -41,12 +41,12 @@ export default function RewardsInfo({ selectedOption, selectedPosition, pendingR
           </Text>
           <Tooltip id="pendingRewards" effect="solid" backgroundColor={theme.primary}>
             <Text color="eerieBlack" fontSize="12px" fontWeight={500} textAlign="center">
-              {pendingRewards} {png.symbol}
+              {pendingRewards} {arc.symbol}
             </Text>
           </Tooltip>
           <Text color="text1" fontSize="36px" fontWeight={500} textAlign="center" data-tip data-for="pendingRewards">
             {formattedPedingRewards === 'NaN' ? '0.00' : formattedPedingRewards}
-            <CurrencyLogo currency={png} />
+            <CurrencyLogo currency={arc} />
           </Text>
         </Box>
       )}

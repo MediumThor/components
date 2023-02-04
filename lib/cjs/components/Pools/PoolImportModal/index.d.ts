@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface ImportPoolModalProps {
     isOpen: boolean;
     onClose: () => void;

@@ -13,4 +13,5 @@ export const usePairsHook: UsePairsHookType = {
   [ChainId.SONGBIRD]: usePairs,
   [ChainId.NEAR_MAINNET]: useNearPairs,
   [ChainId.NEAR_TESTNET]: useNearPairs,
+  [ChainId.BSC]: usePairs
 };

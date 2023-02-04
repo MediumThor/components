@@ -1,4 +1,4 @@
-export type RadioButtonProps = {
+export declare type RadioButtonProps = {
     name?: string;
     /** id **/
     id?: string;

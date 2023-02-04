@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ComponentStory } from '@storybook/react';
 declare const _default: {
     component: ({ onClose, submitText, showCloseIcon, isShowButtton, onButtonClick, buttonText, }: import(".").TransactionCompletedProps) => JSX.Element;

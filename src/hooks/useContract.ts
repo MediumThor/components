@@ -1,8 +1,8 @@
 import { Contract } from '@ethersproject/contracts';
-import MiniChefV2 from '@arcanumdex/exchange-contracts/artifacts/contracts/mini-chef/MiniChefV2.sol/MiniChefV2.json';
-import IArcanumPair from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-core/interfaces/IArcanumPair.sol/IArcanumPair.json';
-import Png from '@arcanumdex/exchange-contracts/artifacts/contracts/arcanum-token/Arc.sol/Arc.json';
-import StakingRewards from '@arcanumdex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
+import MiniChefV2 from '@_arcanumdex/exchange-contracts/artifacts/contracts/mini-chef/MiniChefV2.sol/MiniChefV2.json';
+import IArcanumPair from '@_arcanumdex/exchange-contracts/artifacts/contracts/arcanum-core/interfaces/IArcanumPair.sol/IArcanumPair.json';
+import Arc from '@_arcanumdex/exchange-contracts/artifacts/contracts/arcanum-token/Arc.sol/Arc.json';
+import StakingRewards from '@_arcanumdex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
 import { WAVAX } from '@_arcanumdex/sdk';
 import { useMemo } from 'react';
 import { MINICHEF_ADDRESS, PANGOCHEF_ADDRESS, SAR_STAKING_ADDRESS, ZERO_ADDRESS } from 'src/constants';
@@ -13,7 +13,7 @@ import { REWARDER_VIA_MULTIPLIER_INTERFACE } from 'src/constants/abis/rewarderVi
 import SarStaking from 'src/constants/abis/sar.json';
 import WETH_ABI from 'src/constants/abis/weth.json';
 import { MULTICALL_ABI, MULTICALL_NETWORKS } from 'src/constants/multicall';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, useLibrary, usePangolinWeb3 } from 'src/hooks';
 import { getContract } from 'src/utils';
 
@@ -73,9 +73,9 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
   return useContract(pairAddress, IArcanumPair.abi, withSignerIfPossible);
 }
 
-export function usePngContract(): Contract | null {
+export function useArcContract(): Contract | null {
   const chainId = useChainId();
-  return useContract(PNG[chainId].address, Png.abi, true);
+  return useContract(ARC[chainId].address, Arc.abi, true);
 }
 
 export function useSarStakingContract(): Contract | null {

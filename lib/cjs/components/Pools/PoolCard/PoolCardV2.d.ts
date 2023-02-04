@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { MinichefStakingInfo } from 'src/state/pstake/types';
 export interface PoolCardProps {
     stakingInfo: MinichefStakingInfo;

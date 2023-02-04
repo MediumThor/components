@@ -55,9 +55,9 @@ const PoolCardViewV3 = ({ stakingInfo, onClickViewDetail, version, rewardTokens 
     ? stakingInfo?.totalStakedInUsd.multiply(stakingInfo?.stakedAmount).divide(stakingInfo?.totalStakedAmount)
     : undefined;
 
-  const userPgl = useTokenBalance(account ?? undefined, stakingTokenPair?.liquidityToken);
+  const userArl = useTokenBalance(account ?? undefined, stakingTokenPair?.liquidityToken);
 
-  const isLiquidity = Boolean(userPgl?.greaterThan('0'));
+  const isLiquidity = Boolean(userArl?.greaterThan('0'));
 
   const isSuperFarm =
     version > 1 ? (rewardTokens || [])?.length > 1 : (stakingInfo?.rewardTokensAddress || [])?.length > 1;

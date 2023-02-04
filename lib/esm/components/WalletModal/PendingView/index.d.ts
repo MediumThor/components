@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import { WalletInfo } from 'src/constants';
 export default function PendingView({ option, connector, error, setPendingError, tryActivation, }: {

@@ -1,4 +1,4 @@
-import { TokenList } from '@_arcanumdex/token-lists';
+import { TokenList } from '@pangolindex/token-lists';
 import { nanoid } from '@reduxjs/toolkit';
 import { useCallback } from 'react';
 import { useDispatch } from 'src/state';

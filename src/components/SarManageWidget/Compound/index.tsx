@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Box } from 'src/components/Box';
 import { Button } from 'src/components/Button';
 import { Text } from 'src/components/Text';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId } from 'src/hooks';
 import { useUSDCPriceHook } from 'src/hooks/multiChainsHooks';
 import { Position, useDerivativeSarCompound, useSarStakeInfo } from 'src/state/psarstake/hooks';
@@ -29,11 +29,11 @@ export default function Compound({ selectedOption, selectedPosition, onChange }:
   const pendingRewards = selectedPosition?.pendingRewards ?? BigNumber.from('0');
 
   const chainId = useChainId();
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
   const useUSDPrice = useUSDCPriceHook[chainId];
-  const pngPrice = useUSDPrice(png);
+  const arcPrice = useUSDPrice(arc);
 
-  const dollarValue = parseFloat(formatEther(oldBalance.add(pendingRewards))) * Number(pngPrice?.toFixed() ?? 0);
+  const dollarValue = parseFloat(formatEther(oldBalance.add(pendingRewards))) * Number(arcPrice?.toFixed() ?? 0);
 
   const { t } = useTranslation();
 

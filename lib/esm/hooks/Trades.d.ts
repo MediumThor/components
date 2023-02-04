@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Trade } from '@arcanumdex/sdk';
+import { Currency, CurrencyAmount, Trade } from '@_arcanumdex/sdk';
 /**
  * Returns the best trade for the exact amount of tokens in to the given token out
  */

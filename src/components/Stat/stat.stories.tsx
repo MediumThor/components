@@ -22,9 +22,9 @@ Simple.args = {
 
 const currency1 = new Token(
   ChainId.AVALANCHE,
-  CHAINS[ChainId.AVALANCHE].contracts!.png,
+  CHAINS[ChainId.AVALANCHE].contracts!.arc,
   18,
-  CHAINS[ChainId.AVALANCHE].png_symbol!,
+  CHAINS[ChainId.AVALANCHE].arc_symbol!,
   'Arcanum',
 );
 
@@ -32,7 +32,7 @@ const TemplateCurrencyStat: ComponentStory<typeof Stat> = (args: any) => <Stat {
 
 export const CurrencyStat = TemplateCurrencyStat.bind({});
 CurrencyStat.args = {
-  title: 'Underlying Png',
+  title: 'Underlying Arc',
   stat: 2000,
   titlePosition: 'top',
   titleFontSize: 12,
@@ -46,7 +46,7 @@ const TemplateMultipleCurrencyStat: ComponentStory<typeof Stat> = () => {
   return (
     <Box display="flex">
       <Stat
-        title={`Underlying Png`}
+        title={`Underlying Arc`}
         stat={`2000`}
         titlePosition="top"
         titleFontSize={12}
@@ -56,7 +56,7 @@ const TemplateMultipleCurrencyStat: ComponentStory<typeof Stat> = () => {
         showAnalytics={true}
       />
       <Stat
-        title={`Underlying Png`}
+        title={`Underlying Arc`}
         stat={`2000`}
         titlePosition="top"
         titleFontSize={12}

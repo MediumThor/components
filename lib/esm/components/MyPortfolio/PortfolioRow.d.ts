@@ -1,6 +1,6 @@
 import React from 'react';
 import { PairDataUser, TokenDataUser } from 'src/state/pportfolio/hooks';
-type Props = {
+declare type Props = {
     coin?: TokenDataUser;
     pair?: PairDataUser;
     showBalances: boolean;

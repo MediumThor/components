@@ -1,4 +1,4 @@
-export type BridgeInputsWidgetProps = {
+export declare type BridgeInputsWidgetProps = {
     /**
      * Title of the widget
      */

@@ -6,7 +6,7 @@ import { BIG_INT_SECONDS_IN_WEEK, BIG_INT_ZERO, ZERO_ADDRESS } from 'src/constan
 import ERC20_INTERFACE from 'src/constants/abis/erc20';
 import { PANGOLIN_PAIR_INTERFACE } from 'src/constants/abis/arcanumPair';
 import { REWARDER_VIA_MULTIPLIER_INTERFACE } from 'src/constants/abis/rewarderViaMultiplier';
-import { PNG, USDC } from 'src/constants/tokens';
+import { ARC, USDC } from 'src/constants/tokens';
 import { PairState, usePair, usePairs } from 'src/data/Reserves';
 import { useChainId, useGetBlockTimestamp, usePangolinWeb3 } from 'src/hooks';
 import { useCoinGeckoCurrencyPrice, useTokens } from 'src/hooks/Tokens';
@@ -22,7 +22,7 @@ export function usePangoChefInfos() {
   const chainId = useChainId();
   const pangoChefContract = usePangoChefContract();
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   // get the length of pools
   const poolLenght: BigNumber | undefined = useSingleCallResult(pangoChefContract, 'poolsLength').result?.[0];
@@ -83,8 +83,8 @@ export function usePangoChefInfos() {
   // get total reward rate
   const totalRewardRateState = useSingleCallResult(pangoChefContract, 'rewardRate');
   const totalRewardRate: BigNumber = totalRewardRateState?.result?.[0] ?? BigNumber.from(0);
-  const totalRewardRatePerSecond = new TokenAmount(png, totalRewardRate.toString());
-  const totalRewardRatePerWeek = new TokenAmount(png, totalRewardRate.mul(60 * 60 * 24 * 7).toString());
+  const totalRewardRatePerSecond = new TokenAmount(arc, totalRewardRate.toString());
+  const totalRewardRatePerWeek = new TokenAmount(arc, totalRewardRate.mul(60 * 60 * 24 * 7).toString());
   // get the address of the rewarder for each pool
   const rewardsAddresses = useMemo(() => {
     if ((pools || []).length === 0) return [];
@@ -205,7 +205,7 @@ export function usePangoChefInfos() {
   const userRewardRatesState = useSingleContractMultipleData(pangoChefContract, 'userRewardRate', userInfoInput ?? []);
 
   const wavax = WAVAX[chainId];
-  const [avaxPngPairState, avaxPngPair] = usePair(wavax, png);
+  const [avaxArcPairState, avaxArcPair] = usePair(wavax, arc);
 
   const pairsToGetPrice = useMemo(() => {
     const _pairs: { pair: Pair; totalSupply: TokenAmount }[] = [];
@@ -226,7 +226,7 @@ export function usePangoChefInfos() {
   const { data: currencyPrice = 0 } = useCoinGeckoCurrencyPrice(chainId);
 
   return useMemo(() => {
-    if (!chainId || !png || pairs.length == 0) return [] as PangoChefInfo[];
+    if (!chainId || !arc || pairs.length == 0) return [] as PangoChefInfo[];
 
     const farms: PangoChefInfo[] = [];
     for (let index = 0; index < poolsIds.length; index++) {
@@ -254,9 +254,9 @@ export function usePangoChefInfos() {
         pairTotalSupplyState.loading ||
         totalRewardRateState.loading ||
         pairState === PairState.LOADING ||
-        avaxPngPairState == PairState.LOADING ||
+        avaxArcPairState == PairState.LOADING ||
         !pair ||
-        !avaxPngPair
+        !avaxArcPair
       ) {
         continue;
       }
@@ -275,10 +275,10 @@ export function usePangoChefInfos() {
         JSBI.BigInt(userInfo?.valueVariables.balance ?? 0),
       );
 
-      const pendingRewards = new TokenAmount(png, JSBI.BigInt(userPendingRewardState?.result?.[0] ?? 0));
+      const pendingRewards = new TokenAmount(arc, JSBI.BigInt(userPendingRewardState?.result?.[0] ?? 0));
 
       const pairPrice = pairPrices[pair.liquidityToken.address];
-      const pngPrice = avaxPngPair.priceOf(png, wavax);
+      const arcPrice = avaxArcPair.priceOf(arc, wavax);
       const _totalStakedInWavax = pairPrice.raw.multiply(totalStakedAmount.raw);
       const currencyPriceFraction = decimalToFraction(currencyPrice);
 
@@ -295,7 +295,7 @@ export function usePangoChefInfos() {
         _totalRewardRatePerSecond: TokenAmount,
       ): TokenAmount => {
         return new TokenAmount(
-          png,
+          arc,
           JSBI.greaterThan(_totalStakedAmount.raw, JSBI.BigInt(0))
             ? JSBI.divide(
               JSBI.multiply(JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw), BIG_INT_SECONDS_IN_WEEK),
@@ -304,12 +304,12 @@ export function usePangoChefInfos() {
             : JSBI.BigInt(0),
         );
       };
-      // poolAPR = poolRewardRate(POOL_ID) * 365 days * 100 * PNG_PRICE / (pools(POOL_ID).valueVariables.balance * STAKING_TOKEN_PRICE)
+      // poolAPR = poolRewardRate(POOL_ID) * 365 days * 100 * ARC_PRICE / (pools(POOL_ID).valueVariables.balance * STAKING_TOKEN_PRICE)
       const apr =
         pool.valueVariables.balance.isZero() || pairPrice.equalTo('0')
           ? 0
           : Number(
-            pngPrice.raw
+            arcPrice.raw
               .multiply(rewardRate.mul(365 * 86400 * 100).toString())
               .divide(pairPrice.raw.multiply(pool.valueVariables.balance.toString()))
               .toSignificant(2),
@@ -327,10 +327,10 @@ export function usePangoChefInfos() {
         isPeriodFinished: rewardRate.isZero(),
         periodFinish: undefined,
         rewardsAddress: pool.rewarder,
-        rewardTokensAddress: [png.address, ...(rewardTokensState?.result?.[0] || [])],
+        rewardTokensAddress: [arc.address, ...(rewardTokensState?.result?.[0] || [])],
         totalRewardRatePerSecond: totalRewardRatePerSecond,
         totalRewardRatePerWeek: totalRewardRatePerWeek,
-        rewardRatePerWeek: new TokenAmount(png, rewardRate.mul(60 * 60 * 24 * 7).toString()),
+        rewardRatePerWeek: new TokenAmount(arc, rewardRate.mul(60 * 60 * 24 * 7).toString()),
         getHypotheticalWeeklyRewardRate: getHypotheticalWeeklyRewardRate,
         getExtraTokensWeeklyRewardRate: getExtraTokensWeeklyRewardRate,
         earnedAmount: pendingRewards,

@@ -1,5 +1,5 @@
-import { TokenList } from '@_arcanumdex/token-lists';
-export type PopupContent = {
+import { TokenList } from '@pangolindex/token-lists';
+export declare type PopupContent = {
     txn: {
         hash: string;
         success: boolean;

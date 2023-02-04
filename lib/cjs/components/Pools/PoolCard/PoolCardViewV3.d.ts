@@ -1,4 +1,5 @@
-import { Token } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Token } from '@_arcanumdex/sdk';
 import { PangoChefInfo } from 'src/state/ppangoChef/types';
 export interface PoolCardViewProps {
     stakingInfo: PangoChefInfo;

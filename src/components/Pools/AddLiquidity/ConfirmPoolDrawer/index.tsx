@@ -190,7 +190,7 @@ const ConfirmSwapDrawer: React.FC<Props> = (props) => {
           </Hidden>
 
           <Stat
-            title={`PGL`}
+            title={`ARL`}
             stat={noLiquidity ? '-' : `     ${liquidityMinted?.toSignificant(6)}`}
             titlePosition="top"
             titleFontSize={16}

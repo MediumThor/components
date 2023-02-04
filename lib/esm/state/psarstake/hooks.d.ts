@@ -1,5 +1,6 @@
 /// <reference types="react" />
 import { BigNumber } from '@ethersproject/bignumber';
+import { Token, TokenAmount } from '@_arcanumdex/sdk';
 export interface URI {
     name: string;
     description: string;
@@ -18,22 +19,22 @@ export interface Position {
 }
 export declare function useSarStakeInfo(): {
     apr: BigNumber | null;
-    totalStaked: any;
+    totalStaked: TokenAmount;
     sumOfEntryTimes: BigNumber;
     rewardRate: BigNumber;
-    weeklyPNG: BigNumber;
+    weeklyARC: BigNumber;
 };
 export declare function useDerivativeSarStake(positionId?: BigNumber): {
     attempting: boolean;
     typedValue: string;
-    parsedAmount: any;
+    parsedAmount: import("@_arcanumdex/sdk").CurrencyAmount | undefined;
     hash: string | null;
     stepIndex: number;
     dollerWorth: number | undefined;
     error: string | undefined;
     approval: import("src/hooks/useApproveCallback").ApprovalState;
     account: string | null | undefined;
-    png: Token;
+    arc: Token;
     stakeError: string | null;
     onAttemptToApprove: () => Promise<void>;
     onUserInput: (_typedValue: string) => void;
@@ -48,7 +49,7 @@ export declare function useDerivativeSarUnstake(position: Position | null): {
     hash: string | null;
     stepIndex: number;
     typedValue: string;
-    parsedAmount: any;
+    parsedAmount: import("@_arcanumdex/sdk").CurrencyAmount | undefined;
     error: string | undefined;
     unstakeError: string | null;
     onUserInput: (_typedValue: string) => void;

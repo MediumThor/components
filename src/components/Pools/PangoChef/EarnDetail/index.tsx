@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';
 import { Box, Button, Drawer, Stat, Text, Tooltip } from 'src/components';
 import { BIG_INT_ZERO } from 'src/constants';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId } from 'src/hooks';
 import { useIsLockingPoolZero } from 'src/state/ppangoChef/hooks';
 import { PangoChefInfo } from 'src/state/ppangoChef/types';
@@ -61,7 +61,7 @@ const EarnedDetailV3 = ({ stakingInfo, version }: EarnDetailProps) => {
 
   const isDisabledButtons = !earnedAmount?.greaterThan(BIG_INT_ZERO);
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const lockingPoolZeroPairs = useIsLockingPoolZero();
   const isLockingToPoolZero = lockingPoolZeroPairs.length > 0 && stakingInfo.pid === '0';
@@ -88,11 +88,11 @@ const EarnedDetailV3 = ({ stakingInfo, version }: EarnDetailProps) => {
       <Container>
         <Box width="100%">
           <Text fontSize="12px" color="text1" textAlign="center">
-            {t('earn.unclaimedReward', { symbol: png.symbol })}
+            {t('earn.unclaimedReward', { symbol: arc.symbol })}
           </Text>
           <Tooltip id="earnedAmount" effect="solid" backgroundColor={theme.primary}>
             <Text color="eerieBlack" fontSize="12px" fontWeight={500} textAlign="center">
-              {formatEther(earnedAmount.raw.toString())} {png.symbol}
+              {formatEther(earnedAmount.raw.toString())} {arc.symbol}
             </Text>
           </Tooltip>
           <Text color="text1" fontSize="16px" fontWeight={700} textAlign="center" data-tip data-for="earnedAmount">

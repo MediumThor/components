@@ -1,7 +1,7 @@
-import { Currency, Pair } from '@arcanumdex/sdk';
+import { Currency, Pair } from '@_arcanumdex/sdk';
 import { ButtonStyleProps } from '../Button/types';
 import { TextInputProps } from '../TextInput/types';
-export type CurrencyInputProps = TextInputProps & {
+export declare type CurrencyInputProps = TextInputProps & {
     currency?: Currency | null;
     pair?: Pair | null;
     isShowTextInput?: boolean;

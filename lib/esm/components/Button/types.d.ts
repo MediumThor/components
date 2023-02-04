@@ -1,5 +1,5 @@
 import * as React from 'react';
-export type ButtonProps = ButtonStyleProps & {
+export declare type ButtonProps = ButtonStyleProps & {
     /** Set as disabled button */
     isDisabled?: boolean;
     /** Text to display in the button */
@@ -25,7 +25,7 @@ export type ButtonProps = ButtonStyleProps & {
     href?: string;
     target?: string;
 };
-export type ButtonStyleProps = {
+export declare type ButtonStyleProps = {
     /** button height **/
     height?: string | number;
     /** button width **/

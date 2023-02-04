@@ -1,5 +1,5 @@
 import { ApplicationModal, PopupContent } from './actions';
-type PopupList = Array<{
+declare type PopupList = Array<{
     key: string;
     show: boolean;
     content: PopupContent;

@@ -1,4 +1,4 @@
-export type CheckboxGroupProps = {
+export declare type CheckboxGroupProps = {
     name?: string;
     /** id **/
     id?: string;

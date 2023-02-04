@@ -1,5 +1,5 @@
-import { TokenList } from '@_arcanumdex/token-lists';
-import schema from '@_arcanumdex/token-lists/src/tokenlist.schema.json';
+import { TokenList } from '@pangolindex/token-lists';
+import schema from '@pangolindex/token-lists/src/tokenlist.schema.json';
 import Ajv from 'ajv';
 import uriToHttp from './uriToHttp';
 

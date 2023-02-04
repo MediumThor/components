@@ -1,4 +1,4 @@
-export type Color = string;
+export declare type Color = string;
 export interface Colors {
     white: Color;
     black: Color;

@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@arcanumdex/sdk';
+import { JSBI, Token, TokenAmount } from '@_arcanumdex/sdk';
 export declare enum SpaceType {
     card = "card",
     detail = "detail"
@@ -22,7 +22,7 @@ export interface StakingInfoBase {
 }
 export interface SingleSideStakingInfo extends StakingInfoBase {
     rewardToken: Token;
-    totalStakedInPng: TokenAmount;
+    totalStakedInArc: TokenAmount;
     apr: JSBI;
 }
 export interface DoubleSideStakingInfo extends StakingInfoBase {

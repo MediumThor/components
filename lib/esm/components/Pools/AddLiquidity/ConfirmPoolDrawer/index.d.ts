@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent, TokenAmount } from '@arcanumdex/sdk';
+import { Currency, CurrencyAmount, Fraction, Percent, TokenAmount } from '@_arcanumdex/sdk';
 import React from 'react';
 import { Field } from 'src/state/pmint/actions';
 import { SpaceType } from 'src/state/pstake/types';

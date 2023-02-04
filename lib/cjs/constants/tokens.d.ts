@@ -1,5 +1,5 @@
-import { ChainId, Token } from '@arcanumdex/sdk';
-export declare const PNG: {
+import { ChainId, Token } from '@_arcanumdex/sdk';
+export declare const ARC: {
     [chainId in ChainId]: Token;
 };
 export declare const DAIe: {

@@ -5,7 +5,7 @@ import { JSBI, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, DoubleCurrencyLogo, NumberOptions, Stat, Text, TextInput } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { usePair } from 'src/data/Reserves';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { ApprovalState, useApproveCallback } from 'src/hooks/useApproveCallback';
@@ -237,7 +237,7 @@ const Stake = ({ onComplete, type, stakingInfo, combinedApr }: StakeProps) => {
   };
   const dollerWarth = finalUsd ? `$${Number(finalUsd).toFixed(2)}` : '-';
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const balanceLabel =
     !!stakingInfo?.stakedAmount?.token && userLiquidityUnstaked
@@ -314,7 +314,7 @@ const Stake = ({ onComplete, type, stakingInfo, combinedApr }: StakeProps) => {
                 {!isSuperFarm && (
                   <Stat
                     title={t('dashboardPage.earned_weeklyIncome')}
-                    stat={`${hypotheticalWeeklyRewardRate.toSignificant(4, { groupSeparator: ',' })} ${png.symbol}`}
+                    stat={`${hypotheticalWeeklyRewardRate.toSignificant(4, { groupSeparator: ',' })} ${arc.symbol}`}
                     titlePosition="top"
                     titleFontSize={14}
                     statFontSize={16}
@@ -339,7 +339,7 @@ const Stake = ({ onComplete, type, stakingInfo, combinedApr }: StakeProps) => {
                   {renderPoolDataRow(t('migratePage.dollarWorth'), `${dollerWarth}`)}
                   {renderPoolDataRow(
                     `${t('dashboardPage.earned_weeklyIncome')}`,
-                    `${hypotheticalWeeklyRewardRate.toSignificant(4, { groupSeparator: ',' })} PNG`,
+                    `${hypotheticalWeeklyRewardRate.toSignificant(4, { groupSeparator: ',' })} ARC`,
                   )}
 
                   {isSuperFarm && (

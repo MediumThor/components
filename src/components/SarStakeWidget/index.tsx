@@ -9,7 +9,7 @@ import { Stat } from 'src/components/Stat';
 import { Text } from 'src/components/Text';
 import { TextInput } from 'src/components/TextInput';
 import { ZERO_ADDRESS } from 'src/constants';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { ApprovalState } from 'src/hooks/useApproveCallback';
 import { useWalletModalToggle } from 'src/state/papplication/hooks';
@@ -26,11 +26,11 @@ export default function SarManageWidget() {
   const chainId = useChainId();
   const { account } = usePangolinWeb3();
 
-  const png = PNG[chainId];
-  const userPngBalance = useTokenBalance(account ?? ZERO_ADDRESS, png);
+  const arc = ARC[chainId];
+  const userArcBalance = useTokenBalance(account ?? ZERO_ADDRESS, arc);
   const { t } = useTranslation();
 
-  const { apr, weeklyPNG } = useSarStakeInfo();
+  const { apr, weeklyARC } = useSarStakeInfo();
 
   const toggleWalletModal = useWalletModalToggle();
 
@@ -94,10 +94,10 @@ export default function SarManageWidget() {
           {t('removeLiquidity.connectWallet')}
         </Button>
       );
-    } else if (!userPngBalance?.greaterThan('0')) {
+    } else if (!userArcBalance?.greaterThan('0')) {
       return (
-        <Button padding="15px 18px" variant="primary" as="a" href={getBuyUrl(png, chainId)} onClick={desativeOverlay}>
-          {t('sarStake.buy', { symbol: png.symbol })}
+        <Button padding="15px 18px" variant="primary" as="a" href={getBuyUrl(arc, chainId)} onClick={desativeOverlay}>
+          {t('sarStake.buy', { symbol: arc.symbol })}
         </Button>
       );
     } else {
@@ -143,7 +143,7 @@ export default function SarManageWidget() {
           <Text fontSize={20} fontWeight={500} color="text1" style={{ marginRight: '12px' }}>
             {parsedAmount?.toSignificant(6) ?? 0}
           </Text>
-          <CurrencyLogo currency={png} size={24} imageSize={48} />
+          <CurrencyLogo currency={arc} size={24} imageSize={48} />
         </TokenRow>
         <Box display="inline-grid" style={{ gridGap: '10px', gridTemplateColumns: '1fr 1fr' }}>
           <Stat
@@ -164,12 +164,12 @@ export default function SarManageWidget() {
           />
         </Box>
         <Box display="flex" flexDirection="row" justifyContent="space-between">
-          <Text color="text1">{t('sarStake.weeklyDistributed', { symbol: png.symbol })}</Text>
-          <Text color="text1">{numeral(formatEther(weeklyPNG)).format('0.00a')}</Text>
+          <Text color="text1">{t('sarStake.weeklyDistributed', { symbol: arc.symbol })}</Text>
+          <Text color="text1">{numeral(formatEther(weeklyARC)).format('0.00a')}</Text>
         </Box>
         <Box bgColor="color3" borderRadius="8px" padding="10px">
           <Text color="text1" fontWeight={400} fontSize="12px" textAlign="center">
-            {t('sarStake.confirmDescription', { symbol: png.symbol })}
+            {t('sarStake.confirmDescription', { symbol: arc.symbol })}
           </Text>
         </Box>
       </Header>
@@ -197,7 +197,7 @@ export default function SarManageWidget() {
               {t('sarStake.stake')}
             </Text>
             <Text color="text4">
-              {t('sarStake.walletBalance', { symbol: png.symbol, balance: userPngBalance?.toFixed(2) ?? 0 })}
+              {t('sarStake.walletBalance', { symbol: arc.symbol, balance: userArcBalance?.toFixed(2) ?? 0 })}
             </Text>
           </Box>
           <TextInput
@@ -237,7 +237,7 @@ export default function SarManageWidget() {
         attemptingTxn={attempting}
         txHash={hash}
         errorMessage={stakeError}
-        pendingMessage={t('sarStake.pending', { balance: parsedAmount?.toFixed(2) ?? 0, symbol: png.symbol })}
+        pendingMessage={t('sarStake.pending', { balance: parsedAmount?.toFixed(2) ?? 0, symbol: arc.symbol })}
         successMessage={t('sarStake.successSubmit')}
         confirmContent={ConfirmContent}
       />

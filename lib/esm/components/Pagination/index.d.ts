@@ -1,3 +1,4 @@
+/// <reference types="react" />
 interface Props {
     pageCount: number;
     forcePage?: number;

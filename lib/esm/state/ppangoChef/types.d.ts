@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Price } from '@arcanumdex/sdk';
+import { Price } from '@_arcanumdex/sdk';
 import { MinichefStakingInfo } from '../pstake/types';
 export declare enum PoolType {
     UNSET_POOL = 0,

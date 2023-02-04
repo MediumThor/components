@@ -1,4 +1,4 @@
-import { ChainId } from '@arcanumdex/sdk';
+import { ChainId } from '@_arcanumdex/sdk';
 import { MinichefV2 } from './types';
 export interface Apr {
     pid: string;
@@ -6,15 +6,15 @@ export interface Apr {
     stakingApr: number;
     combinedApr: number;
 }
-type MinichefStakingData = {
+declare type MinichefStakingData = {
     [chainId in ChainId]: MinichefV2;
 };
-type Aprs = {
+declare type Aprs = {
     [chainId in ChainId]: {
         [key: string]: Apr;
     };
 };
-type EarnerdAmounts = {
+declare type EarnerdAmounts = {
     [chainId in ChainId]: {
         [key: string]: {
             pid: string;

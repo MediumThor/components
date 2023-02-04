@@ -8,7 +8,7 @@ import CurrencyLogo from 'src/components/CurrencyLogo';
 import { Stat } from 'src/components/Stat';
 import { Text } from 'src/components/Text';
 import { TextInput } from 'src/components/TextInput';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { useWalletModalToggle } from 'src/state/papplication/hooks';
 import { Position, useDerivativeSarUnstake } from 'src/state/psarstake/hooks';
@@ -31,7 +31,7 @@ export default function Unstake({ selectedOption, selectedPosition, onChange }: 
   const { account } = usePangolinWeb3();
   const chainId = useChainId();
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const stakedAmount = selectedPosition?.balance ?? 0;
 
@@ -89,7 +89,7 @@ export default function Unstake({ selectedOption, selectedPosition, onChange }: 
           <Text fontSize={24} fontWeight={500} color="text1" style={{ marginRight: '12px' }}>
             {t('sarUnstake.unstaking', { balance: parsedAmount?.toSignificant(6) ?? 0 })}
           </Text>
-          <CurrencyLogo currency={png} size={24} imageSize={48} />
+          <CurrencyLogo currency={arc} size={24} imageSize={48} />
         </TokenRow>
         <Box display="inline-grid" style={{ gridGap: '10px', gridTemplateColumns: 'auto auto' }}>
           <Stat
@@ -125,7 +125,7 @@ export default function Unstake({ selectedOption, selectedPosition, onChange }: 
             </Text>
             <Text color="text4">
               {t('sarUnstake.stakedBalance', {
-                symbol: png.symbol,
+                symbol: arc.symbol,
                 balance: numeral(formatEther(stakedAmount)).format('0.00a'),
               })}
             </Text>
@@ -169,7 +169,7 @@ export default function Unstake({ selectedOption, selectedPosition, onChange }: 
         attemptingTxn={attempting}
         txHash={hash}
         errorMessage={unstakeError}
-        pendingMessage={t('sarUnstake.pending', { balance: parsedAmount?.toSignificant(2) ?? 0, symbol: png.symbol })}
+        pendingMessage={t('sarUnstake.pending', { balance: parsedAmount?.toSignificant(2) ?? 0, symbol: arc.symbol })}
         successMessage={t('sarUnstake.successSubmit')}
         confirmContent={ConfirmContent}
       />

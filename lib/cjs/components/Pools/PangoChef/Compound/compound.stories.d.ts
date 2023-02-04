@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ComponentStory } from '@storybook/react';
 declare const _default: {
     component: ({ stakingInfo, onClose }: import(".").CompoundProps) => JSX.Element;

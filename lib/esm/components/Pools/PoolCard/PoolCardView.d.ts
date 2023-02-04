@@ -1,4 +1,5 @@
-import { Token, TokenAmount } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Token, TokenAmount } from '@_arcanumdex/sdk';
 import { StakingInfo } from 'src/state/pstake/types';
 export interface PoolCardViewProps {
     stakingInfo: StakingInfo;

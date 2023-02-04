@@ -1,4 +1,4 @@
-export type RadioButtonGroupProps = {
+export declare type RadioButtonGroupProps = {
     name?: string;
     /** id **/
     id?: string;

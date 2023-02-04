@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@arcanumdex/sdk';
+import { ChainId, Pair, Token } from '@_arcanumdex/sdk';
 export declare function useUserSlippageTolerance(): [number, (slippage: number) => void];
 export declare function useAddUserToken(): (token: Token) => void;
 export declare function useRemoveUserAddedToken(): (chainId: number, address: string) => void;

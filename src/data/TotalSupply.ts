@@ -3,7 +3,7 @@ import { ChainId, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { useChainId } from 'src/hooks';
 import { nearFn } from 'src/utils/near';
-import { PNG } from '../constants/tokens';
+import { ARC } from '../constants/tokens';
 import { useTokenContract } from '../hooks/useContract';
 import { useSingleCallResult } from '../state/pmulticall/hooks';
 
@@ -14,8 +14,8 @@ export function useTotalSupply(token?: Token): TokenAmount | undefined {
 
   const totalSupply: BigNumber = useSingleCallResult(contract, 'totalSupply')?.result?.[0];
 
-  // Special case to handle PNG's proxy burnt total supply
-  if (token?.equals(PNG[ChainId.AVALANCHE])) {
+  // Special case to handle ARC's proxy burnt total supply
+  if (token?.equals(ARC[ChainId.AVALANCHE])) {
     return new TokenAmount(token, '230000000000000000000000000');
   }
 

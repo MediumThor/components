@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface LogoProps {
     srcs: string[];
     alt?: string;

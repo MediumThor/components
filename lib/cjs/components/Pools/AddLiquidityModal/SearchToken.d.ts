@@ -1,4 +1,5 @@
-import { Currency } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Currency } from '@_arcanumdex/sdk';
 export declare enum Fields {
     TOKEN0 = 0,
     TOKEN1 = 1

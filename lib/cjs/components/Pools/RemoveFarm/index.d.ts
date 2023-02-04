@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { StakingInfo } from 'src/state/pstake/types';
 interface RemoveFarmProps {
     stakingInfo: StakingInfo;

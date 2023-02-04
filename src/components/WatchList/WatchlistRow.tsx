@@ -4,7 +4,7 @@ import { X } from 'react-feather';
 import { Line, LineChart, ResponsiveContainer } from 'recharts';
 import { ThemeContext } from 'styled-components';
 import { Box, CurrencyLogo, Text } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId } from 'src/hooks';
 import { useCoinGeckoTokenPrice, useCoinGeckoTokenPriceChart } from 'src/hooks/Tokens';
 import { useUSDCPrice } from 'src/hooks/useUSDCPrice';
@@ -93,7 +93,7 @@ const WatchlistRow: React.FC<Props> = ({ coin, onClick, onRemove, isSelected }) 
         )}
       </Box>
       <Box textAlign="right" minWidth={30} height={'100%'}>
-        {showDeleteButton && coin.address !== PNG[chainId].address && (
+        {showDeleteButton && coin.address !== ARC[chainId].address && (
           <Box zIndex={2} position="relative">
             <DeleteButton onClick={removeToken}>
               <X fontSize={16} fontWeight={600} style={{ float: 'right' }} />

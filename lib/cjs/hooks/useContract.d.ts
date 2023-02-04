@@ -7,6 +7,6 @@ export declare function useStakingContract(stakingAddress?: string, withSignerIf
 export declare function useMiniChefContract(): Contract | null;
 export declare function useRewardViaMultiplierContract(address?: string, withSignerIfPossible?: boolean): Contract | null;
 export declare function usePairContract(pairAddress?: string, withSignerIfPossible?: boolean): Contract | null;
-export declare function usePngContract(): Contract | null;
+export declare function useArcContract(): Contract | null;
 export declare function useSarStakingContract(): Contract | null;
 export declare function usePangoChefContract(): Contract | null;

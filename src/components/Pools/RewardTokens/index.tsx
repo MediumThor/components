@@ -23,7 +23,7 @@ const CoveredLogo = styled(CurrencyLogo) <{ sizeraw: number }>`
 `;
 
 export default function RewardTokens({ rewardTokens = [], size = 24, margin = false }: RewardTokensLogoProps) {
-  const tokens = rewardTokens || []; // add PNG as default reward
+  const tokens = rewardTokens || []; // add ARC as default reward
 
   return (
     <Wrapper sizeraw={size} margin={margin}>

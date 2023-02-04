@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export type SwitchProps = {
+export declare type SwitchProps = {
     checked: boolean;
     onChange?: (checked: boolean) => void;
     disabled?: boolean;

@@ -1,6 +1,6 @@
 import * as React from 'react';
-export type ReactInputKeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
-export type TextInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'accept' | 'ref'> & {
+export declare type ReactInputKeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
+export declare type TextInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'accept' | 'ref'> & {
     addonAfter?: React.ReactNode | null;
     addonBefore?: React.ReactNode | null;
     /** Standard HTML input autocomplete attribute. */

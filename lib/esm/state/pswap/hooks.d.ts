@@ -1,5 +1,5 @@
 import { Order } from '@gelatonetwork/limit-orders-react';
-import { ChainId, Currency, CurrencyAmount, Trade } from '@arcanumdex/sdk';
+import { ChainId, Currency, CurrencyAmount, Price, TokenAmount, Trade } from '@_arcanumdex/sdk';
 import { ParsedQs } from 'qs';
 import { AppState } from 'src/state';
 import { FeeInfo, Field } from './actions';
@@ -35,11 +35,11 @@ export declare function useDefaultsFromURLSearch(): {
     outputCurrencyId: string | undefined;
 } | undefined;
 export declare function useGelatoLimitOrderDetail(order: Order): {
-    currency0: any;
-    currency1: any;
-    inputAmount: any;
-    outputAmount: any;
-    executionPrice: any;
+    currency0: Currency | null | undefined;
+    currency1: Currency | null | undefined;
+    inputAmount: TokenAmount | undefined;
+    outputAmount: TokenAmount | undefined;
+    executionPrice: Price | undefined;
 };
 export declare function useGelatoLimitOrderList(): {
     allOrders: any[];

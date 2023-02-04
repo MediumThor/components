@@ -21,7 +21,7 @@ import {
 import ERC20_INTERFACE from 'src/constants/abis/erc20';
 import { PANGOLIN_PAIR_INTERFACE } from 'src/constants/abis/arcanumPair';
 import { REWARDER_VIA_MULTIPLIER_INTERFACE } from 'src/constants/abis/rewarderViaMultiplier';
-import { DAIe, PNG, USDC, USDCe, USDTe, axlUST } from 'src/constants/tokens';
+import { DAIe, ARC, USDC, USDCe, USDTe, axlUST } from 'src/constants/tokens';
 import { PairState, usePair, usePairs } from 'src/data/Reserves';
 import { useTotalSupplyHook } from 'src/data/TotalSupply';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
@@ -70,15 +70,15 @@ export const useGetFarmApr = (pid: string) => {
 
 export const useGetEarnedAmount = (pid: string) => {
   const chainId = useChainId();
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const amount = useSelector<number>((state) => state?.pstake?.earnedAmounts?.[chainId]?.[pid]?.earnedAmount);
 
   return useMemo(
     () => ({
-      earnedAmount: new TokenAmount(png, JSBI.BigInt(amount ?? 0)),
+      earnedAmount: new TokenAmount(arc, JSBI.BigInt(amount ?? 0)),
     }),
-    [png, amount],
+    [arc, amount],
   );
 };
 
@@ -401,12 +401,12 @@ export const calculateTotalStakedAmountInAvax = function (
   }
 };
 
-export const calculateTotalStakedAmountInAvaxFromPng = function (
+export const calculateTotalStakedAmountInAvaxFromArc = function (
   amountStaked: JSBI,
   amountAvailable: JSBI,
-  avaxPngPairReserveOfPng: JSBI,
-  avaxPngPairReserveOfWavax: JSBI,
-  reserveInPng: JSBI,
+  avaxArcPairReserveOfArc: JSBI,
+  avaxArcPairReserveOfWavax: JSBI,
+  reserveInArc: JSBI,
   chainId: ChainId,
 ): TokenAmount {
   if (JSBI.EQ(amountAvailable, JSBI.BigInt(0))) {
@@ -414,14 +414,14 @@ export const calculateTotalStakedAmountInAvaxFromPng = function (
   }
 
   const oneToken = JSBI.BigInt(1000000000000000000);
-  const avaxPngRatio = JSBI.divide(JSBI.multiply(oneToken, avaxPngPairReserveOfWavax), avaxPngPairReserveOfPng);
-  const valueOfPngInAvax = JSBI.divide(JSBI.multiply(reserveInPng, avaxPngRatio), oneToken);
+  const avaxArcRatio = JSBI.divide(JSBI.multiply(oneToken, avaxArcPairReserveOfWavax), avaxArcPairReserveOfArc);
+  const valueOfArcInAvax = JSBI.divide(JSBI.multiply(reserveInArc, avaxArcRatio), oneToken);
 
   return new TokenAmount(
     WAVAX[chainId],
     JSBI.divide(
       JSBI.multiply(
-        JSBI.multiply(amountStaked, valueOfPngInAvax),
+        JSBI.multiply(amountStaked, valueOfArcInAvax),
         JSBI.BigInt(2), // this is b/c the value of LP shares are ~double the value of the wavax they entitle owner to
       ),
       amountAvailable,
@@ -452,9 +452,9 @@ export const tokenComparator = (
   // Sort AVAX last
   if (addressA === WAVAX[ChainId.AVALANCHE].address) return 1;
   else if (addressB === WAVAX[ChainId.AVALANCHE].address) return -1;
-  // Sort PNG first
-  else if (addressA === PNG[ChainId.AVALANCHE].address) return -1;
-  else if (addressB === PNG[ChainId.AVALANCHE].address) return 1;
+  // Sort ARC first
+  else if (addressA === ARC[ChainId.AVALANCHE].address) return -1;
+  else if (addressB === ARC[ChainId.AVALANCHE].address) return 1;
   // Sort axlUST first
   else if (addressA === axlUST[ChainId.AVALANCHE].address) return -1;
   else if (addressB === axlUST[ChainId.AVALANCHE].address) return 1;
@@ -543,7 +543,7 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
     MINICHEF_ADDRESS[chainId],
   ]);
 
-  const [avaxPngPairState, avaxPngPair] = usePair(WAVAX[chainId], PNG[chainId]);
+  const [avaxArcPairState, avaxArcPair] = usePair(WAVAX[chainId], ARC[chainId]);
 
   const poolIdArray = useMemo(() => {
     if (!pairAddresses || !poolMap) return [];
@@ -599,7 +599,7 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
   const usdPrice = CHAINS[chainId]?.mainnet ? usdPriceTmp : undefined;
 
   return useMemo(() => {
-    if (!chainId || !PNG[chainId]) return [];
+    if (!chainId || !ARC[chainId]) return [];
 
     return pairAddresses.reduce<any[]>((memo, _pairAddress, index) => {
       const pairTotalSupplyState = pairTotalSupplies[index];
@@ -617,9 +617,9 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
         poolInfo?.loading === false &&
         balanceState?.loading === false &&
         pair &&
-        avaxPngPair &&
+        avaxArcPair &&
         pairState !== PairState.LOADING &&
-        avaxPngPairState !== PairState.LOADING &&
+        avaxArcPairState !== PairState.LOADING &&
         rewardPerSecond &&
         totalAllocPoint &&
         rewardsExpiration?.[0] &&
@@ -630,8 +630,8 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
           pairTotalSupplyState.error ||
           pairState === PairState.INVALID ||
           pairState === PairState.NOT_EXISTS ||
-          avaxPngPairState === PairState.INVALID ||
-          avaxPngPairState === PairState.NOT_EXISTS
+          avaxArcPairState === PairState.INVALID ||
+          avaxArcPairState === PairState.NOT_EXISTS
         ) {
           console.error('Failed to load staking rewards info');
           return memo;
@@ -648,14 +648,14 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
 
         const poolAllocPointAmount = new TokenAmount(lpToken, JSBI.BigInt(poolInfo?.result?.['allocPoint']));
         const totalAllocPointAmount = new TokenAmount(lpToken, JSBI.BigInt(totalAllocPoint?.[0]));
-        const rewardRatePerSecAmount = new TokenAmount(PNG[chainId], JSBI.BigInt(rewardPerSecond?.[0]));
+        const rewardRatePerSecAmount = new TokenAmount(ARC[chainId], JSBI.BigInt(rewardPerSecond?.[0]));
         const poolRewardRate = new TokenAmount(
-          PNG[chainId],
+          ARC[chainId],
           JSBI.divide(JSBI.multiply(poolAllocPointAmount.raw, rewardRatePerSecAmount.raw), totalAllocPointAmount.raw),
         );
 
         const totalRewardRatePerWeek = new TokenAmount(
-          PNG[chainId],
+          ARC[chainId],
           JSBI.multiply(poolRewardRate.raw, BIG_INT_SECONDS_IN_WEEK),
         );
 
@@ -668,7 +668,7 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
         const totalSupplyAvailable = JSBI.BigInt(pairTotalSupplyState?.result?.[0]);
         const totalStakedAmount = new TokenAmount(lpToken, JSBI.BigInt(balanceState?.result?.[0]));
         const stakedAmount = new TokenAmount(lpToken, JSBI.BigInt(userPoolInfo?.result?.['amount'] ?? 0));
-        const earnedAmount = new TokenAmount(PNG[chainId], JSBI.BigInt(pendingRewardInfo?.result?.['pending'] ?? 0));
+        const earnedAmount = new TokenAmount(ARC[chainId], JSBI.BigInt(pendingRewardInfo?.result?.['pending'] ?? 0));
         const multiplier = JSBI.BigInt(poolInfo?.result?.['allocPoint']);
 
         let totalStakedInUsd = CHAINS[(chainId as ChainId) || ChainId].mainnet
@@ -727,20 +727,20 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
           totalStakedInUsd = CHAINS[(chainId as ChainId) || ChainId].mainnet
             ? _totalStakedInWavax && (usdPrice?.quote(_totalStakedInWavax, chainId) as TokenAmount)
             : undefined;
-        } else if (pair.involvesToken(PNG[chainId])) {
-          const _totalStakedInWavax = calculateTotalStakedAmountInAvaxFromPng(
+        } else if (pair.involvesToken(ARC[chainId])) {
+          const _totalStakedInWavax = calculateTotalStakedAmountInAvaxFromArc(
             totalSupplyStaked,
             totalSupplyAvailable,
-            avaxPngPair.reserveOfToken(PNG[chainId]).raw,
-            avaxPngPair.reserveOfToken(WAVAX[chainId]).raw,
-            pair.reserveOfToken(PNG[chainId]).raw,
+            avaxArcPair.reserveOfToken(ARC[chainId]).raw,
+            avaxArcPair.reserveOfToken(WAVAX[chainId]).raw,
+            pair.reserveOfToken(ARC[chainId]).raw,
             chainId,
           );
           totalStakedInUsd = CHAINS[(chainId as ChainId) || ChainId].mainnet
             ? _totalStakedInWavax && (usdPrice?.quote(_totalStakedInWavax, chainId) as TokenAmount)
             : undefined;
         } else {
-          // Contains no stablecoin, WAVAX, nor PNG
+          // Contains no stablecoin, WAVAX, nor ARC
           console.error(`Could not identify total staked value for pair ${pair.liquidityToken.address}`);
         }
 
@@ -750,7 +750,7 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
           _totalRewardRatePerSecond: TokenAmount,
         ): TokenAmount => {
           return new TokenAmount(
-            PNG[chainId],
+            ARC[chainId],
             JSBI.greaterThan(_totalStakedAmount.raw, JSBI.BigInt(0))
               ? JSBI.divide(
                 JSBI.multiply(
@@ -782,7 +782,7 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
           isPeriodFinished,
           getHypotheticalWeeklyRewardRate,
           getExtraTokensWeeklyRewardRate,
-          rewardTokensAddress: [PNG[chainId]?.address, ...(rewardTokensAddress?.result?.[0] || [])],
+          rewardTokensAddress: [ARC[chainId]?.address, ...(rewardTokensAddress?.result?.[0] || [])],
           rewardTokensMultiplier: [BigNumber.from(1), ...(rewardTokensMultiplier?.result?.[0] || [])],
           rewardsAddress,
         });
@@ -792,13 +792,13 @@ export const useMinichefStakingInfos = (version = 2, pairToFilterBy?: Pair | nul
     }, []);
   }, [
     chainId,
-    PNG[chainId],
+    ARC[chainId],
     pairTotalSupplies,
     poolInfos,
     userInfos,
     pairs,
-    avaxPngPair,
-    avaxPngPairState,
+    avaxArcPair,
+    avaxArcPairState,
     rewardPerSecond,
     totalAllocPoint,
     pendingRewards,
@@ -882,14 +882,14 @@ export const useGetMinichefStakingInfosViaSubgraph = (): MinichefStakingInfo[] =
   const farms = minichefData?.farms;
 
   const chainId = useChainId();
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const rewardsExpiration = minichefData?.rewardsExpiration;
   const totalAllocPoint = minichefData?.totalAllocPoint;
   const rewardPerSecond = minichefData?.rewardPerSecond;
 
   return useMemo(() => {
-    if (!chainId || !png || !farms?.length) return [];
+    if (!chainId || !arc || !farms?.length) return [];
 
     return farms.reduce(function (memo: any, farm: MinichefFarm) {
       const rewardsAddress = farm?.rewarderAddress;
@@ -928,13 +928,13 @@ export const useGetMinichefStakingInfosViaSubgraph = (): MinichefStakingInfo[] =
       const poolAllocPointAmount = new TokenAmount(lpToken, JSBI.BigInt(farm?.allocPoint));
 
       const totalAllocPointAmount = new TokenAmount(lpToken, JSBI.BigInt(totalAllocPoint ?? 0));
-      const rewardRatePerSecAmount = new TokenAmount(png, JSBI.BigInt(rewardPerSecond ?? 0));
+      const rewardRatePerSecAmount = new TokenAmount(arc, JSBI.BigInt(rewardPerSecond ?? 0));
       const poolRewardRate = new TokenAmount(
-        png,
+        arc,
         JSBI.divide(JSBI.multiply(poolAllocPointAmount.raw, rewardRatePerSecAmount.raw), totalAllocPointAmount.raw),
       );
 
-      const totalRewardRatePerWeek = new TokenAmount(png, JSBI.multiply(poolRewardRate.raw, BIG_INT_SECONDS_IN_WEEK));
+      const totalRewardRatePerWeek = new TokenAmount(arc, JSBI.multiply(poolRewardRate.raw, BIG_INT_SECONDS_IN_WEEK));
 
       const periodFinishMs = (rewardsExpiration || 0) * 1000;
       // periodFinish will be 0 immediately after a reward contract is initialized
@@ -961,7 +961,7 @@ export const useGetMinichefStakingInfosViaSubgraph = (): MinichefStakingInfo[] =
         lpToken,
         parseUnits(farm?.farmingPositions?.[0]?.stakedTokenBalance?.toString() ?? '0').toString(),
       );
-      const earnedAmount = new TokenAmount(png, JSBI.BigInt(farm?.earnedAmount ?? 0));
+      const earnedAmount = new TokenAmount(arc, JSBI.BigInt(farm?.earnedAmount ?? 0));
 
       const multiplier = JSBI.BigInt(farm?.allocPoint);
 
@@ -983,7 +983,7 @@ export const useGetMinichefStakingInfosViaSubgraph = (): MinichefStakingInfo[] =
         _totalRewardRatePerSecond: TokenAmount,
       ): TokenAmount => {
         return new TokenAmount(
-          png,
+          arc,
           JSBI.greaterThan(_totalStakedAmount.raw, JSBI.BigInt(0))
             ? JSBI.divide(
               JSBI.multiply(JSBI.multiply(_totalRewardRatePerSecond.raw, _stakedAmount.raw), BIG_INT_SECONDS_IN_WEEK),
@@ -1018,7 +1018,7 @@ export const useGetMinichefStakingInfosViaSubgraph = (): MinichefStakingInfo[] =
 
       return memo;
     }, []);
-  }, [chainId, png, rewardPerSecond, totalAllocPoint, rewardsExpiration, farms]);
+  }, [chainId, arc, rewardPerSecond, totalAllocPoint, rewardsExpiration, farms]);
 };
 
 /* eslint-disable @typescript-eslint/no-unused-vars */

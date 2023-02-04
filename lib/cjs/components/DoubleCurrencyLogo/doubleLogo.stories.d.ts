@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ComponentStory } from '@storybook/react';
 declare const _default: {
     component: ({ currency0, currency1, size, margin }: import("./DoubleCurrencyLogo").DoubleCurrencyLogoProps) => JSX.Element;

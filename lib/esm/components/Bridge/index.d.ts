@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare enum BridgePrioritizations {
     recommended = 0,
     fast = 1,

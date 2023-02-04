@@ -1,19 +1,19 @@
-import { ChainId, JSBI, Percent, Token } from '@arcanumdex/sdk';
+import { ChainId, Fraction, JSBI, Percent, Token } from '@_arcanumdex/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import BN from 'bn.js';
-export declare const BIG_INT_ZERO: any;
-export declare const BIG_INT_TWO: any;
+export declare const BIG_INT_ZERO: JSBI;
+export declare const BIG_INT_TWO: JSBI;
 export declare const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 export declare const NATIVE = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-export declare const BIG_INT_SECONDS_IN_WEEK: any;
-export declare const ONE_TOKEN: any;
+export declare const BIG_INT_SECONDS_IN_WEEK: JSBI;
+export declare const ONE_TOKEN: JSBI;
 export declare const ROUTER_ADDRESS: {
     [chainId in ChainId]: string;
 };
 export declare const ROUTER_DAAS_ADDRESS: {
     [chainId in ChainId]: string;
 };
-type ChainTokenList = {
+declare type ChainTokenList = {
     readonly [chainId in ChainId]: Token[];
 };
 /**
@@ -38,14 +38,38 @@ export declare const TRUSTED_TOKEN_ADDRESSES: {
     readonly [chainId in ChainId]: string[];
 };
 export declare const SWAP_DEFAULT_CURRENCY: {
-    [x: number]: {
-        inputCurrency: any;
-        outputCurrency: any;
+    43114: {
+        inputCurrency: string;
+        outputCurrency: string;
+    };
+    43113: {
+        inputCurrency: string;
+        outputCurrency: string;
+    };
+    11111: {
+        inputCurrency: string;
+        outputCurrency: string;
+    };
+    16: {
+        inputCurrency: string;
+        outputCurrency: string;
+    };
+    19: {
+        inputCurrency: string;
+        outputCurrency: string;
+    };
+    329847900: {
+        inputCurrency: string;
+        outputCurrency: string;
+    };
+    329847901: {
+        inputCurrency: string;
+        outputCurrency: string;
     };
 };
 export declare const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList;
-export declare const ONE_BIPS: any;
-export declare const BIPS_BASE: any;
+export declare const ONE_BIPS: Percent;
+export declare const BIPS_BASE: JSBI;
 export declare const ALLOWED_PRICE_IMPACT_LOW: Percent;
 export declare const ALLOWED_PRICE_IMPACT_MEDIUM: Percent;
 export declare const ALLOWED_PRICE_IMPACT_HIGH: Percent;
@@ -53,7 +77,7 @@ export declare const PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN: Percent;
 export declare const BLOCKED_PRICE_IMPACT_NON_EXPERT: Percent;
 export declare const MIN_ETH: JSBI;
 export declare const PANGOLIN_TOKENS_REPO_RAW_BASE_URL = "https://raw.githubusercontent.com/pangolindex/tokens";
-export type LogoSize = 24 | 48;
+export declare type LogoSize = 24 | 48;
 export declare const ANALYTICS_PAGE = "https://info.pangolin.exchange";
 export declare const PANGOLIN_API_BASE_URL = "https://api.pangolin.exchange";
 export declare const TIMEFRAME: {
@@ -119,8 +143,8 @@ export declare enum SwapTypes {
     MARKET = "MARKET",
     LIMIT = "LIMIT"
 }
-export declare const PANGOCHEF_COMPOUND_SLIPPAGE: any;
-export declare const ONE_FRACTION: any;
+export declare const PANGOCHEF_COMPOUND_SLIPPAGE: Fraction;
+export declare const ONE_FRACTION: Fraction;
 export declare const COINGECKO_CURRENCY_ID: {
     [chainId in ChainId]: string | undefined;
 };

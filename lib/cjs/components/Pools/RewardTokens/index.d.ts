@@ -1,4 +1,5 @@
-import { Token } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Token } from '@_arcanumdex/sdk';
 import { LogoSize } from 'src/constants';
 interface RewardTokensLogoProps {
     margin?: boolean;

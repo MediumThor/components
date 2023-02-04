@@ -1,4 +1,4 @@
-export type WalletModalProps = {
+export declare type WalletModalProps = {
     open: boolean;
     closeModal: () => void;
     background?: string;

@@ -1,4 +1,4 @@
-import { Currency } from '@arcanumdex/sdk';
+import { Currency } from '@_arcanumdex/sdk';
 import React from 'react';
 interface Props {
     isOpen: boolean;

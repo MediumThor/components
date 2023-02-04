@@ -14,9 +14,9 @@ const BridgeInputsWidget: React.FC<BridgeInputsWidgetProps> = (props) => {
 
   const currency = new Token(
     ChainId.AVALANCHE,
-    CHAINS[ChainId.AVALANCHE].contracts!.png,
+    CHAINS[ChainId.AVALANCHE].contracts!.arc,
     18,
-    CHAINS[ChainId.AVALANCHE].png_symbol!,
+    CHAINS[ChainId.AVALANCHE].arc_symbol!,
     'Arcanum',
   );
 

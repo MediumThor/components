@@ -22,7 +22,7 @@ const WalletCard = ({ pair }: WalletCardProps) => {
   const currency0 = unwrappedToken(pair.token0, chainId);
   const currency1 = unwrappedToken(pair.token1, chainId);
 
-  const { liquidityInUSD, userPgl } = useGetPoolDollerWorth(pair);
+  const { liquidityInUSD, userArl } = useGetPoolDollerWorth(pair);
   const yourLiquidity = liquidityInUSD ? `$${liquidityInUSD?.toFixed(4)}` : '-';
 
   return (
@@ -49,7 +49,7 @@ const WalletCard = ({ pair }: WalletCardProps) => {
 
         <Stat
           title={t('positionCard.poolTokens')}
-          stat={userPgl ? userPgl.toSignificant(4) : '-'}
+          stat={userArl ? userArl.toSignificant(4) : '-'}
           titlePosition="top"
           titleFontSize={16}
           statFontSize={[24, 18]}

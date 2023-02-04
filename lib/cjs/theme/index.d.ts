@@ -1,7 +1,7 @@
 import React, { HTMLProps } from 'react';
 import { DefaultTheme } from 'styled-components';
 import { Colors } from './styled';
-export type ThemeColorsType = NestedObjectDotNotation<Colors>;
+export declare type ThemeColorsType = NestedObjectDotNotation<Colors>;
 export declare const MEDIA_WIDTHS: {
     upToExtraSmall: number;
     upToSmall: number;
@@ -10,7 +10,7 @@ export declare const MEDIA_WIDTHS: {
 };
 export declare const defaultColors: Colors;
 export declare const defaultTheme: DefaultTheme;
-type ThemeProviderProps = {
+declare type ThemeProviderProps = {
     children: React.ReactNode;
     theme: Partial<DefaultTheme>;
 };

@@ -1,8 +1,8 @@
-export type SendReturnResult = {
+export declare type SendReturnResult = {
     result: any;
 };
-export type SendReturn = any;
-export type Send = (method: string, params?: any[]) => Promise<SendReturnResult | SendReturn>;
-export type SendOld = ({ method }: {
+export declare type SendReturn = any;
+export declare type Send = (method: string, params?: any[]) => Promise<SendReturnResult | SendReturn>;
+export declare type SendOld = ({ method }: {
     method: string;
 }) => Promise<SendReturnResult | SendReturn>;

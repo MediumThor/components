@@ -10,7 +10,7 @@ import useParsedQueryString from 'src/hooks/useParsedQueryString';
 import { useUSDCPrice } from 'src/hooks/useUSDCPrice';
 import { useActivePopups, useAddPopup, useRemovePopup } from 'src/state/papplication/hooks';
 import { usePangoChefInfos } from 'src/state/ppangoChef/hooks';
-import { calculateTotalStakedAmountInAvax, calculateTotalStakedAmountInAvaxFromPng, fetchChunkedAprs, fetchMinichefData, useDerivedStakeInfo, useGetAllFarmData, useMinichefPools, useMinichefStakingInfos } from 'src/state/pstake/hooks';
+import { calculateTotalStakedAmountInAvax, calculateTotalStakedAmountInAvaxFromArc, fetchChunkedAprs, fetchMinichefData, useDerivedStakeInfo, useGetAllFarmData, useMinichefPools, useMinichefStakingInfos } from 'src/state/pstake/hooks';
 import { useGetAllFarmDataHook, useGetMinichefStakingInfosViaSubgraphHook, useMinichefStakingInfosHook } from 'src/state/pstake/multiChainsHooks';
 import { DoubleSideStaking, DoubleSideStakingInfo, MinichefStakingInfo, PoolType, StakingInfo } from 'src/state/pstake/types';
 import { LimitOrderInfo, useDerivedSwapInfo, useGelatoLimitOrderDetail, useGelatoLimitOrderList, useSwapActionHandlers } from 'src/state/pswap/hooks';
@@ -38,4 +38,4 @@ export type { LimitOrderInfo, MinichefStakingInfo, DoubleSideStakingInfo, Stakin
 export { SelectTokenDrawer };
 export { useGelatoLimitOrderDetail, useGelatoLimitOrderList };
 export { useSarStakeInfo, useSarPositions, useDerivedSwapInfo, useUSDCPrice, useAllTokens, useActivePopups, useRemovePopup, useAddPopup, usePair, useSwapActionHandlers, useLibrary, useAllTransactions, useAllTransactionsClearer, useAccountBalanceHook, useTranslation, useMinichefStakingInfosHook, useGetAllFarmData, useGetMinichefStakingInfosViaSubgraphHook, useGetUserLP, useMinichefStakingInfos, useDerivedStakeInfo, useMinichefPools, useTotalSupplyHook, useTotalSupply, useGetAllFarmDataHook, useTokenBalanceHook, useTokenBalance, usePangoChefInfos, useUSDCPriceHook, useParsedQueryString, };
-export { pangolinReducers, PANGOLIN_PERSISTED_KEYS, wrappedCurrency, nearFn, i18n, availableLanguages, Trans, PoolType, fetchMinichefData, fetchChunkedAprs, calculateTotalStakedAmountInAvax, calculateTotalStakedAmountInAvaxFromPng, existSarContract, getEtherscanLink, shortenAddress, };
+export { pangolinReducers, PANGOLIN_PERSISTED_KEYS, wrappedCurrency, nearFn, i18n, availableLanguages, Trans, PoolType, fetchMinichefData, fetchChunkedAprs, calculateTotalStakedAmountInAvax, calculateTotalStakedAmountInAvaxFromArc, existSarContract, getEtherscanLink, shortenAddress, };

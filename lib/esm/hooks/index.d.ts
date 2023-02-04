@@ -1,4 +1,5 @@
 import { Web3Provider as Web3ProviderEthers } from '@ethersproject/providers';
+import { ChainId } from '@_arcanumdex/sdk';
 import React from 'react';
 import type { FC, ReactNode } from 'react';
 interface Web3State {

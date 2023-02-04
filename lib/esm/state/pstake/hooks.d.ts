@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@arcanumdex/sdk';
+import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@_arcanumdex/sdk';
 import { Apr } from 'src/state/pstake/reducer';
 import { DoubleSideStakingInfo, MinichefStakingInfo, MinichefV2, StakingInfo } from 'src/state/pstake/types';
 export declare const useGetFarmApr: (pid: string) => {
@@ -7,7 +7,7 @@ export declare const useGetFarmApr: (pid: string) => {
     stakingApr: number;
 };
 export declare const useGetEarnedAmount: (pid: string) => {
-    earnedAmount: any;
+    earnedAmount: TokenAmount;
 };
 export declare const useSortFarmAprs: () => Array<Apr>;
 interface AprResult {
@@ -29,7 +29,7 @@ export declare function useMinichefPendingRewards(miniChefStaking: StakingInfo |
     rewardTokensMultiplier: any;
 };
 export declare function useGetPoolDollerWorth(pair: Pair | null): {
-    userArl: any;
+    userArl: TokenAmount | undefined;
     liquidityInUSD: number;
 };
 export declare function useDerivedStakeInfo(typedValue: string, stakingToken: Token, userLiquidityUnstaked: TokenAmount | undefined): {
@@ -38,15 +38,15 @@ export declare function useDerivedStakeInfo(typedValue: string, stakingToken: To
 };
 export declare function useGetRewardTokens(rewardTokens?: Array<Token>, rewardTokensAddress?: Array<string>): Token[] | undefined;
 export declare const calculateTotalStakedAmountInAvax: (amountStaked: JSBI, amountAvailable: JSBI, reserveInWavax: JSBI, chainId: ChainId) => TokenAmount;
-export declare const calculateTotalStakedAmountInAvaxFromPng: (amountStaked: JSBI, amountAvailable: JSBI, avaxPngPairReserveOfPng: JSBI, avaxPngPairReserveOfWavax: JSBI, reserveInPng: JSBI, chainId: ChainId) => TokenAmount;
-export declare const getExtraTokensWeeklyRewardRate: (rewardRatePerWeek: TokenAmount, token: Token, tokenMultiplier: JSBI | undefined) => any;
+export declare const calculateTotalStakedAmountInAvaxFromArc: (amountStaked: JSBI, amountAvailable: JSBI, avaxArcPairReserveOfArc: JSBI, avaxArcPairReserveOfWavax: JSBI, reserveInArc: JSBI, chainId: ChainId) => TokenAmount;
+export declare const getExtraTokensWeeklyRewardRate: (rewardRatePerWeek: TokenAmount, token: Token, tokenMultiplier: JSBI | undefined) => TokenAmount;
 export declare const tokenComparator: ({ address: addressA }: {
     address: string;
 }, { address: addressB }: {
     address: string;
 }) => 0 | 1 | -1;
-export declare const useDummyMinichefHook: (_version?: number, _pairToFilterBy?: Pair | null) => StakingInfo[];
-export declare const useMinichefStakingInfos: (version?: number, pairToFilterBy?: Pair | null) => StakingInfo[];
+export declare const useDummyMinichefHook: (_version?: number | undefined, _pairToFilterBy?: Pair | null | undefined) => StakingInfo[];
+export declare const useMinichefStakingInfos: (version?: number, pairToFilterBy?: Pair | null | undefined) => StakingInfo[];
 export declare const fetchMinichefData: (account: string, chainId: ChainId) => () => Promise<any>;
 export declare function useGetAllFarmData(): void;
 export declare function useGetDummyAllFarmData(): void;

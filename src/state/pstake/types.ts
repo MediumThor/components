@@ -41,8 +41,8 @@ export interface StakingInfoBase {
 export interface SingleSideStakingInfo extends StakingInfoBase {
   // the token being earned
   rewardToken: Token;
-  // total staked PNG in the pool
-  totalStakedInPng: TokenAmount;
+  // total staked ARC in the pool
+  totalStakedInArc: TokenAmount;
   apr: JSBI;
 }
 

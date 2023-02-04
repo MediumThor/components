@@ -1,7 +1,7 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { SafeAppConnector } from '@gnosis.pm/safe-apps-web3-react';
 import { ChainId } from '@_arcanumdex/sdk';
-import { InjectedConnector } from '@arcanumdex/web3-react-injected-connector';
+import { InjectedConnector } from '@pangolindex/web3-react-injected-connector';
 import { TalismanConnector } from '@talismn/web3react-v6-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { WalletLinkConnector } from '@web3-react/walletlink-connector';
@@ -14,8 +14,8 @@ const NETWORK_URL = 'https://api.avax.network/ext/bc/C/rpc';
 
 // Near Exchnage Contract
 export const NEAR_EXCHANGE_CONTRACT_ADDRESS = {
-  [ChainId.NEAR_MAINNET]: 'png-exchange-v1.mainnet',
-  [ChainId.NEAR_TESTNET]: 'png-exchange-v1.testnet',
+  [ChainId.NEAR_MAINNET]: 'arc-exchange-v1.mainnet',
+  [ChainId.NEAR_TESTNET]: 'arc-exchange-v1.testnet',
 };
 
 export const NETWORK_CHAIN_ID: number = parseInt(process.env.REACT_APP_CHAIN_ID ?? '43114');

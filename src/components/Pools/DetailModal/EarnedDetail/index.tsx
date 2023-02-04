@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Stat, Text } from 'src/components';
 import { BIG_INT_ZERO } from 'src/constants';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId } from 'src/hooks';
 import { useGetEarnedAmount, useMinichefPendingRewards } from 'src/state/pstake/hooks';
 import { StakingInfo } from 'src/state/pstake/types';
@@ -27,7 +27,7 @@ const EarnedDetail = ({ stakingInfo, version }: EarnDetailProps) => {
 
   const isSuperFarm = (rewardTokensAmount || [])?.length > 0;
 
-  const png = PNG[chainId]; // add PNG as default reward
+  const arc = ARC[chainId]; // add ARC as default reward
 
   const { earnedAmount } = useGetEarnedAmount(stakingInfo?.pid as string);
 
@@ -56,7 +56,7 @@ const EarnedDetail = ({ stakingInfo, version }: EarnDetailProps) => {
               titleFontSize={14}
               statFontSize={[20, 18]}
               titleColor="text2"
-              currency={png}
+              currency={arc}
             />
           </Box>
 
@@ -68,7 +68,7 @@ const EarnedDetail = ({ stakingInfo, version }: EarnDetailProps) => {
               titleFontSize={14}
               statFontSize={[20, 18]}
               titleColor="text2"
-              currency={png}
+              currency={arc}
             />
           </Box>
         </InnerWrapper>

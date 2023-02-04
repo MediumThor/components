@@ -32,7 +32,7 @@ const Details: React.FC<Props> = ({ stakingInfo }) => {
   const [, stakingTokenPair] = usePair(token0, token1);
 
   const pair = stakingTokenPair;
-  const { userPgl, liquidityInUSD } = useGetPoolDollerWorth(pair);
+  const { userArl, liquidityInUSD } = useGetPoolDollerWorth(pair);
 
   const isStaking = Boolean(stakingInfo.stakedAmount.greaterThan('0'));
 
@@ -57,7 +57,7 @@ const Details: React.FC<Props> = ({ stakingInfo }) => {
           link={`${ANALYTICS_PAGE}/#/pair/${pair?.liquidityToken.address}`}
         />
 
-        {userPgl?.greaterThan('0') && (
+        {userArl?.greaterThan('0') && (
           <Box mt={25}>
             <StatDetail
               title={`Your Liquidity`}
@@ -65,7 +65,7 @@ const Details: React.FC<Props> = ({ stakingInfo }) => {
               currency1={currency1}
               pair={pair}
               totalAmount={yourLiquidity}
-              arl={userPgl}
+              arl={userArl}
               link={`${ANALYTICS_PAGE}/#/account/${account}`}
             />
           </Box>

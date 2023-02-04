@@ -1,4 +1,4 @@
-import { Currency } from '@arcanumdex/sdk';
+import { Currency } from '@_arcanumdex/sdk';
 import React from 'react';
 import { LogoSize } from 'src/constants';
 export default function CurrencyLogo({ currency, size, style, imageSize, }: {

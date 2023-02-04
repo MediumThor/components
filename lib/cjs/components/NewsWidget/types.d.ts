@@ -1,3 +1,3 @@
-export type NewsProps = {
+export declare type NewsProps = {
     boxHeight?: string;
 };

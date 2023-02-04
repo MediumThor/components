@@ -1,54 +1,54 @@
 import { CHAINS, ChainId, Token } from '@_arcanumdex/sdk';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
-export const PNG: { [chainId in ChainId]: Token } = {
+export const ARC: { [chainId in ChainId]: Token } = {
   [ChainId.FUJI]: new Token(
     ChainId.FUJI,
-    CHAINS[ChainId.FUJI].contracts!.png,
+    CHAINS[ChainId.FUJI].contracts!.arc,
     18,
-    CHAINS[ChainId.FUJI].png_symbol,
+    CHAINS[ChainId.FUJI].arc_symbol,
     'Arcanum',
   ),
   [ChainId.AVALANCHE]: new Token(
     ChainId.AVALANCHE,
-    CHAINS[ChainId.AVALANCHE].contracts!.png,
+    CHAINS[ChainId.AVALANCHE].contracts!.arc,
     18,
-    CHAINS[ChainId.AVALANCHE].png_symbol,
+    CHAINS[ChainId.AVALANCHE].arc_symbol,
     'Arcanum',
   ),
   [ChainId.WAGMI]: new Token(
     ChainId.WAGMI,
-    CHAINS[ChainId.WAGMI].contracts!.png,
+    CHAINS[ChainId.WAGMI].contracts!.arc,
     18,
-    CHAINS[ChainId.WAGMI].png_symbol,
+    CHAINS[ChainId.WAGMI].arc_symbol,
     'Wagmi Arcanum',
   ),
   [ChainId.COSTON]: new Token(
     ChainId.COSTON,
-    CHAINS[ChainId.COSTON].contracts!.png,
+    CHAINS[ChainId.COSTON].contracts!.arc,
     18,
-    CHAINS[ChainId.COSTON].png_symbol,
+    CHAINS[ChainId.COSTON].arc_symbol,
     'Coston Arcanum',
   ),
   [ChainId.SONGBIRD]: new Token(
     ChainId.SONGBIRD,
-    CHAINS[ChainId.SONGBIRD].contracts!.png,
+    CHAINS[ChainId.SONGBIRD].contracts!.arc,
     18,
-    CHAINS[ChainId.SONGBIRD].png_symbol,
+    CHAINS[ChainId.SONGBIRD].arc_symbol,
     'Songbird Arcanum',
   ),
   [ChainId.NEAR_MAINNET]: new Token(
     ChainId.NEAR_MAINNET,
-    CHAINS[ChainId.NEAR_MAINNET].contracts!.png,
+    CHAINS[ChainId.NEAR_MAINNET].contracts!.arc,
     18,
-    CHAINS[ChainId.NEAR_MAINNET].png_symbol,
+    CHAINS[ChainId.NEAR_MAINNET].arc_symbol,
     'Arcanum Near',
   ),
   [ChainId.NEAR_TESTNET]: new Token(
     ChainId.NEAR_TESTNET,
-    CHAINS[ChainId.NEAR_TESTNET].contracts!.png,
+    CHAINS[ChainId.NEAR_TESTNET].contracts!.arc,
     18,
-    CHAINS[ChainId.NEAR_TESTNET].png_symbol,
+    CHAINS[ChainId.NEAR_TESTNET].arc_symbol,
     'Arcanum Near',
   ),
 };

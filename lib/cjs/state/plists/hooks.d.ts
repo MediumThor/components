@@ -1,6 +1,6 @@
-import { ChainId, Token } from '@arcanumdex/sdk';
-import { Tags, TokenInfo, TokenList } from '@_arcanumdex/token-lists';
-type TagDetails = Tags[keyof Tags];
+import { ChainId, Token } from '@_arcanumdex/sdk';
+import { Tags, TokenInfo, TokenList } from '@pangolindex/token-lists';
+declare type TagDetails = Tags[keyof Tags];
 export interface TagInfo extends TagDetails {
     id: string;
 }
@@ -13,7 +13,7 @@ export declare class WrappedTokenInfo extends Token {
     constructor(tokenInfo: TokenInfo, tags: TagInfo[]);
     get logoURI(): string | undefined;
 }
-export type TokenAddressMap = Readonly<{
+export declare type TokenAddressMap = Readonly<{
     [chainId in ChainId]: Readonly<{
         [tokenAddress: string]: WrappedTokenInfo;
     }>;

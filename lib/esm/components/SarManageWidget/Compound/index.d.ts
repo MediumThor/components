@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { Position } from 'src/state/psarstake/hooks';
 import { Options } from '../types';
 interface Props {

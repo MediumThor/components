@@ -26,8 +26,8 @@ declare const store: import("@reduxjs/toolkit").EnhancedStore<{
     pmint: import("./pmint/reducer").MintState;
     pburn: import("./pburn/reducer").BurnState;
 }, import("redux").AnyAction, import("redux").Middleware<{}, any, import("redux").Dispatch<import("redux").AnyAction>>[]>;
-export type AppState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export declare type AppState = ReturnType<typeof store.getState>;
+export declare type AppDispatch = typeof store.dispatch;
 export declare const StoreContext: React.Context<any>;
 export declare const useStore: () => import("redux").Store<any, import("redux").AnyAction>;
 export declare const useDispatch: () => AppDispatch;

@@ -15,13 +15,13 @@ const Loading = () => {
     <Svg
       fill="none"
       viewBox="0 0 66 66"
-      style={{ color: '#e1aa00', overflow: 'visible' }}
+      style={{ color: '#2accdb', overflow: 'visible' }}
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(22px, -20px)',
@@ -31,7 +31,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(29px)',
@@ -41,7 +41,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(22px, 20px)',
@@ -51,7 +51,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(0px, 30px)',
@@ -61,7 +61,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(-23px, 20px)',
@@ -71,7 +71,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(-30px)',
@@ -81,7 +81,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(-23px, -20px)',
@@ -91,7 +91,7 @@ const Loading = () => {
       <circle
         cx="33"
         cy="33"
-        fill="currentColor"
+        fill="#2accdb"
         r="3"
         style={{
           transform: 'translate(0px, -30px)',

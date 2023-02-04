@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { PangoChefInfo } from 'src/state/ppangoChef/types';
 import { SpaceType } from 'src/state/pstake/types';
 interface StakeProps {

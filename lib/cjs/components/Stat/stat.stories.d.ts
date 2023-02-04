@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ComponentStory } from '@storybook/react';
 declare const _default: {
     component: ({ title, titlePosition, stat, titleColor, titleFontSize, statColor, statFontSize, currency, statAlign, showAnalytics, }: import("./Stat").StatProps) => JSX.Element;

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@arcanumdex/sdk';
+import { Currency, CurrencyAmount, Token } from '@_arcanumdex/sdk';
 import React from 'react';
 import { SpaceType } from 'src/state/pstake/types';
 interface Props {

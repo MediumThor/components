@@ -1,4 +1,4 @@
-import { Trade } from '@arcanumdex/sdk';
+import { Trade } from '@_arcanumdex/sdk';
 import React from 'react';
 interface Props {
     isOpen: boolean;

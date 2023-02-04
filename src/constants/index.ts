@@ -14,7 +14,7 @@ import walletConnectIcon from 'src/assets/images/walletConnectIcon.svg';
 import xDefiIcon from 'src/assets/images/xDefi.png';
 import { bitKeep, gnosisSafe, injected, near, talisman, walletconnect, walletlink, xDefi } from '../connectors';
 import { CommonEVMProvider, NearProvider } from '../connectors/WalletProviders';
-import { DAIe, PNG, USDC, USDCe, USDTe, UST, axlUST } from './tokens';
+import { DAIe, ARC, USDC, USDCe, USDTe, UST, axlUST } from './tokens';
 
 export const BIG_INT_ZERO = JSBI.BigInt(0);
 export const BIG_INT_TWO = JSBI.BigInt(2);
@@ -31,6 +31,7 @@ export const ROUTER_ADDRESS: { [chainId in ChainId]: string } = {
   [ChainId.SONGBIRD]: CHAINS[ChainId.SONGBIRD].contracts!.router,
   [ChainId.NEAR_MAINNET]: CHAINS[ChainId.NEAR_MAINNET]?.contracts!.router,
   [ChainId.NEAR_TESTNET]: CHAINS[ChainId.NEAR_TESTNET]?.contracts!.router,
+  [ChainId.BSC]: ''
 };
 
 export const ROUTER_DAAS_ADDRESS: { [chainId in ChainId]: string } = {
@@ -41,6 +42,7 @@ export const ROUTER_DAAS_ADDRESS: { [chainId in ChainId]: string } = {
   [ChainId.SONGBIRD]: CHAINS[ChainId.SONGBIRD]?.contracts?.router_daas ?? ZERO_ADDRESS,
   [ChainId.NEAR_MAINNET]: CHAINS[ChainId.NEAR_MAINNET]?.contracts?.router_daas ?? ZERO_ADDRESS,
   [ChainId.NEAR_TESTNET]: CHAINS[ChainId.NEAR_TESTNET]?.contracts?.router_daas ?? ZERO_ADDRESS,
+  [ChainId.BSC]: ''
 };
 
 // a list of tokens by chain
@@ -79,6 +81,7 @@ export const MINICHEF_ADDRESS: { [chainId in ChainId]: string | undefined } = {
   [ChainId.SONGBIRD]: getMiniChefAddress(ChainId.SONGBIRD),
   [ChainId.NEAR_MAINNET]: getMiniChefAddress(ChainId.NEAR_MAINNET),
   [ChainId.NEAR_TESTNET]: getMiniChefAddress(ChainId.NEAR_TESTNET),
+  [ChainId.BSC]: undefined
 };
 
 const getPangoChefAddress = (chainId: ChainId) => {
@@ -97,17 +100,19 @@ export const PANGOCHEF_ADDRESS: { [chainId in ChainId]: string | undefined } = {
   [ChainId.SONGBIRD]: getPangoChefAddress(ChainId.SONGBIRD),
   [ChainId.NEAR_MAINNET]: undefined,
   [ChainId.NEAR_TESTNET]: undefined,
+  [ChainId.BSC]: undefined
 };
 
 // these tokens can be directly linked to (via url params) in the swap page without prompting a warning
 export const TRUSTED_TOKEN_ADDRESSES: { readonly [chainId in ChainId]: string[] } = {
   [ChainId.FUJI]: [],
-  [ChainId.AVALANCHE]: [WAVAX[ChainId.AVALANCHE].address, PNG[ChainId.AVALANCHE].address],
-  [ChainId.WAGMI]: [WAVAX[ChainId.WAGMI].address, PNG[ChainId.WAGMI].address],
-  [ChainId.COSTON]: [WAVAX[ChainId.COSTON].address, PNG[ChainId.COSTON].address],
-  [ChainId.SONGBIRD]: [WAVAX[ChainId.SONGBIRD].address, PNG[ChainId.SONGBIRD].address],
-  [ChainId.NEAR_MAINNET]: [WAVAX[ChainId.NEAR_MAINNET].address, PNG[ChainId.NEAR_MAINNET].address],
-  [ChainId.NEAR_TESTNET]: [WAVAX[ChainId.NEAR_TESTNET].address, PNG[ChainId.NEAR_TESTNET].address],
+  [ChainId.AVALANCHE]: [WAVAX[ChainId.AVALANCHE].address, ARC[ChainId.AVALANCHE].address],
+  [ChainId.WAGMI]: [WAVAX[ChainId.WAGMI].address, ARC[ChainId.WAGMI].address],
+  [ChainId.COSTON]: [WAVAX[ChainId.COSTON].address, ARC[ChainId.COSTON].address],
+  [ChainId.SONGBIRD]: [WAVAX[ChainId.SONGBIRD].address, ARC[ChainId.SONGBIRD].address],
+  [ChainId.NEAR_MAINNET]: [WAVAX[ChainId.NEAR_MAINNET].address, ARC[ChainId.NEAR_MAINNET].address],
+  [ChainId.NEAR_TESTNET]: [WAVAX[ChainId.NEAR_TESTNET].address, ARC[ChainId.NEAR_TESTNET].address],
+  [ChainId.BSC]: []
 };
 
 export const SWAP_DEFAULT_CURRENCY = {
@@ -116,8 +121,8 @@ export const SWAP_DEFAULT_CURRENCY = {
     outputCurrency: USDC[ChainId.AVALANCHE].address,
   },
   [ChainId.FUJI]: {
-    inputCurrency: '',
-    outputCurrency: '',
+    inputCurrency: 'AVAX',
+    outputCurrency: ARC[ChainId.FUJI].address,
   },
   [ChainId.WAGMI]: {
     inputCurrency: '',
@@ -129,24 +134,24 @@ export const SWAP_DEFAULT_CURRENCY = {
   },
   [ChainId.SONGBIRD]: {
     inputCurrency: 'SGB',
-    outputCurrency: PNG[ChainId.SONGBIRD].address,
+    outputCurrency: ARC[ChainId.SONGBIRD].address,
   },
   [ChainId.NEAR_MAINNET]: {
     inputCurrency: WAVAX[ChainId.NEAR_MAINNET].address,
-    outputCurrency: PNG[ChainId.NEAR_MAINNET].address,
+    outputCurrency: ARC[ChainId.NEAR_MAINNET].address,
   },
   [ChainId.NEAR_TESTNET]: {
     inputCurrency: WAVAX[ChainId.NEAR_TESTNET].address,
-    outputCurrency: PNG[ChainId.NEAR_TESTNET].address,
+    outputCurrency: ARC[ChainId.NEAR_TESTNET].address,
   },
 };
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  [ChainId.FUJI]: [WAVAX[ChainId.FUJI], PNG[ChainId.FUJI]],
+  [ChainId.FUJI]: [WAVAX[ChainId.FUJI], ARC[ChainId.FUJI]],
   [ChainId.AVALANCHE]: [
     WAVAX[ChainId.AVALANCHE],
-    PNG[ChainId.AVALANCHE],
+    ARC[ChainId.AVALANCHE],
     USDTe[ChainId.AVALANCHE],
     DAIe[ChainId.AVALANCHE],
     USDCe[ChainId.AVALANCHE],
@@ -154,11 +159,12 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     axlUST[ChainId.AVALANCHE],
     USDC[ChainId.AVALANCHE],
   ],
-  [ChainId.WAGMI]: [WAVAX[ChainId.WAGMI], PNG[ChainId.WAGMI]],
-  [ChainId.COSTON]: [WAVAX[ChainId.COSTON], PNG[ChainId.COSTON]],
-  [ChainId.SONGBIRD]: [WAVAX[ChainId.SONGBIRD], PNG[ChainId.SONGBIRD]],
-  [ChainId.NEAR_MAINNET]: [WAVAX[ChainId.NEAR_MAINNET], PNG[ChainId.NEAR_MAINNET]],
-  [ChainId.NEAR_TESTNET]: [WAVAX[ChainId.NEAR_TESTNET], PNG[ChainId.NEAR_TESTNET]],
+  [ChainId.WAGMI]: [WAVAX[ChainId.WAGMI], ARC[ChainId.WAGMI]],
+  [ChainId.COSTON]: [WAVAX[ChainId.COSTON], ARC[ChainId.COSTON]],
+  [ChainId.SONGBIRD]: [WAVAX[ChainId.SONGBIRD], ARC[ChainId.SONGBIRD]],
+  [ChainId.NEAR_MAINNET]: [WAVAX[ChainId.NEAR_MAINNET], ARC[ChainId.NEAR_MAINNET]],
+  [ChainId.NEAR_TESTNET]: [WAVAX[ChainId.NEAR_TESTNET], ARC[ChainId.NEAR_TESTNET]],
+  [ChainId.BSC]: []
 };
 
 // one basis point
@@ -328,6 +334,9 @@ export const PROVIDER_MAPPING: { [chainId in ChainId]: (provider: any) => any } 
   [ChainId.SONGBIRD]: CommonEVMProvider,
   [ChainId.NEAR_MAINNET]: NearProvider,
   [ChainId.NEAR_TESTNET]: NearProvider,
+  [ChainId.BSC]: function (provider: any) {
+    throw new Error('Function not implemented.');
+  }
 };
 
 export const AVALANCHE_CHAIN_PARAMS = {
@@ -371,19 +380,20 @@ export const NEAR_ACCOUNT_MIN_STORAGE_AMOUNT = '0.005';
 export const NEAR_LP_STORAGE_AMOUNT = '0.01';
 export const ONLY_ZEROS = /^0*\.?0*$/;
 
-const WAVAX_AND_PNG_ONLY: ChainTokenList = {
-  [ChainId.FUJI]: [WAVAX[ChainId.FUJI], PNG[ChainId.FUJI]],
-  [ChainId.AVALANCHE]: [WAVAX[ChainId.AVALANCHE], PNG[ChainId.AVALANCHE]],
-  [ChainId.WAGMI]: [WAVAX[ChainId.WAGMI], PNG[ChainId.WAGMI]],
-  [ChainId.COSTON]: [WAVAX[ChainId.COSTON], PNG[ChainId.COSTON]],
-  [ChainId.SONGBIRD]: [WAVAX[ChainId.SONGBIRD], PNG[ChainId.SONGBIRD]],
-  [ChainId.NEAR_MAINNET]: [WAVAX[ChainId.NEAR_MAINNET], PNG[ChainId.NEAR_MAINNET]],
-  [ChainId.NEAR_TESTNET]: [WAVAX[ChainId.NEAR_TESTNET], PNG[ChainId.NEAR_TESTNET]],
+const WAVAX_AND_ARC_ONLY: ChainTokenList = {
+  [ChainId.FUJI]: [WAVAX[ChainId.FUJI], ARC[ChainId.FUJI]],
+  [ChainId.AVALANCHE]: [WAVAX[ChainId.AVALANCHE], ARC[ChainId.AVALANCHE]],
+  [ChainId.WAGMI]: [WAVAX[ChainId.WAGMI], ARC[ChainId.WAGMI]],
+  [ChainId.COSTON]: [WAVAX[ChainId.COSTON], ARC[ChainId.COSTON]],
+  [ChainId.SONGBIRD]: [WAVAX[ChainId.SONGBIRD], ARC[ChainId.SONGBIRD]],
+  [ChainId.NEAR_MAINNET]: [WAVAX[ChainId.NEAR_MAINNET], ARC[ChainId.NEAR_MAINNET]],
+  [ChainId.NEAR_TESTNET]: [WAVAX[ChainId.NEAR_TESTNET], ARC[ChainId.NEAR_TESTNET]],
+  [ChainId.BSC]: []
 };
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  ...WAVAX_AND_PNG_ONLY,
+  ...WAVAX_AND_ARC_ONLY,
 };
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -402,6 +412,7 @@ export const SAR_STAKING_ADDRESS: { [chainId in ChainId]: string | undefined } =
   [ChainId.SONGBIRD]: getSarAddress(ChainId.SONGBIRD),
   [ChainId.NEAR_MAINNET]: getSarAddress(ChainId.NEAR_MAINNET),
   [ChainId.NEAR_TESTNET]: getSarAddress(ChainId.NEAR_TESTNET),
+  [ChainId.BSC]: undefined
 };
 /* eslint-enable max-lines */
 
@@ -421,4 +432,5 @@ export const COINGECKO_CURRENCY_ID: { [chainId in ChainId]: string | undefined }
   [ChainId.SONGBIRD]: 'songbird',
   [ChainId.NEAR_MAINNET]: 'near',
   [ChainId.NEAR_TESTNET]: undefined,
+  [ChainId.BSC]: undefined
 };

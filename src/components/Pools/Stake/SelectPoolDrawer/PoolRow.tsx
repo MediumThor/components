@@ -22,7 +22,7 @@ const PoolRow: React.FC<Props> = (props) => {
   const currency0 = unwrappedToken(pair.token0, chainId);
   const currency1 = unwrappedToken(pair.token1, chainId);
 
-  const userPgl = useTokenBalance(account ?? undefined, pair?.liquidityToken);
+  const userArl = useTokenBalance(account ?? undefined, pair?.liquidityToken);
 
   const handleSelect = useCallback(() => {
     onSelect(pair);
@@ -37,7 +37,7 @@ const PoolRow: React.FC<Props> = (props) => {
         </Text>
       </Box>
       <Balance color="text1" fontSize={14}>
-        {userPgl ? userPgl.toSignificant(4) : '-'}
+        {userArl ? userArl.toSignificant(4) : '-'}
       </Balance>
     </CurrencyRowRoot>
   );

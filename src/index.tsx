@@ -19,7 +19,7 @@ import MulticallUpdater from 'src/state/pmulticall/updater';
 import { usePangoChefInfos } from 'src/state/ppangoChef/hooks';
 import {
   calculateTotalStakedAmountInAvax,
-  calculateTotalStakedAmountInAvaxFromPng,
+  calculateTotalStakedAmountInAvaxFromArc,
   fetchChunkedAprs,
   fetchMinichefData,
   useDerivedStakeInfo,
@@ -173,7 +173,7 @@ export {
   fetchMinichefData,
   fetchChunkedAprs,
   calculateTotalStakedAmountInAvax,
-  calculateTotalStakedAmountInAvaxFromPng,
+  calculateTotalStakedAmountInAvaxFromArc,
   existSarContract,
   getEtherscanLink,
   shortenAddress,

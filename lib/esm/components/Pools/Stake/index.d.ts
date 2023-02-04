@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { SpaceType, StakingInfo } from 'src/state/pstake/types';
 interface StakeProps {
     version: number;

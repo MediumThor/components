@@ -1,4 +1,5 @@
-import { Currency, CurrencyAmount, Percent, Price } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Currency, CurrencyAmount, Percent, Price } from '@_arcanumdex/sdk';
 import { Field } from 'src/state/pmint/actions';
 interface BarProps {
     currencies: {

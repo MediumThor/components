@@ -1,5 +1,5 @@
 import { ChainId, Token } from '@_arcanumdex/sdk';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { usePangolinWeb3 } from 'src/hooks';
 import { useAllTokens } from 'src/hooks/Tokens';
 import { AppState, useSelector } from '../index';
@@ -13,7 +13,7 @@ export function useSelectedCurrencyLists(): Token[] | undefined {
     ([] as string[]).concat(state?.pwatchlists?.currencies || []),
   );
 
-  addresses = [PNG[chainId]?.address, ...addresses];
+  addresses = [ARC[chainId]?.address, ...addresses];
 
   let allSelectedToken = [] as Token[];
 
@@ -33,7 +33,7 @@ export function useIsSelectedCurrency(address: string): boolean {
     ([] as string[]).concat(state?.pwatchlists?.currencies || []),
   );
 
-  addresses = [PNG[chainId]?.address, ...addresses];
+  addresses = [ARC[chainId]?.address, ...addresses];
 
   return (addresses || []).includes(address);
 }

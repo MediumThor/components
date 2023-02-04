@@ -1,5 +1,5 @@
-import { ChainId, Currency, Token } from '@arcanumdex/sdk';
-export type TokenReturnType = Token | undefined | null;
+import { ChainId, Currency, Token } from '@_arcanumdex/sdk';
+export declare type TokenReturnType = Token | undefined | null;
 export declare function useAllTokens(): {
     [address: string]: Token;
 };

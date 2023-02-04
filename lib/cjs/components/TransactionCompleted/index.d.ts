@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface TransactionCompletedProps {
     onClose?: () => void;
     submitText?: string;

@@ -2,7 +2,7 @@ import { TransactionResponse } from '@ethersproject/providers';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Loader, Stat, Text, TransactionCompleted } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { useStakingContract } from 'src/hooks/useContract';
 import { useGetEarnedAmount, useMinichefPendingRewards, useMinichefPools } from 'src/state/pstake/hooks';
@@ -40,7 +40,7 @@ const ClaimReward = ({ stakingInfo, version, onClose }: ClaimProps) => {
     onClose();
   }
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   async function onClaimReward() {
     if (stakingContract && poolMap && stakingInfo?.stakedAmount) {
@@ -52,7 +52,7 @@ const ClaimReward = ({ stakingInfo, version, onClose }: ClaimProps) => {
         const response: TransactionResponse = await stakingContract[method](...args);
         await waitForTransaction(response, 1);
         addTransaction(response, {
-          summary: t('earn.claimAccumulated', { symbol: png.symbol }),
+          summary: t('earn.claimAccumulated', { symbol: arc.symbol }),
         });
         setHash(response.hash);
       } catch (error) {
@@ -86,7 +86,7 @@ const ClaimReward = ({ stakingInfo, version, onClose }: ClaimProps) => {
             <RewardWrapper isSuperFarm={isSuperFarm}>
               <StatWrapper>
                 <Stat
-                  title={t('earn.unclaimedReward', { symbol: 'PNG' })}
+                  title={t('earn.unclaimedReward', { symbol: 'ARC' })}
                   stat={newEarnedAmount?.toSignificant(4)}
                   titlePosition="top"
                   titleFontSize={12}
@@ -119,7 +119,7 @@ const ClaimReward = ({ stakingInfo, version, onClose }: ClaimProps) => {
 
           <Box my={'10px'}>
             <Button variant="primary" onClick={onClaimReward}>
-              {_error ?? t('earn.claimReward', { symbol: 'PNG' })}
+              {_error ?? t('earn.claimReward', { symbol: 'ARC' })}
             </Button>
           </Box>
         </Root>

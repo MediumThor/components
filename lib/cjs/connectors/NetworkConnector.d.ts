@@ -6,7 +6,7 @@ interface NetworkConnectorArguments {
     };
     defaultChainId?: number;
 }
-type AsyncSendable = {
+declare type AsyncSendable = {
     isMetaMask?: boolean;
     isXDEFI?: boolean;
     host?: string;
@@ -36,7 +36,7 @@ declare class MiniRpcProvider implements AsyncSendable {
     readonly request: (method: string | {
         method: string;
         params: unknown[];
-    }, params?: unknown[] | object) => Promise<unknown>;
+    }, params?: object | unknown[] | undefined) => Promise<unknown>;
 }
 export declare class NetworkConnector extends AbstractConnector {
     private readonly providers;

@@ -31,16 +31,16 @@ const Bridge = () => {
   const { t } = useTranslation();
   const currency0 = new Token(
     ChainId.AVALANCHE,
-    CHAINS[ChainId.AVALANCHE].contracts!.png,
+    CHAINS[ChainId.AVALANCHE].contracts!.arc,
     18,
-    CHAINS[ChainId.AVALANCHE].png_symbol!,
+    CHAINS[ChainId.AVALANCHE].arc_symbol!,
     'Arcanum',
   );
   const currency1 = new Token(
     ChainId.AVALANCHE,
-    CHAINS[ChainId.AVALANCHE].contracts!.png,
+    CHAINS[ChainId.AVALANCHE].contracts!.arc,
     18,
-    CHAINS[ChainId.AVALANCHE].png_symbol!,
+    CHAINS[ChainId.AVALANCHE].arc_symbol!,
     'Arcanum',
   );
 

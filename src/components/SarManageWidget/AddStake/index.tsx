@@ -9,7 +9,7 @@ import { Stat } from 'src/components/Stat';
 import { Text } from 'src/components/Text';
 import { TextInput } from 'src/components/TextInput';
 import { ZERO_ADDRESS } from 'src/constants';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { ApprovalState } from 'src/hooks/useApproveCallback';
 import { useWalletModalToggle } from 'src/state/papplication/hooks';
@@ -28,15 +28,15 @@ interface Props {
   onChange: (value: Options) => void;
 }
 
-// Add more png on existing position
+// Add more arc on existing position
 export default function AddStake({ selectedOption, selectedPosition, onChange }: Props) {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const chainId = useChainId();
   const { account } = usePangolinWeb3();
 
-  const png = PNG[chainId];
-  const userPngBalance = useTokenBalance(account ?? ZERO_ADDRESS, png);
+  const arc = ARC[chainId];
+  const userArcBalance = useTokenBalance(account ?? ZERO_ADDRESS, arc);
   const { t } = useTranslation();
 
   const { apr } = useSarStakeInfo();
@@ -67,7 +67,7 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
 
   const newAPR = selectedPosition?.rewardRate.mul(86400).mul(365).mul(100).div(_newBalance);
 
-  const weeklyPNG = selectedPosition?.rewardRate.mul(86400).mul(7);
+  const weeklyARC = selectedPosition?.rewardRate.mul(86400).mul(7);
 
   // check if user has gone through approval process, used to show two step buttons, reset on token change
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false);
@@ -101,10 +101,10 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
           {t('earn.connectWallet')}
         </Button>
       );
-    } else if (!userPngBalance?.greaterThan('0')) {
+    } else if (!userArcBalance?.greaterThan('0')) {
       return (
-        <Button padding="15px 18px" variant="primary" as="a" href={getBuyUrl(png, chainId)}>
-          {t('sarStake.buy', { symbol: png.symbol })}
+        <Button padding="15px 18px" variant="primary" as="a" href={getBuyUrl(arc, chainId)}>
+          {t('sarStake.buy', { symbol: arc.symbol })}
         </Button>
       );
     } else {
@@ -140,7 +140,7 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
           <Text fontSize={24} fontWeight={500} color="text1" style={{ marginRight: '12px' }}>
             {parsedAmount?.toSignificant(6) ?? 0}
           </Text>
-          <CurrencyLogo currency={png} size={24} imageSize={48} />
+          <CurrencyLogo currency={arc} size={24} imageSize={48} />
         </TokenRow>
         <Box display="inline-grid" style={{ gridGap: '10px', gridTemplateColumns: 'auto auto' }}>
           <Stat
@@ -152,14 +152,14 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
           <Stat title={t('sarStakeMore.newAPR')} titlePosition="top" stat={`${newAPR}%`} titleColor="text2" />
         </Box>
         <Box display="flex" flexDirection="row" justifyContent="space-between">
-          <Text color="text1">{t('sarStake.weeklyDistributed', { symbol: png.symbol })}</Text>
-          <Text color="text1">{numeral(formatEther(weeklyPNG ?? 0)).format('0.00a')}</Text>
+          <Text color="text1">{t('sarStake.weeklyDistributed', { symbol: arc.symbol })}</Text>
+          <Text color="text1">{numeral(formatEther(weeklyARC ?? 0)).format('0.00a')}</Text>
         </Box>
         <Text color="text1" fontWeight={400} fontSize="14px" textAlign="center">
-          {t('sarStake.confirmDescription', { symbol: png.symbol })}
+          {t('sarStake.confirmDescription', { symbol: arc.symbol })}
           <br />
           <br />
-          {t('sarStakeMore.confirmDescription', { symbol: png.symbol })}
+          {t('sarStakeMore.confirmDescription', { symbol: arc.symbol })}
         </Text>
       </Header>
       <Footer>
@@ -182,7 +182,7 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
               {t('sarStakeMore.stakeMore')}
             </Text>
             <Text color="text4">
-              {t('sarStake.walletBalance', { symbol: png.symbol, balance: userPngBalance?.toFixed(2) ?? 0 })}
+              {t('sarStake.walletBalance', { symbol: arc.symbol, balance: userArcBalance?.toFixed(2) ?? 0 })}
             </Text>
           </Box>
           <TextInput
@@ -211,10 +211,10 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
             </Box>
           </Box>
           <Text color="text1" fontWeight={400} fontSize="14px" textAlign="center">
-            {t('sarStake.confirmDescription', { symbol: png.symbol })}
+            {t('sarStake.confirmDescription', { symbol: arc.symbol })}
             <br />
             <br />
-            {t('sarStakeMore.confirmDescription', { symbol: png.symbol })}
+            {t('sarStakeMore.confirmDescription', { symbol: arc.symbol })}
           </Text>
         </Box>
         {renderButtons()}
@@ -227,7 +227,7 @@ export default function AddStake({ selectedOption, selectedPosition, onChange }:
         attemptingTxn={attempting}
         txHash={hash}
         errorMessage={stakeError}
-        pendingMessage={t('sarStakeMore.pending', { balance: parsedAmount?.toFixed(2) ?? 0, symbol: png.symbol })}
+        pendingMessage={t('sarStakeMore.pending', { balance: parsedAmount?.toFixed(2) ?? 0, symbol: arc.symbol })}
         successMessage={t('sarStake.successSubmit')}
         confirmContent={ConfirmContent}
       />

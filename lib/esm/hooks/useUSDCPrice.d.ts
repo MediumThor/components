@@ -1,4 +1,4 @@
-import { Currency, Price } from '@arcanumdex/sdk';
+import { Currency, Price } from '@_arcanumdex/sdk';
 /**
  * Returns the price in USDC of the input currency
  * @param currency currency to compute the USDC price of

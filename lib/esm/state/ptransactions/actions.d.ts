@@ -1,3 +1,4 @@
+import { ChainId } from '@_arcanumdex/sdk';
 export interface SerializableTransactionReceipt {
     to: string;
     from: string;

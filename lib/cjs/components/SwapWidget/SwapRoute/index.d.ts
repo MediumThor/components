@@ -1,6 +1,6 @@
-import { Trade } from '@arcanumdex/sdk';
+import { Trade } from '@_arcanumdex/sdk';
 import React from 'react';
-type Props = {
+declare type Props = {
     trade: Trade;
 };
 declare const SwapRoute: React.FC<Props>;

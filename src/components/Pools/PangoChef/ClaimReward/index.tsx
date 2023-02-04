@@ -4,7 +4,7 @@ import { AlertTriangle } from 'react-feather';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';
 import { Box, Button, Loader, Text, TransactionCompleted } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { usePangoChefContract } from 'src/hooks/useContract';
 import { PangoChefInfo, PoolType } from 'src/state/ppangoChef/types';
@@ -25,7 +25,7 @@ const ClaimRewardV3 = ({ stakingInfo, onClose, redirectToCompound }: ClaimProps)
 
   const theme = useContext(ThemeContext);
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   // monitor call to help UI loading state
   const addTransaction = useTransactionAdder();
@@ -50,7 +50,7 @@ const ClaimRewardV3 = ({ stakingInfo, onClose, redirectToCompound }: ClaimProps)
         const response: TransactionResponse = await pangoChefContract[method](stakingInfo.pid);
         await waitForTransaction(response, 1);
         addTransaction(response, {
-          summary: t('earn.claimAccumulated', { symbol: png.symbol }),
+          summary: t('earn.claimAccumulated', { symbol: arc.symbol }),
         });
         setHash(response.hash);
       } catch (error) {
@@ -95,7 +95,7 @@ const ClaimRewardV3 = ({ stakingInfo, onClose, redirectToCompound }: ClaimProps)
 
           <Buttons>
             <Button variant="outline" onClick={onClaimReward} color={theme.text10}>
-              {_error ?? t('earn.claimReward', { symbol: png.symbol })}
+              {_error ?? t('earn.claimReward', { symbol: arc.symbol })}
             </Button>
             <Button variant="primary" onClick={redirectToCompound}>
               {t('sarCompound.compound')}

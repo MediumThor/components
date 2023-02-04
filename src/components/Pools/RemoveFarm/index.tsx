@@ -3,7 +3,7 @@ import { CHAINS, ChefType } from '@_arcanumdex/sdk';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Loader, Stat, Text, TransactionCompleted } from 'src/components';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3, useRefetchMinichefSubgraph } from 'src/hooks';
 import { usePangoChefContract, useStakingContract } from 'src/hooks/useContract';
 import { useGetEarnedAmount, useMinichefPendingRewards, useMinichefPools } from 'src/state/pstake/hooks';
@@ -37,7 +37,7 @@ const RemoveFarm = ({ stakingInfo, version, onClose, onLoadingOrComplete, redire
   const pangoChefContract = usePangoChefContract();
 
   const chainId = useChainId();
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
 
   const contract = version <= 2 ? stakingContract : pangoChefContract;
 
@@ -144,7 +144,7 @@ const RemoveFarm = ({ stakingInfo, version, onClose, onLoadingOrComplete, redire
                   {newEarnedAmount && (
                     <StatWrapper>
                       <Stat
-                        title={t('earn.unclaimedReward', { symbol: png.symbol })}
+                        title={t('earn.unclaimedReward', { symbol: arc.symbol })}
                         stat={newEarnedAmount?.toSignificant(4)}
                         titlePosition="top"
                         titleFontSize={12}

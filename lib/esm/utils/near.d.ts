@@ -1,4 +1,4 @@
-import { Token } from '@arcanumdex/sdk';
+import { Token } from '@_arcanumdex/sdk';
 import BN from 'bn.js';
 import { providers, transactions } from 'near-api-js';
 export interface ViewFunctionOptions {
@@ -68,8 +68,8 @@ declare class Near {
         actions: transactions.Action[];
         nonceOffset?: number;
     }): Promise<transactions.Transaction>;
-    getGas: (gas?: string) => BN;
-    getAmount: (amount?: string | null) => BN;
+    getGas: (gas?: string | undefined) => BN;
+    getAmount: (amount?: string | null | undefined) => BN;
     executeMultipleTransactions(allTransactions: Transaction[], callbackUrl?: string): Promise<void>;
     storageDepositAction({ accountId, registrationOnly, amount, }: StorageDepositActionOptions): FunctionCallOptions;
     nearDepositAction(amount: string): FunctionCallOptions;

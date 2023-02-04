@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { PangoChefInfo } from 'src/state/ppangoChef/types';
 export interface ClaimProps {
     stakingInfo: PangoChefInfo;

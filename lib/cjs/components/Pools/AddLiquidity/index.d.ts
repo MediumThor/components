@@ -1,4 +1,5 @@
-import { Currency } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Currency } from '@_arcanumdex/sdk';
 import { SpaceType } from 'src/state/pstake/types';
 interface AddLiquidityProps {
     currencyA: Currency;

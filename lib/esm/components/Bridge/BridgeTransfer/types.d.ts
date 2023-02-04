@@ -1,10 +1,10 @@
-import { Token } from '@arcanumdex/sdk';
+import { Token } from '@_arcanumdex/sdk';
 export declare enum BridgeState {
     PENDING = "PENDING",
     FAILED = "FAILED",
     SUCCESS = "SUCCESS"
 }
-export type BridgeTransferProps = {
+export declare type BridgeTransferProps = {
     onDelete?: () => void;
     onResume?: () => void;
     date: string;

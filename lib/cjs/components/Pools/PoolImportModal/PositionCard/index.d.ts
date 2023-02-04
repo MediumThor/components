@@ -1,4 +1,5 @@
-import { Pair } from '@arcanumdex/sdk';
+/// <reference types="react" />
+import { Pair } from '@_arcanumdex/sdk';
 export interface PositionCardProps {
     pair: Pair;
     onManagePoolsClick: () => void;

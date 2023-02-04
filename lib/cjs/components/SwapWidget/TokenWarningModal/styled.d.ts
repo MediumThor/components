@@ -5,5 +5,5 @@ export declare const WarningContainer: import("styled-components").StyledCompone
 export declare const StyledWarningIcon: import("styled-components").StyledComponent<import("react-feather").Icon, import("styled-components").DefaultTheme, {}, never>;
 export declare const AutoColumn: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     gap?: string | undefined;
-    justify?: "center" | "end" | "stretch" | "start" | "flex-start" | "flex-end" | "space-between" | undefined;
+    justify?: "space-between" | "stretch" | "center" | "end" | "flex-end" | "flex-start" | "start" | undefined;
 }, never>;

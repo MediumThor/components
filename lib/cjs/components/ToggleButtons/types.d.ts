@@ -1,4 +1,4 @@
-export type ToggleButtonsProps = {
+export declare type ToggleButtonsProps = {
     name?: string;
     /** id **/
     id?: string;

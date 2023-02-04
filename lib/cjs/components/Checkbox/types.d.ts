@@ -1,5 +1,5 @@
 import { ThemeColorsType } from 'src/theme';
-export type CheckboxProps = {
+export declare type CheckboxProps = {
     name?: string;
     /** id **/
     id?: string;

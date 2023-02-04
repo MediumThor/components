@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';
 import { Box, Button, Loader, Text, TextInput, TransactionCompleted } from 'src/components';
 import { ONE_FRACTION, PANGOCHEF_COMPOUND_SLIPPAGE, ZERO_ADDRESS } from 'src/constants';
-import { PNG } from 'src/constants/tokens';
+import { ARC } from 'src/constants/tokens';
 import { usePair } from 'src/data/Reserves';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';
 import { ApprovalState, useApproveCallback } from 'src/hooks/useApproveCallback';
@@ -53,7 +53,7 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
     onClose();
   }
 
-  const png = PNG[chainId];
+  const arc = ARC[chainId];
   const wrappedCurrency = WAVAX[chainId];
   const currency = CAVAX[chainId];
   const [token0, token1] = stakingInfo.tokens;
@@ -68,13 +68,13 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
 
   const tokensBalances = useTokenBalances(account ?? ZERO_ADDRESS, [token0, token1]);
 
-  const isPNGPool = token0.equals(png) || token1.equals(png);
+  const isARCPool = token0.equals(arc) || token1.equals(arc);
   const isWrappedCurrencyPool = token0.equals(wrappedCurrency) || token1.equals(wrappedCurrency);
 
   const tokensToGetPrice = [token0, token1];
 
-  if (!isPNGPool) {
-    tokensToGetPrice.push(png);
+  if (!isARCPool) {
+    tokensToGetPrice.push(arc);
   }
 
   const tokensPrices = useTokensCurrencyPrice(tokensToGetPrice);
@@ -91,16 +91,16 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
 
   const earnedAmount = stakingInfo.earnedAmount;
 
-  const pngPrice = tokensPrices[png.address] ?? new Price(png, wrappedCurrency, '1', '0');
+  const arcPrice = tokensPrices[arc.address] ?? new Price(arc, wrappedCurrency, '1', '0');
   let amountToAdd: CurrencyAmount | TokenAmount = new TokenAmount(wrappedCurrency, '0');
-  // if is png pool and not is wrapped token as second token (eg PNG/USDC, PSB/SDOOD)
-  if (isPNGPool && !isWrappedCurrencyPool) {
-    // need to calculate the token price in png, for this we using the token price on currency and png price on currency
-    const token = token0.equals(png) ? token1 : token0;
+  // if is arc pool and not is wrapped token as second token (eg ARC/USDC, PSB/SDOOD)
+  if (isARCPool && !isWrappedCurrencyPool) {
+    // need to calculate the token price in arc, for this we using the token price on currency and arc price on currency
+    const token = token0.equals(arc) ? token1 : token0;
     const tokenBalance = tokensBalances[token.address];
     const tokenPrice = tokensPrices[token.address] ?? new Price(token, wrappedCurrency, '1', '0');
-    const tokenPngPrice = pngPrice.equalTo('0') ? new Fraction('0') : pngPrice.divide(tokenPrice);
-    amountToAdd = new TokenAmount(token, tokenPngPrice.multiply(earnedAmount.raw).toFixed(0));
+    const tokenArcPrice = arcPrice.equalTo('0') ? new Fraction('0') : arcPrice.divide(tokenPrice);
+    amountToAdd = new TokenAmount(token, tokenArcPrice.multiply(earnedAmount.raw).toFixed(0));
 
     if (amountToAdd.greaterThan(tokenBalance ?? '0')) {
       _error = _error ?? t('stakeHooks.insufficientBalance', { symbol: token.symbol });
@@ -110,10 +110,10 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
       symbol: token.symbol,
     })} ${t('pangoChef.compoundAmountWarning2', {
       symbol: token.symbol,
-      png: png.symbol,
+      arc: arc.symbol,
     })}`;
   } else {
-    amountToAdd = CurrencyAmount.ether(pngPrice.raw.multiply(earnedAmount.raw).toFixed(0), chainId);
+    amountToAdd = CurrencyAmount.ether(arcPrice.raw.multiply(earnedAmount.raw).toFixed(0), chainId);
     if (amountToAdd.greaterThan(currencyBalance ? currencyBalance[account ?? ZERO_ADDRESS] ?? '0' : '0')) {
       _error = _error ?? t('stakeHooks.insufficientBalance', { symbol: currency.symbol });
     }
@@ -147,9 +147,9 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
 
   const userRewardRate = useUserPangoChefRewardRate(stakingInfo);
   /*
-  Let's say you get 1 png per sec, and 1 png equals 1 avax.
-  In 10 secs you have 10 png rewards. you make a tx to send 10 avax.
-  5 more seconds pass until you do the transaction, so you have 15 png rewards, and it needs to be paired with 15 avax. so tx will revert. bad for ux.
+  Let's say you get 1 arc per sec, and 1 arc equals 1 avax.
+  In 10 secs you have 10 arc rewards. you make a tx to send 10 avax.
+  5 more seconds pass until you do the transaction, so you have 15 arc rewards, and it needs to be paired with 15 avax. so tx will revert. bad for ux.
   The less pending rewards you have the more pronounced the issue. so you have to wait an hour or so, such that the rewards you receive do not so rapidly increase in proportion to your pending rewards. that's why we have to grey it out.
 
   1% slippage we have to hard code, otherwise any tx changing the reserve amounts in the pool would make it revert.
@@ -175,7 +175,7 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
     if (pangoChefContract && stakingInfo?.stakedAmount && pair && !_error) {
       setAttempting(true);
       try {
-        const method = isPNGPool ? 'compound' : 'compoundToPoolZero';
+        const method = isARCPool ? 'compound' : 'compoundToPoolZero';
 
         const minPairAmount = JSBI.BigInt(
           ONE_FRACTION.subtract(PANGOCHEF_COMPOUND_SLIPPAGE).multiply(amountToAdd.raw).toFixed(0),
@@ -307,8 +307,8 @@ const CompoundV3 = ({ stakingInfo, onClose }: CompoundProps) => {
               {t('pangoChef.compoundWarning', {
                 token0: currency0.symbol,
                 token1: currency1.symbol,
-                currency: isPNGPool ? currency0.symbol : currency.symbol,
-                png: isPNGPool ? currency1.symbol : png.symbol,
+                currency: isARCPool ? currency0.symbol : currency.symbol,
+                arc: isARCPool ? currency1.symbol : arc.symbol,
               })}
             </Text>
           </Box>

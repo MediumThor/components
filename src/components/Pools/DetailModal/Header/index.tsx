@@ -45,7 +45,7 @@ const Header: React.FC<Props> = ({ stakingInfo, version, onClose }) => {
   const cheftType = CHAINS[chainId].contracts?.mini_chef?.type ?? ChefType.MINI_CHEF_V2;
 
   // old calculation, it's using if the userRewardRate is not broken
-  //userApr = userRewardRate(POOL_ID, USER_ADDRESS) * 365 days * 100 * PNG_PRICE / (getUser(POOL_ID, USER_ADDRESS).valueVariables.balance * STAKING_TOKEN_PRICE)
+  //userApr = userRewardRate(POOL_ID, USER_ADDRESS) * 365 days * 100 * ARC_PRICE / (getUser(POOL_ID, USER_ADDRESS).valueVariables.balance * STAKING_TOKEN_PRICE)
 
   const userApr = useUserPangoChefAPR(cheftType === ChefType.PANGO_CHEF ? (stakingInfo as PangoChefInfo) : undefined);
 

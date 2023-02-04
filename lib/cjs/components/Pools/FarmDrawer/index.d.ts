@@ -1,6 +1,6 @@
 import React from 'react';
 import { StakingInfo } from 'src/state/pstake/types';
-type Props = {
+declare type Props = {
     isOpen: boolean;
     onClose: () => void;
     backgroundColor?: string;

@@ -1,9 +1,9 @@
 import { BridgePrioritizations } from '..';
-export type Step = {
+export declare type Step = {
     contractType?: string;
     subSteps?: string[];
 };
-export type BridgeRouteProps = {
+export declare type BridgeRouteProps = {
     steps: Step[];
     transactionType: BridgePrioritizations;
     selected: boolean;
